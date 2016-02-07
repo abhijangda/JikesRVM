@@ -27,6 +27,12 @@ import org.jikesrvm.compilers.common.CompiledMethods;
 import org.jikesrvm.compilers.opt.runtimesupport.OptCompiledMethod;
 import org.jikesrvm.scheduler.RVMThread;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+
 /**
  * A container for recording how often a method is executed.
  */
@@ -58,7 +64,7 @@ public final class MethodCountData implements Reportable {
    * Next available count array entry.
    */
   private int nextIndex;
-
+  
   /**
    * Constructor
    */
@@ -76,6 +82,8 @@ public final class MethodCountData implements Reportable {
     cmids = new int[256];
     nextIndex = 1;
     totalCountsTaken = 0;
+    
+    
   }
 
   /**
@@ -90,6 +98,11 @@ public final class MethodCountData implements Reportable {
       int index = findOrCreateHeapIdx(cmid);
       counts[index]++;      // Record count
       heapifyUp(index);     // Fix up the heap
+      
+      if (VM.useAOSDB)
+      {
+    	  VM.methodDatabase.putCallCount(cmid, numCounts);
+      }
     }
     totalCountsTaken += numCounts;
     if (DEBUG) validityCheck();
@@ -107,6 +120,11 @@ public final class MethodCountData implements Reportable {
     heapifyUp(index);                 // Fix up the heap
     totalCountsTaken += numCounts;
     if (DEBUG) validityCheck();
+    
+    if (VM.useAOSDB)
+    {
+  	  VM.methodDatabase.incrementCallCount(cmid);
+    }
   }
 
   /**
@@ -159,6 +177,13 @@ public final class MethodCountData implements Reportable {
    * @return the current count for a given compiled method id.
    */
   public synchronized double getData(int cmid) {
+	//MongoDB implementation
+	if (VM.useAOSDB)
+	{
+		double count = VM.methodDatabase.getCallCount(cmid);
+	}
+	
+	//Normal implementation
     int index = findHeapIdx(cmid);
     if (index > 0) {
       return counts[index];

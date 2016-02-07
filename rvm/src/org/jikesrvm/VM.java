@@ -16,6 +16,9 @@ import static org.jikesrvm.runtime.ExitStatus.EXIT_STATUS_BOGUS_COMMAND_LINE_ARG
 import static org.jikesrvm.runtime.ExitStatus.EXIT_STATUS_RECURSIVELY_SHUTTING_DOWN;
 import static org.jikesrvm.runtime.ExitStatus.EXIT_STATUS_SYSFAIL;
 
+import java.net.UnknownHostException;
+import java.util.Date;
+
 import org.jikesrvm.adaptive.controller.Controller;
 import org.jikesrvm.adaptive.util.CompilerAdvice;
 import org.jikesrvm.architecture.StackFrameLayout;
@@ -65,13 +68,15 @@ import org.vmmagic.unboxed.Extent;
 import org.vmmagic.unboxed.ObjectReference;
 import org.vmmagic.unboxed.Offset;
 import org.vmmagic.unboxed.Word;
+import org.jikesrvm.adaptive.database.methodsamples.MethodDatabase;
+import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase;
 
 /**
  * A virtual machine.
  */
 @Uninterruptible
 public class VM extends Properties {
-
+  public static MethodDatabase methodDatabase;	  
   /**
    * For assertion checking things that should never happen.
    */
@@ -529,7 +534,15 @@ public class VM extends Properties {
     if (verboseBoot >= 2) {
       VM.sysWriteln("Boot sequence completed; finishing boot thread");
     }
+    VM.sysWriteln ("Created");
 
+    if (useAOSDB)
+    {
+    	methodDatabase = new MongoMethodDatabase ();
+    	methodDatabase.initialize();
+    }
+	  
+	  
     RVMThread.getCurrentThread().terminate();
     if (VM.VerifyAssertions) VM._assert(VM.NOT_REACHED);
   }
@@ -2468,6 +2481,7 @@ public class VM extends Properties {
    dieAbruptlyRecursiveSystemTrouble() only.  */
 
   private static boolean inDieAbruptlyRecursiveSystemTrouble = false;
+  public static boolean useAOSDB = false;
 
   public static void dieAbruptlyRecursiveSystemTrouble() {
     if (!inDieAbruptlyRecursiveSystemTrouble) {

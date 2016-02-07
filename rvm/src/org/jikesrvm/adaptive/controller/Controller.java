@@ -220,8 +220,11 @@ public class Controller implements Callbacks.ExitMonitor,
     ControllerThread tt = new ControllerThread(sentinel);
     tt.start();
     // wait until controller threads are up and running.
+    org.jikesrvm.VM.sysWriteln ("sdsdsdsd");
     try {
       sentinel.waitAndClose();
+      org.jikesrvm.VM.sysWriteln ("sdsdsdsd");
+      
     } catch (Exception e) {
       e.printStackTrace();
       VM.sysFail("Failed to start up controller subsystem");

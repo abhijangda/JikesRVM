@@ -76,6 +76,7 @@ public class CommandLineArgs {
     BASE_ARG,
     OPT_ARG,
     OPT_HELP_ARG,
+    USE_AOSDB,
     /* Silently ignored */
     VERIFY_ARG,
     GC_HELP_ARG,
@@ -186,6 +187,7 @@ public class CommandLineArgs {
                                             new Prefix("-dsa:", PrefixType.DISABLE_SYSTEM_ASSERTION_ARG),
                                             new Prefix("-disablesystemassertions", PrefixType.DISABLE_SYSTEM_ASSERTION_ARG),
                                             new Prefix("-dsa", PrefixType.DISABLE_SYSTEM_ASSERTION_ARG),
+                                            new Prefix("-use_aosdb", PrefixType.USE_AOSDB),
 
                                             new Prefix("-Xbootclasspath/p:", PrefixType.BOOTCLASSPATH_P_ARG),
                                             new Prefix("-Xbootclasspath/a:", PrefixType.BOOTCLASSPATH_A_ARG),
@@ -526,7 +528,9 @@ public class CommandLineArgs {
       Prefix p = findPrefix(type);
       if (DEBUG) VM.sysWriteln(" CommandLineArgs.earlyProcessCLA(" + p + arg + " - " + type + ")");
       switch (type) {
-
+        case USE_AOSDB:
+        	org.jikesrvm.VM.useAOSDB = true;
+        	break;
         case CLASSPATH_ARG:
           // arguments of the form "-classpath a:b:c" or "-cp a:b:c"
           // We are experimentally processing this early so that we can have the
