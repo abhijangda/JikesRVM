@@ -76,6 +76,7 @@ import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase;
  */
 @Uninterruptible
 public class VM extends Properties {
+  public static String bulkUpdateCount;
   public static MethodDatabase methodDatabase;	  
   /**
    * For assertion checking things that should never happen.
@@ -538,7 +539,8 @@ public class VM extends Properties {
 
     if (useAOSDB)
     {
-    	methodDatabase = new MongoMethodDatabase ();
+    	VM.sysWriteln ("Bulkupdatecount " + bulkUpdateCount);
+    	methodDatabase = new MongoMethodDatabase (Integer.parseInt(bulkUpdateCount));
     	methodDatabase.initialize();
     }
 	  

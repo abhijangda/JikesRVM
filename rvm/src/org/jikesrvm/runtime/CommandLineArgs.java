@@ -530,6 +530,7 @@ public class CommandLineArgs {
       switch (type) {
         case USE_AOSDB:
         	org.jikesrvm.VM.useAOSDB = true;
+        	org.jikesrvm.VM.bulkUpdateCount = arg;
         	break;
         case CLASSPATH_ARG:
           // arguments of the form "-classpath a:b:c" or "-cp a:b:c"

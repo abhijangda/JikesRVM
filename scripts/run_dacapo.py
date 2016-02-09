@@ -5,7 +5,7 @@ import csv
 
 benchmarks= ['avrora', 'lusearch', 'jython', 'luindex', 'xalan', 'pmd', 'sunflow']
 
-with open ('mongo_results.csv', 'wb') as csvfile:
+with open ('mongo_results_with_async.csv', 'wb') as csvfile:
     os.chdir ('../dist/development_x86_64-linux')
     r = csv.writer (csvfile, delimiter = ' ')
     r.writerow (['Benchmark', 'NormalTime', 'MongoTime', 'Overhead (%)'])
@@ -17,7 +17,7 @@ with open ('mongo_results.csv', 'wb') as csvfile:
         print normal_time
         
         print "Running ", b, "with -use_aosdb"
-        o = commands.getoutput ('./rvm -use_aosdb -Xbootclasspath/p:mongo-java-driver-2.11.3.jar -jar dacapo.jar ' + b)
+        o = commands.getoutput ('./rvm -use_aosdb10 -Xbootclasspath/p:mongo-java-driver-2.11.3.jar -jar dacapo.jar ' + b)
         aos_time = int (re.findall (r'PASSED in (\d+)', o)[0])
         print aos_time
 
