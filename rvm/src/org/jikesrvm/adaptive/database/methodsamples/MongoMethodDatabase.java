@@ -118,8 +118,15 @@ public class MongoMethodDatabase extends MethodDatabase {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		writeRequests.add(new UpdateOneModel <Document> (new Document ("cmid", cmid), 
-				new Document ("$set", new Document ("cmid", cmid).append("count", count + 1))));
+		if (count != 0.0)
+		{
+			writeRequests.add(new UpdateOneModel <Document> (new Document ("cmid", cmid), 
+				new Document ("$set", new Document ("cmid", cmid).append("count", new Double (count + 1.0)))));
+		}
+		else
+		{
+			writeRequests.add(new InsertOneModel<Document> (new Document ("cmid", cmid).append ("count", new Double (1.0))));
+		}
 		writeRequestsLock.release();
 		if (VM.verboseClassLoading)
 			VM.sysWriteln ("Method " + cmid + " incremented to MongoDB");
@@ -183,13 +190,20 @@ public class MongoMethodDatabase extends MethodDatabase {
 			return 0.0;
 		}
 		
-		Document meth = aosCollection.find(eq("cmid", 71)).first();
+		Document meth = aosCollection.find(eq("cmid", cmid)).first();
 		if (meth == null)
 		{
 			if (VM.verboseClassLoading)
 				VM.sysWriteln ("Cannot find call count for Method " + cmid);
 			return 0.0;
 		}
+		
+		/*if (!(meth.get("count") instanceof Double))
+		{
+			if (VM.verboseClassLoading)
+				VM.sysWriteln ("Cannot find call count for Method " + cmid);
+			return 0.0;
+		}*/
 		
 		if (VM.verboseClassLoading)
 			VM.sysWriteln ("Getting call count for Method "+ cmid);
