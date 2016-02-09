@@ -101,7 +101,7 @@ public final class MethodCountData implements Reportable {
       
       if (VM.useAOSDB)
       {
-    	  VM.methodDatabase.putCallCount(cmid, numCounts);
+    	  VM.methodDatabase.incrementCallCount(cmid);
       }
     }
     totalCountsTaken += numCounts;
@@ -123,7 +123,7 @@ public final class MethodCountData implements Reportable {
     
     if (VM.useAOSDB)
     {
-  	  VM.methodDatabase.incrementCallCount(cmid);
+      VM.methodDatabase.putCallCount(cmid, numCounts);
     }
   }
 

@@ -52,22 +52,28 @@ public class MongoMethodDatabase extends MethodDatabase {
 		VM.verboseClassLoading = prev;
 		DBObject meth = new BasicDBObject();
 		meth.put("cmid", cmid);
-		meth.put("count", count + 1);
+		meth.put("count", new Double (count + 1.0));
 		
-		if (VM.verboseClassLoading)
-			VM.sysWriteln ("Method " + cmid + " with call counts " + count + " will be incremented");
-		
-		DBObject query = new BasicDBObject ();
-		query.put ("cmid", cmid);
-
-		DBObject updateObj = new BasicDBObject ();
-		updateObj.put ("$set", meth);
-
-		if (VM.verboseClassLoading)
-			VM.sysWriteln ("Method " + cmid + " incremented to MongoDB");
-
-		aosCollection.update (query, updateObj);
-
+		if (count != 0.0)
+		{
+    		if (VM.verboseClassLoading)
+	    		VM.sysWriteln ("Method " + cmid + " with call counts " + count + " will be incremented");
+	    	
+	    	DBObject query = new BasicDBObject ();
+	    	query.put ("cmid", cmid);
+    
+	    	DBObject updateObj = new BasicDBObject ();
+	    	updateObj.put ("$set", meth);
+    
+	    	if (VM.verboseClassLoading)
+	    		VM.sysWriteln ("Method " + cmid + " incremented to MongoDB");
+    
+	    	aosCollection.update (query, updateObj);
+        }
+        else
+        {
+            aosCollection.insert(meth);
+        }
 	}
 
 	@Override
@@ -81,7 +87,7 @@ public class MongoMethodDatabase extends MethodDatabase {
 		
 		DBObject meth = new BasicDBObject();
 		meth.put("cmid", cmid);
-		meth.put("count", counts);
+		meth.put("count", new Double(counts));
 
 		if (VM.verboseClassLoading)
 			VM.sysWriteln ("Put Method " + cmid + " with call counts " + counts);
