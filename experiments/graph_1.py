@@ -65,5 +65,3 @@ ax.legend((normal_bars[0], aosdb_bars[0]), ('rvm', 'rvm -use_aosdb'))
 
 plt.tight_layout()
 plt.savefig(os.path.join(graphs_dir, basename + '.pdf'))
-plt.show()
-

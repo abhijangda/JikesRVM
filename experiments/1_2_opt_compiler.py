@@ -3,15 +3,15 @@ import csv
 import os
 import sys
 
-# This experiment measures the overhead incurred when using naive mongodb calls in the AOS
-# update methods. The -use_aosdb flag is enabled on the master branch build.
+# 1.2: This quick test simply tries to run the benchmarks with the optimizing
+# compiler - here every method will be compiled by the opt compiler immediately
+# the first time it is used.
 
 benchmarks = ['avrora', 'lusearch', 'jython', 'luindex', 'xalan', 'pmd', 'sunflow']
 
 results_dir = os.path.abspath('results')
-results_prefix = '1_'
-n = 3
-TIMELIMIT = 60
+results_prefix = '1_2_'
+n = 2
 
 # Allow overriding the number of repetitions for each benchmark pair with the first argument
 if (len(sys.argv) > 1):
@@ -36,9 +36,8 @@ try:
             r.writerow(['i', 'normal', 'use_aosdb'])
 
             for i in range(n):
-                normal_time = common.run_dacapo(b, timelimit=TIMELIMIT)
-                aos_time = common.run_dacapo(b, vm_args=['-use_aosdb'], timelimit=TIMELIMIT)
-                r.writerow([i, str(normal_time), str(aos_time)])
+                time = common.run_dacapo(b, vm_args=['-X:aos:initial_compiler=opt'], timelimit=180)
+                r.writerow([i, str(time)])
 
 finally:
     common.teardown()

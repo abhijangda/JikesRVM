@@ -1,6 +1,5 @@
 # python 2.7
 # beyond build requirements for Jikes, requires installation of the timelimit utility.
-# TODO: The time limit should be set per benchmark invocation, not hardcoded in common.py
 
 import os
 import re
@@ -13,7 +12,6 @@ import urllib
 
 # === configuration options ===
 __DACAPO_DOWNLOAD__ = 'http://downloads.sourceforge.net/project/dacapobench/9.12-bach/dacapo-9.12-bach.jar?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fdacapobench%2Ffiles%2F9.12-bach%2F&ts=1455100129&use_mirror=kent'
-__TIMELIMIT__ = 1 * 60 # for testing: kill hung jikes instances after one minute.
 
 # === 'static' variables needed by module functions below - do not change ===
 # set a temporary repository root if an experiment requires a specific commit checked out
@@ -78,12 +76,12 @@ def teardown():
     else:
         print 'WARN', 'teardown() called with no temporary repository root previously defined.'
 
-def run_rvm(args):
+def run_rvm(args, timelimit = 0):
     ''' runs the rvm with the given arguments and returns the output as a string. '''
     # generate timelimit arguments if needed
     timelimit_args = []
-    if __TIMELIMIT__ > 0:
-        timelimit_args = ['timelimit', '-t', str(__TIMELIMIT__), '-T', str(1)]
+    if timelimit > 0:
+        timelimit_args = ['timelimit', '-t', str(timelimit), '-T', str(1)]
 
     # generate rvm arguments using absolute paths if needed
     rvm_exec = 'rvm'
@@ -108,16 +106,16 @@ def run_rvm(args):
         print 'ERROR', 'child process exited with non-zero exit code', error.returncode
         return error.output
 
-def run_dacapo(benchmark, size='default', repetitions=1, vm_args=[]):
+def run_dacapo(benchmark, size='default', repetitions=1, vm_args=[], dacapo_args=[], timelimit = 0):
     ''' runs the specified dacapo instance on the newly built rvm and returns
     its runtime in milliseconds. Use vm_args to specify -use_aosdb etc. '''
     dacapo_path = download_dacapo()
 
     # define the benchmark arguments, prepend any extra arguments to the vm
-    args = vm_args + ['-jar', dacapo_path, benchmark, '-s', size, '-n', str(repetitions)]
+    args = vm_args + ['-jar', dacapo_path, benchmark, '-s', size, '-n', str(repetitions)] + dacapo_args
 
     # run the RVM with these arguments
-    output = run_rvm(args)
+    output = run_rvm(args, timelimit = 0)
 
     # attempt to find the PASSED time reported by the dacapo benchmark.
     # report an error and log the runtime as -1 if this line is missing from the output.
