@@ -115,7 +115,7 @@ def run_dacapo(benchmark, size='default', repetitions=1, vm_args=[], dacapo_args
     args = vm_args + ['-jar', dacapo_path, benchmark, '-s', size, '-n', str(repetitions)] + dacapo_args
 
     # run the RVM with these arguments
-    output = run_rvm(args, timelimit = 0)
+    output = run_rvm(args, timelimit = timelimit)
 
     # attempt to find the PASSED time reported by the dacapo benchmark.
     # report an error and log the runtime as -1 if this line is missing from the output.
