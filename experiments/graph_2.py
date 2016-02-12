@@ -37,7 +37,7 @@ for b in benchmarks:
     names = raw_data.dtype.names
 
     # Add to the X, Y series for each column after the first
-    X, Y = [], []
+    X, Y, Yerr = [], [], []
 
     for k in range(1, len(names)):
         # Filter out -1 values and scale to seconds.
@@ -46,8 +46,10 @@ for b in benchmarks:
 
         # calculate the mean
         mean = np.mean(values)
-        X += [int(k)]
+        std = np.std(values)
+        X += [int(names[k])]
         Y += [mean]
+        Yerr += [std]
 
     # compute the mean for the baseline column
     baseline = raw_data['baseline']
@@ -55,16 +57,16 @@ for b in benchmarks:
     baseline_mean = np.mean(baseline)
 
     # Draw bars with errors
-    batch_plot    = ax.plot(X, Y,             color='#CC6666')
+    batch_line    = ax.errorbar(X, Y, color='#CC6666', yerr=Yerr, marker=".")
     baseline_plot = ax.plot(X, [baseline_mean] * len(Y), color='#6666CC')
 
     # set sub plot title and axis labels
     ax.set_title(b)
+    ax.set_xticks(X)
+    ax.set_xlim(0, np.max(X)+1)
     ax.set_ylabel('runtime/seconds')
     ax.set_xlabel('batch update size')
-
-# Draw legend using default settings
-# ax.legend((normal_bars[0], aosdb_bars[0]), ('rvm', 'rvm -use_aosdb'))
+    ax.legend((batch_line, baseline_plot[0]), ('rvm -use_aosdb<x>', 'rvm') )
 
 plt.tight_layout()
 plt.savefig(os.path.join(graphs_dir, basename + '.pdf'))
