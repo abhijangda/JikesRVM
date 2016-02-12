@@ -6,14 +6,20 @@ import sys
 # This experiment uses different batch-update sizes for each benchmark, and
 # compares these to the base line implementation. update methods.
 
-# The batch-update branch is used, and the -use_aosdb and -aosdb-batch-size (TODO)
-
+# The batch-update branch is used, and the -use_aosdb<n> flag defines how many
+# updates are packed into one batch.
 
 benchmarks = ['avrora', 'lusearch', 'jython', 'luindex', 'xalan', 'pmd', 'sunflow']
+batch_sizes = ['1, 10, 100, 1000, 10000']
 
 results_dir = os.path.abspath('results')
-results_prefix = '1_'
+results_prefix = '2_'
 n = 3
+timelimit = 60
+
+# The number of benchmarks to be run will be len(benchmarks) * (1 +
+# len(batch_sizes)) * n, therefore, the expected maximum time with these setting
+# is 7 * 6 * 3 * 60 seconds = 7560 seconds = ~ 2 hours.
 
 # Allow overriding the number of repetitions for each benchmark pair with the first argument
 if (len(sys.argv) > 1):
@@ -23,7 +29,7 @@ if (len(sys.argv) > 1):
         print "ERROR", "The first argument sets the number of repetitions and must be positive integer."
         exit(1)
 try:
-    common.checkout_and_build_jikes('master')
+    common.checkout_and_build_jikes('BulkUpdates')
 
     if not os.path.exists(results_dir):
         os.makedirs(results_dir)
@@ -35,12 +41,16 @@ try:
 
         with open(csvname, 'wb') as csvfile:
             r = csv.writer (csvfile, delimiter = ',')
-            r.writerow(['i', 'normal', 'use_aosdb'])
+            r.writerow(['baseline'] + map(str, batch_sizes))
 
             for i in range(n):
-                normal_time = common.run_dacapo(b)
-                aos_time = common.run_dacapo(b, vm_args=['-use_aosdb'])
-                r.writerow([i, str(normal_time), str(aos_time)])
+                baseline_time = common.run_dacapo(b)
+
+                aos_time = []
+                for bs in batch_sizes:
+                    aos_time += [common.run_dacapo(b, vm_args=['-use_aosdb'+bs], timelimit = timelimit)]
+
+                r.writerow([baseline_time, map(str, aos_time)])
 
 finally:
     common.teardown()
