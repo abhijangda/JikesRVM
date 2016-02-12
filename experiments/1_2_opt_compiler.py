@@ -33,7 +33,7 @@ try:
 
         with open(csvname, 'wb') as csvfile:
             r = csv.writer (csvfile, delimiter = ',')
-            r.writerow(['i', 'normal', 'use_aosdb'])
+            r.writerow(['i', 'normal'])
 
             for i in range(n):
                 time = common.run_dacapo(b, vm_args=['-X:aos:initial_compiler=opt'], timelimit=180)
