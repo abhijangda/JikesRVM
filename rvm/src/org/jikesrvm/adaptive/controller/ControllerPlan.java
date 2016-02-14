@@ -65,7 +65,7 @@ public final class ControllerPlan {
   /**
    *  The associate compilation plan
    */
-  private final CompilationPlan compPlan;
+  private CompilationPlan compPlan;
 
   /**
    *  The time we created this plan
@@ -174,15 +174,16 @@ public final class ControllerPlan {
    *  method otherwise
    */
   public CompiledMethod doRecompile() {
+	//compPlan = new CompilationPlan (compPlan.method, Controller.recompilationStrategy.getOptPlanForLevel(2),
+	//		compPlan.instrumentationPlan, Controller.recompilationStrategy.getOptOptionsForLevel(2));
     CompilationPlan cp = getCompPlan();
-
     setTimeInitiated(Controller.controllerClock);
     AOSLogging.logger.recompilationStarted(cp);
 
     if (cp.options.PRINT_METHOD) {
       VM.sysWrite("-oc:O" + cp.options.getOptLevel() + " \n");
     }
-
+//VM.sysWriteln ("doRecompile");
     // Compile the method.
     int newCMID = RuntimeCompiler.recompileWithOpt(cp);
     int prevCMID = getPrevCMID();

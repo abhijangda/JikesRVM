@@ -103,6 +103,15 @@ public abstract class RecompilationStrategy {
     return new CompilationPlan(method, _optPlans[optLevel], null, _options[optLevel]);
   }
 
+  public OptimizationPlanElement[] getOptPlanForLevel (int level)
+  {
+	  return _optPlans[level];
+  }
+  
+  public OptOptions getOptOptionsForLevel (int level)
+  {
+	  return _options[level];
+  }
   /**
    * Should we consider the hme for recompilation?
    *
@@ -231,6 +240,19 @@ public abstract class RecompilationStrategy {
   private OptimizationPlanElement[][] _optPlans;
   private OptOptions[] _options;
 
+  public int getOptLevelForOptPlan (OptimizationPlanElement[] plan)
+  {
+	  for (int i = 0; i < _optPlans.length; i++)
+	  {
+		  if (_optPlans[i] == plan)
+		  {
+			  return i;
+		  }
+	  }
+	  
+	  return -1;
+  }
+  
   /**
    * Creates the default set of &lt;optimization plan, options&gt; pairs.
    * Processes optimizing compiler command line options.

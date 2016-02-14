@@ -77,7 +77,10 @@ import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase;
 @Uninterruptible
 public class VM extends Properties {
   public static String bulkUpdateCount;
-  public static MethodDatabase methodDatabase;	  
+  public static MongoMethodDatabase methodDatabase;
+  public static boolean useAOSDBOptCompile = false;
+  public static boolean useAOSDBVerbose = false;
+  
   /**
    * For assertion checking things that should never happen.
    */
@@ -524,7 +527,18 @@ public class VM extends Properties {
     // Create main thread.
     if (verboseBoot >= 1) VM.sysWriteln("Constructing mainThread");
     mainThread = new MainThread(applicationArguments);
-
+    
+    if (useAOSDB || useAOSDBOptCompile)
+    {
+    	if (useAOSDBOptCompile && !useAOSDB)
+    		bulkUpdateCount = "0";
+    	
+    	if (VM.useAOSDBVerbose)
+    		VM.sysWriteln ("Bulkupdatecount " + bulkUpdateCount);
+    	
+    	VM.methodDatabase = new MongoMethodDatabase (Integer.parseInt(bulkUpdateCount));
+    }
+    
     // Schedule "main" thread for execution.
     if (verboseBoot >= 1) VM.sysWriteln("Starting main thread");
     mainThread.start();
@@ -536,15 +550,7 @@ public class VM extends Properties {
       VM.sysWriteln("Boot sequence completed; finishing boot thread");
     }
     VM.sysWriteln ("Created");
-
-    if (useAOSDB)
-    {
-    	VM.sysWriteln ("Bulkupdatecount " + bulkUpdateCount);
-    	methodDatabase = new MongoMethodDatabase (Integer.parseInt(bulkUpdateCount));
-    	methodDatabase.initialize();
-    }
-	  
-	  
+    
     RVMThread.getCurrentThread().terminate();
     if (VM.VerifyAssertions) VM._assert(VM.NOT_REACHED);
   }
