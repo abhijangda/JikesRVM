@@ -48,6 +48,12 @@ def checkout_and_build_jikes(commit):
     args = ['git', 'checkout', commit]
     subprocess.call(args)
 
+    # create a symlink to this original repo's components folder to avoid duplicate downloads
+    args = ['ln', '-s',
+            os.path.join(__JIKES_EXPERIMENT_ORIGINAL_ROOT__, 'components'),
+            os.path.join(__JIKES_EXPERIMENT_TEMP_ROOT__, 'components')]
+    subprocess.call(args)
+
     # build jikes
     __JIKES_EXPERIMENT_TEMP_BIN__ = os.path.join(__JIKES_EXPERIMENT_TEMP_ROOT__, build_jikes('x86_64-linux', 'development'))
 
@@ -129,8 +135,7 @@ def run_dacapo(benchmark, size='default', repetitions=1, vm_args=[], dacapo_args
     return time
 
 def download_dacapo():
-    ''' Downloads the dacapo benchmark to the original repository root and creates
-    a symlink to it in the temp repository root. '''
+    ''' Downloads the dacapo benchmark to the original repository root returns the path to it. '''
     dacapo_path = os.path.abspath(os.path.join(__JIKES_EXPERIMENT_ORIGINAL_ROOT__, 'dacapo.jar'))
 
     if not os.path.exists(dacapo_path):

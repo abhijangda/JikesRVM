@@ -38,7 +38,7 @@ try:
     for b in benchmarks:
         csvname = os.path.abspath(os.path.join(results_dir, results_prefix+b+'.csv'))
 
-        print '----', 'Running', b, n, 'times, results in', csvname, '----'
+        print '----', 'Running', b, n, '*', len(batch_sizes) + 1, 'times, results in', csvname, '----'
 
         with open(csvname, 'wb') as csvfile:
             r = csv.writer (csvfile, delimiter = ',')
@@ -49,9 +49,9 @@ try:
 
                 aos_time = []
                 for bs in batch_sizes:
-                    aos_time += [common.run_dacapo(b, vm_args=['-use_aosdb'+bs], timelimit = timelimit)]
+                    aos_time += [common.run_dacapo(b, vm_args=['-use_aosdb'+str(bs)], timelimit = timelimit)]
 
-                r.writerow([baseline_time, map(str, aos_time)])
+                r.writerow([baseline_time] + map(str, aos_time))
 
 finally:
     common.teardown()
