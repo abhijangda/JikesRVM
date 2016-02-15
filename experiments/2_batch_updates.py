@@ -10,7 +10,7 @@ import sys
 # updates are packed into one batch.
 
 benchmarks = ['avrora', 'lusearch', 'jython', 'luindex', 'xalan', 'pmd', 'sunflow']
-batch_sizes = ['1, 10, 100, 1000, 10000']
+batch_sizes = [1, 10, 100, 1000, 10000]
 
 results_dir = os.path.abspath('results')
 results_prefix = '2_'
@@ -28,6 +28,7 @@ if (len(sys.argv) > 1):
     except Exception:
         print "ERROR", "The first argument sets the number of repetitions and must be positive integer."
         exit(1)
+
 try:
     common.checkout_and_build_jikes('BulkUpdates')
 
@@ -44,7 +45,7 @@ try:
             r.writerow(['baseline'] + map(str, batch_sizes))
 
             for i in range(n):
-                baseline_time = common.run_dacapo(b)
+                baseline_time = common.run_dacapo(b, timelimit = timelimit)
 
                 aos_time = []
                 for bs in batch_sizes:
@@ -54,4 +55,3 @@ try:
 
 finally:
     common.teardown()
-
