@@ -1,10 +1,16 @@
 package org.jikesrvm.adaptive.database.methodsamples;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
 import java.util.concurrent.Semaphore;
 //Run with AOS:log
+
+
+
+
+
 
 
 
@@ -23,9 +29,13 @@ import org.jikesrvm.compilers.opt.runtimesupport.OptCompiledMethod;
 import org.vmmagic.pragma.Inline;
 import org.vmmagic.pragma.NoOptCompile;
 
+import com.mongodb.Cursor;
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoIterable;
 import com.mongodb.client.model.InsertOneModel;
 import com.mongodb.client.model.UpdateOneModel;
 import com.mongodb.client.model.WriteModel;
@@ -33,12 +43,12 @@ import com.mongodb.client.model.WriteModel;
 import static com.mongodb.client.model.Filters.*;
 
 public class MongoMethodDatabase {
-	private  MongoClient mongo;
-	private  MongoDatabase aosDatabase;
-	private  MongoCollection<Document> aosCollection;
-	private  BulkWriteThread bulkWriteThread;
-	private  Semaphore writeRequestsLock;
-	private  Vector<CompilationPlan> compilationPlans;
+	private MongoClient mongo;
+	private MongoDatabase aosDatabase;
+	private MongoCollection<Document> aosCollection;
+	private BulkWriteThread bulkWriteThread;
+	private Semaphore writeRequestsLock;
+	private HashMap<String, MethodDatabaseElement> internalDB;
 	private int bulkUpdateCount;
 
 	private  List<WriteRequest> writeRequests;
@@ -218,6 +228,7 @@ public class MongoMethodDatabase {
 			writeRequestsLock = new Semaphore (1);
 			
 			VM.sysWriteln ("RequestsLock created");
+			internalDB = new HashMap<String, MethodDatabaseElement> ();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -433,5 +444,30 @@ public class MongoMethodDatabase {
 		bulkWriteThread = new BulkWriteThread(aosCollection, writeRequests, 
 				writeRequestsLock);
 		bulkWriteThread.run();
+	}
+	
+	public void readAllDocuments ()
+	{
+		MongoCursor<Document> cur = aosCollection.find().iterator();
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Obtained cursor to the collection");
+		while (cur.hasNext())
+		{
+			Document d = cur.next();
+			String methFullDesc = d.getString("methodFullDesc");
+			int optLevel = d.getInteger("optLevel");
+			double counts = d.getDouble("count");
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("Read: " + methFullDesc + "  " + optLevel + "  " + counts);
+			internalDB.put(methFullDesc, new MethodDatabaseElement(methFullDesc, counts, optLevel));
+		}
+	}
+	
+	public void readAll ()
+	{
+		BulkReadThread b = new BulkReadThread (this);
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Starting BulkReadThread");
+		b.start();
 	}
 }

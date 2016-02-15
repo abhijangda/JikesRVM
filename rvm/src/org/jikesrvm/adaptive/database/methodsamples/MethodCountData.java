@@ -99,7 +99,7 @@ public final class MethodCountData implements Reportable {
       counts[index]++;      // Record count
       heapifyUp(index);     // Fix up the heap
       if (VM.useAOSDBVerbose)
-      VM.sysWriteln ("UPDATE " + numCounts);
+    	  VM.sysWriteln ("UPDATE " + numCounts);
       if (VM.useAOSDB && VM.methodDatabase != null)
       {
     	  VM.methodDatabase.incrementCallCount(cmid);
@@ -122,7 +122,7 @@ public final class MethodCountData implements Reportable {
     totalCountsTaken += numCounts;
     if (DEBUG) validityCheck();
     if (VM.useAOSDBVerbose)
-    VM.sysWriteln ("UPDATE " + numCounts +"  " + cmid);
+    	VM.sysWriteln ("UPDATE " + numCounts +"  " + cmid);
     if (VM.useAOSDB && VM.methodDatabase != null)
     {
     	VM.methodDatabase.putCallCount(cmid, numCounts);

@@ -80,6 +80,7 @@ public class VM extends Properties {
   public static MongoMethodDatabase methodDatabase;
   public static boolean useAOSDBOptCompile = false;
   public static boolean useAOSDBVerbose = false;
+  public static boolean useAOSDBRead = false;
   
   /**
    * For assertion checking things that should never happen.
@@ -528,15 +529,18 @@ public class VM extends Properties {
     if (verboseBoot >= 1) VM.sysWriteln("Constructing mainThread");
     mainThread = new MainThread(applicationArguments);
     
-    if (useAOSDB || useAOSDBOptCompile)
+    if (useAOSDB || useAOSDBOptCompile || useAOSDBRead)
     {
-    	if (useAOSDBOptCompile && !useAOSDB)
+    	if ((useAOSDBRead || useAOSDBOptCompile) && !useAOSDB)
     		bulkUpdateCount = "0";
     	
     	if (VM.useAOSDBVerbose)
     		VM.sysWriteln ("Bulkupdatecount " + bulkUpdateCount);
     	
     	VM.methodDatabase = new MongoMethodDatabase (Integer.parseInt(bulkUpdateCount));
+    	
+    	if (useAOSDBRead)
+    		VM.methodDatabase.readAll ();
     }
     
     // Schedule "main" thread for execution.
