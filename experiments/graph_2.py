@@ -20,12 +20,15 @@ csv_dir = 'results'
 csv_prefix = '2_'
 benchmarks = ['avrora', 'lusearch', 'jython', 'luindex', 'xalan', 'pmd', 'sunflow']
 
-fig, axarr = plt.subplots(len(benchmarks))
+subplot_cols=4
+subplot_rows = len(benchmarks) / subplot_cols + len(benchmarks) % 2
 
-i = 0;
+fig = plt.figure()
+
+i = 0
 for b in benchmarks:
     # Select the current sub plot
-    ax = axarr[i]
+    ax = plt.subplot2grid((subplot_rows, subplot_cols), (i / subplot_cols, i % subplot_cols))
     i += 1
 
     # get data from csv file
@@ -59,14 +62,20 @@ for b in benchmarks:
     batch_line    = ax.errorbar(X, Y, color='#CC6666', yerr=Yerr, marker=".")
     baseline_plot = ax.plot(X, [baseline_mean] * len(Y), color='#6666CC')
 
+    # set sub plot scales
+    ax.set_xscale('log')
+    ax.set_ylim(0)
+
     # set sub plot title and axis labels
     ax.set_title(b)
     ax.set_xticks(X)
-    ax.set_xscale('log')
-    ax.set_ylabel('runtime/seconds')
-    ax.set_xlabel('batch update size')
-    ax.legend((batch_line, baseline_plot[0]), ('rvm -use_aosdb<x>', 'rvm') )
 
+    if (i == 1):
+        ax.set_ylabel('runtime/seconds')
+        ax.set_xlabel('batch update size')
+
+# create a single shared legend
+fig.legend((batch_line, baseline_plot[0]), ('rvm -use_aosdb<x>', 'rvm'), loc='lower right' )
 plt.tight_layout()
 plt.savefig(os.path.join(graphs_dir, basename + '.pdf'))
 plt.show()
