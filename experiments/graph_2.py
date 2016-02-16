@@ -18,8 +18,7 @@ if not os.path.exists(graphs_dir):
 basename = '2_batch_updates'
 csv_dir = 'results'
 csv_prefix = '2_'
-#benchmarks = ['avrora', 'lusearch', 'jython', 'luindex', 'xalan', 'pmd', 'sunflow']
-benchmarks = ['fake', 'fake'] # TODO using fake data to prepare the plot until real data is available
+benchmarks = ['avrora', 'lusearch', 'jython', 'luindex', 'xalan', 'pmd', 'sunflow']
 
 fig, axarr = plt.subplots(len(benchmarks))
 
@@ -63,7 +62,7 @@ for b in benchmarks:
     # set sub plot title and axis labels
     ax.set_title(b)
     ax.set_xticks(X)
-    ax.set_xlim(0, np.max(X)+1)
+    ax.set_xscale('log')
     ax.set_ylabel('runtime/seconds')
     ax.set_xlabel('batch update size')
     ax.legend((batch_line, baseline_plot[0]), ('rvm -use_aosdb<x>', 'rvm') )
