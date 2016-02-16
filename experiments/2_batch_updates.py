@@ -6,9 +6,10 @@ import sys
 # This experiment uses different batch-update sizes for each benchmark, and
 # compares these to the base line implementation. update methods.
 
-# The batch-update branch is used, and the -use_aosdb<n> flag defines how many
+# The BulkRead branch is used, and the -use_aosdb<n> flag defines how many
 # updates are packed into one batch.
 
+git_checkout = 'BulkRead'
 benchmarks = ['avrora', 'lusearch', 'jython', 'luindex', 'xalan', 'pmd', 'sunflow']
 batch_sizes = [1, 10, 100, 1000, 10000]
 
@@ -30,7 +31,7 @@ if (len(sys.argv) > 1):
         exit(1)
 
 try:
-    common.checkout_and_build_jikes('BulkUpdates')
+    common.checkout_and_build_jikes(git_checkout)
 
     if not os.path.exists(results_dir):
         os.makedirs(results_dir)
