@@ -62,7 +62,10 @@ def checkout_and_build_jikes(commit):
     return __JIKES_EXPERIMENT_TEMP_ROOT__
 
 def build_jikes(host = 'x86_64-linux', config = 'development'):
-    args = ['ant', '-Dhost.name=' + host, '-Dconfig.name=' + config]
+    args = ['ant',
+            '-Dhost.name=' + host,
+            '-Dconfig.name=' + config,
+            '-Djunit.jar=components/junit/4.10/junit4.10/junit-4.10.jar']
     subprocess.call(args)
 
     return os.path.join('dist', config + '_' + host)
