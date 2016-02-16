@@ -1,0 +1,15 @@
+# Provide a dummy implementation of getHardwareAddress needed by MongoDB
+--- java/net/NetworkInterface.java     2010-06-03 19:13:02.000000000 +0000
++++ /home/vagrant/NetworkInterface.java        2016-02-15 14:44:28.672673233 +0000
+@@ -312,5 +312,10 @@
+   {
+     return VMNetworkInterface.supportsMulticast(netif.name);
+   }
+-
++  
++  public byte[] getHardwareAddress ()
++  {
++    byte[] mac = new byte[6];
++    return mac;
++  }
+ }
