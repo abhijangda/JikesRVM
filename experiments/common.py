@@ -145,3 +145,12 @@ def download_dacapo():
         urllib.urlretrieve(__DACAPO_DOWNLOAD__, dacapo_path)
 
     return dacapo_path
+
+def dropMongoCollection(database, collection):
+    ''' uses the mongo shell to drop the specified collection from a database. '''
+    args = ['mongo']
+    commands = ['use '+database, 'db.'+collection+'.drop()', 'exit']
+
+    p = subprocess.Popen(args, stdin=subprocess.PIPE)
+    p.communicate(string.join(commands, '\n'))
+    p.wait()
