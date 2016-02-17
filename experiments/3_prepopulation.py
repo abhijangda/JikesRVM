@@ -47,13 +47,13 @@ try:
                 # TODO maybe wait - to ensure this has finished and isn't taking up resources/blocking DB operations
 
                 # Baseline runs
-                for i in range(2):
-                    print '--', b, 'Baseline', i + 1, '--'
+                for k in range(2):
+                    print '--', b, 'Baseline', k + 1, '--'
                     results += [common.run_dacapo(b, timelimit=TIMELIMIT)]
 
                 # AOS database enabled runs
-                for i in range(2):
-                    print '--', b, 'AOSDB VM', i + 1, '--'
+                for k in range(2):
+                    print '--', b, 'AOSDB VM', k + 1, '--'
                     results += [common.run_dacapo(b, vm_args=['-use_aosdb1000', '-use_aosdbread'], timelimit=TIMELIMIT)]
 
                 # convert all results to strings and store them
