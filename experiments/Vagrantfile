@@ -1,0 +1,127 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure(2) do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = "hashicorp/precise64"
+
+  # Disable automatic box update checking. If you disable this, then
+  # boxes will only be checked for updates when the user runs
+  # `vagrant box outdated`. This is not recommended.
+  # config.vm.box_check_update = false
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  # config.vm.network "private_network", ip: "192.168.33.10"
+
+  # Create a public network, which generally matched to bridged network.
+  # Bridged networks make the machine appear as another physical device on
+  # your network.
+  # config.vm.network "public_network"
+
+  # Share an additional folder to the guest VM. The first argument is
+  # the path on the host to the actual folder. The second argument is
+  # the path on the guest to mount the folder. And the optional third
+  # argument is a set of non-required options.
+  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.synced_folder "../", "/home/vagrant/JikesRVM"
+
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  config.vm.provider "virtualbox" do |vb|
+  #   # Display the VirtualBox GUI when booting the machine
+  #   vb.gui = true
+  #
+  #   # Customize the amount of memory on the VM:
+      vb.memory = "4096"
+      vb.cpus = "4"
+  end
+  #
+  # View the documentation for the provider you are using for more
+  # information on available options.
+
+  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
+  # such as FTP and Heroku are also available. See the documentation at
+  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
+  # config.push.define "atlas" do |push|
+  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
+  # end
+
+  # Enable provisioning with a shell script. Additional provisioners such as
+  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo -u vagrant -s
+    REPO_ROOT=/home/vagrant/JikesRVM/
+
+    # Update package database
+    sudo apt-get update
+
+    # Install common tools
+    sudo apt-get install -y git vim emacs tree unzip timelimit
+
+    # Get our Jikes repository fork
+    git clone https://github.com/abhijangda/JikesRVM $REPO_ROOT
+    cd $REPO_ROOT
+
+    git checkout experiments
+
+    # Download the JUnit component manually to avoid sourceforge redirect issues
+    mkdir -p components/junit/4.10/
+    cd components/junit/4.10/
+
+    wget http://sourceforge.net/projects/junit/files/junit/4.10/junit4.10.zip/download?use_mirror=autoselect -O junit4.10.zip
+    unzip junit4.10.zip
+
+    # This file will tell ant that it does not have to download junit again
+    cd junit4.10
+    echo 'junit.version=4.10' > constants.properties
+    echo 'junit.description=jUnit' >> constants.properties
+
+    # Back to JikesRVM repository root
+    cd $REPO_ROOT
+    # Manually store the path to the junit jar file extracted from the zip so the tests can be built.
+    echo 'junit.jar=components/junit/4.10/junit4.10/junit-4.10.jar' >> .ant.properties
+
+    # Install build dependencies for Jikes RVM
+    sudo apt-get install -y openjdk-6-jdk ant gcc g++ bison perl patch make libtool
+    sudo apt-get install -y automake1.9 autoconf2.59 ecj
+    sudo apt-get install -y gettext
+    sudo apt-get install -y libc-dev gcc-multilib
+    sudo apt-get autoremove
+
+    # Build the classpath extension in the main repository so experiments don't have to rebuild it
+    ant -f build/components/classpath.xml -Dhost.name=x86_64-linux -Dconfig.name=development
+
+    # Install MongoDB 3.2.1
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+    echo "deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+    sudo apt-get update
+
+    sudo apt-get install -y mongodb-org=3.2.1 mongodb-org-server=3.2.1 mongodb-org-shell=3.2.1 mongodb-org-mongos=3.2.1 mongodb-org-tools=3.2.1
+    echo "mongodb-org hold" | sudo dpkg --set-selections
+    echo "mongodb-org-server hold" | sudo dpkg --set-selections
+    echo "mongodb-org-shell hold" | sudo dpkg --set-selections
+    echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+    echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+    sudo service mongod start
+
+  SHELL
+end
