@@ -87,7 +87,7 @@ Vagrant.configure(2) do |config|
     mkdir -p components/junit/4.10/
     cd components/junit/4.10/
 
-    wget http://sourceforge.net/projects/junit/files/junit/4.10/junit4.10.zip/download?use_mirror=autoselect -O junit4.10.zip
+    wget http://sourceforge.net/projects/junit/files/junit/4.10/junit4.10.zip/download?use_mirror=autoselect -O junit4.10.zip -q
     unzip junit4.10.zip
 
     # This file will tell ant that it does not have to download junit again
@@ -110,6 +110,9 @@ Vagrant.configure(2) do |config|
     # Build the classpath extension in the main repository so experiments don't have to rebuild it
     ant -f build/components/classpath.xml -Dhost.name=x86_64-linux -Dconfig.name=development
 
+    # Build Jikes once to configure all dependencies for the master directory
+    ant -Dhost.name=x86_64-linux -Dconfig.name=development
+
     # Install MongoDB 3.2.1
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
     echo "deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
@@ -121,7 +124,6 @@ Vagrant.configure(2) do |config|
     echo "mongodb-org-shell hold" | sudo dpkg --set-selections
     echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
     echo "mongodb-org-tools hold" | sudo dpkg --set-selections
-    sudo service mongod start
 
   SHELL
 end
