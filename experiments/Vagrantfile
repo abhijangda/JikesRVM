@@ -78,7 +78,10 @@ Vagrant.configure(2) do |config|
     sudo apt-get install -y git vim emacs tree unzip timelimit
 
     # Get our Jikes repository fork
-    git clone https://github.com/abhijangda/JikesRVM $REPO_ROOT
+    # With the shared folder setup, this is not necessary anymore.
+    # Leaving this note and following line in in case a different strategy
+    # without shared folders is used later.
+    # git clone https://github.com/abhijangda/JikesRVM $REPO_ROOT
     cd $REPO_ROOT
 
     git checkout experiments
