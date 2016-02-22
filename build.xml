@@ -1707,7 +1707,7 @@ Check to make sure all required properties are specified. This includes properti
       <arg value="-log"/>
       <arg path="${build.base}/BootImageWriterOutput.txt"/>
       <arg value="-classpath"/>
-      <arg path="${rvm.class.path}"/>
+      <arg path="${rvm.class.path}:${basedir}/mongo-java-driver-3.2.1.jar"/>
       <arg value="-n"/>
       <arg path="${build.base}/Primordials.txt"/>
       <arg value="-oc"/>

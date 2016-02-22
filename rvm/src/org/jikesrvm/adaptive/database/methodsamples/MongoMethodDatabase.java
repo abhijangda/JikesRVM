@@ -1,51 +1,59 @@
 package org.jikesrvm.adaptive.database.methodsamples;
 
+import java.lang.instrument.Instrumentation;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.StringTokenizer;
 import java.util.Vector;
 import java.util.concurrent.Semaphore;
 //Run with AOS:log
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-
-
-
-
-
-
-
-
-import org.bson.Document;
 import org.jikesrvm.VM;
 import org.jikesrvm.adaptive.controller.Controller;
+import org.jikesrvm.adaptive.database.callgraph.PartialCallGraph;
 import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase.WriteRequest.WriteRequestType;
+import org.jikesrvm.adaptive.recompilation.InvocationCounts;
+import org.jikesrvm.adaptive.recompilation.instrumentation.AOSInstrumentationPlan;
+import org.jikesrvm.adaptive.util.AOSLogging;
+import org.jikesrvm.adaptive.util.CompilerAdvice;
+import org.jikesrvm.adaptive.util.CompilerAdviceAttribute;
+import org.jikesrvm.adaptive.util.DynamicCallFileInfoReader;
+import org.jikesrvm.classloader.Atom;
+import org.jikesrvm.classloader.MemberReference;
+import org.jikesrvm.classloader.MethodReference;
 import org.jikesrvm.classloader.NormalMethod;
 import org.jikesrvm.classloader.RVMClass;
+import org.jikesrvm.classloader.RVMClassLoader;
 import org.jikesrvm.classloader.RVMMethod;
+import org.jikesrvm.classloader.TypeReference;
+import org.jikesrvm.compilers.baseline.EdgeCounts;
 import org.jikesrvm.compilers.common.CompiledMethod;
 import org.jikesrvm.compilers.common.CompiledMethods;
+import org.jikesrvm.compilers.common.RuntimeCompiler;
+import org.jikesrvm.compilers.opt.OptOptions;
 import org.jikesrvm.compilers.opt.driver.CompilationPlan;
+import org.jikesrvm.compilers.opt.driver.OptimizationPlanElement;
 import org.jikesrvm.compilers.opt.runtimesupport.OptCompiledMethod;
 import org.vmmagic.pragma.Inline;
 import org.vmmagic.pragma.NoOptCompile;
 
-import com.mongodb.Cursor;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.MongoIterable;
-import com.mongodb.client.model.InsertOneModel;
-import com.mongodb.client.model.UpdateOneModel;
-import com.mongodb.client.model.WriteModel;
-
-import static com.mongodb.client.model.Filters.*;
 
 public class MongoMethodDatabase {
-	private MongoClient mongo;
-	private MongoDatabase aosDatabase;
-	private MongoCollection<Document> aosCollection;
+	private Mongo mongo;
+	private DB aosDatabase;
+	private DBCollection aosCollection;
+	private DBCollection dcgCollection;
 	private BulkWriteThread bulkWriteThread;
 	private Semaphore writeRequestsLock;
 	private HashMap<String, MethodDatabaseElement> internalDB;
@@ -89,11 +97,11 @@ public class MongoMethodDatabase {
 	
 	class BulkWriteThread extends Thread
 	{
-		private MongoCollection<Document> aosCollection;
+		private DBCollection aosCollection;
 		private List<WriteRequest> writeRequests;
 		private Semaphore writeRequestsLock;
 		
-		public BulkWriteThread (MongoCollection<Document> aosCollection,
+		public BulkWriteThread (DBCollection aosCollection,
 				List<WriteRequest> writeRequests, Semaphore writeRequestsLock)
 		{
 			this.writeRequestsLock = writeRequestsLock;
@@ -119,70 +127,75 @@ public class MongoMethodDatabase {
 				}
 				writeRequests.clear();
 				writeRequestsLock.release();
+				if (VM.useAOSDBVerbose)
+					VM.sysWriteln ("Writing requests");
 				
-				Vector<WriteModel<Document>> writeDocuments = new Vector<WriteModel<Document>> ();
-
 				for (WriteRequest req : _writeRequests)
 				{
 					if (req.type == WriteRequestType.PutRequest)
 					{
-						WriteModel<Document> d = putCallCount(req);
-						if (d != null)
-							writeDocuments.add(d);
+						putCallCount(req);
 					}
 					else if (req.type == WriteRequestType.IncrementRequest)
 					{
-						WriteModel<Document> d = incrementCallCount (req);
-						if (d != null)
-							writeDocuments.add(d);
+						incrementCallCount (req);
 					}
 				}
 				if (VM.useAOSDBVerbose)
-					VM.sysWriteln ("Writing bulk requests");
-				if (writeDocuments.size () != 0)
-					aosCollection.bulkWrite(writeDocuments);
-
-				if (VM.useAOSDBVerbose)
-					VM.sysWriteln ("Wrote bulk requests");
+					VM.sysWriteln ("Wrote requests");
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 		
-		public WriteModel<Document> incrementCallCount (WriteRequest writeRequest)
+		public void incrementCallCount (WriteRequest writeRequest)
 		{
 			int cmid = writeRequest.cmid;
 			int optLevel = writeRequest.optLevel;
 			String methodFullDesc = getMethodFullDesc(cmid);
 			if (methodFullDesc == "")
-				return null;
+				return;
 			
 			double count = getCallCount (methodFullDesc);
+			
+			DBObject meth = new BasicDBObject ();
+			meth.put("methodFullDesc", methodFullDesc);
+			meth.put("count", count + 1);
+			meth.put("optLevel", optLevel);
 			
 			if (VM.useAOSDBVerbose)
 				VM.sysWriteln ("Method " + cmid + " with call counts " + count + " will be incremented");
 			
 			if (count != 0.0)
 			{
-				return (new UpdateOneModel <Document> (new Document ("methodFullDesc", methodFullDesc), 
-					new Document ("$set", new Document ("methodFullDesc", methodFullDesc).append("count", new Double (count + 1.0)).append ("optLevel", optLevel))));
+				DBObject query = new BasicDBObject ();
+				query.put("methodFullDesc", methodFullDesc);
+				
+				DBObject updateObj = new BasicDBObject ();
+				updateObj.put ("$set", meth);
+				
+				aosCollection.update(query, updateObj);
 			}
 			else
 			{
-				return (new InsertOneModel<Document> (new Document ("methodFullDesc", methodFullDesc).append ("count", new Double (1.0)).append ("optLevel", optLevel)));
+				if (VM.useAOSDBVerbose)
+					VM.sysWriteln ("Method " + cmid + " added to MongoDB");
+				
+				aosCollection.insert(meth);
 			}
 		}
 		
-		public WriteModel<Document> putCallCount (WriteRequest writeRequest)
+		public void putCallCount (WriteRequest writeRequest)
 		{
 			int cmid = writeRequest.cmid;
 			int optLevel = writeRequest.optLevel;
 			double counts = writeRequest.count;
 			String methodFullDesc = getMethodFullDesc (cmid);
-			if (methodFullDesc == "")
-				return null;
 			
-			Document meth = new Document();
+			if (methodFullDesc == "")
+				return;
+			
+			DBObject meth = new BasicDBObject();
 			meth.put("methodFullDesc", methodFullDesc);
 			meth.put("count", counts);
 			meth.put("optLevel", optLevel);
@@ -195,14 +208,20 @@ public class MongoMethodDatabase {
 				if (VM.useAOSDBVerbose)
 					VM.sysWriteln ("Method " + cmid + " added to MongoDB");
 				
-				return (new InsertOneModel<Document> (meth));
+				aosCollection.insert(meth);
 			}
 			else
 			{
 				if (VM.useAOSDBVerbose)
 					VM.sysWriteln ("Method " + cmid + " updated to MongoDB");
-				return (new UpdateOneModel <Document> (new Document ("methodFullDesc", methodFullDesc), 
-						new Document ("$set", new Document ("methodFullDesc", methodFullDesc).append("count", counts))));
+				
+				DBObject query = new BasicDBObject ();
+				query.put("methodFullDesc", methodFullDesc);
+				
+				DBObject updateObj = new BasicDBObject ();
+				updateObj.put ("$set", meth);
+				
+				aosCollection.update(query, updateObj);
 			}
 		}
 	}
@@ -211,26 +230,34 @@ public class MongoMethodDatabase {
 	{
 		this.bulkUpdateCount = bulkMethodCount;
 		writeRequests = new LinkedList<WriteRequest> ();
-		
+		writeRequestsLock = new Semaphore (1);
+		VM.sysWriteln ("RequestsLock created");
+		internalDB = new HashMap<String, MethodDatabaseElement> ();
+	}
+	
+	public void initializeMongoDB ()
+	{		
 		try {
-			// TODO Auto-generated method stub
-			mongo = new MongoClient("localhost", 27017);
-			if (VM.useAOSDBVerbose)
-				VM.sysWriteln ("MongoClient Initialized");
+			mongo = new Mongo("localhost", 27017);
+		
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("MongoClient Initialized");
 
-			aosDatabase = mongo.getDatabase("AOSDatabase");
-			if (VM.useAOSDBVerbose)
-				VM.sysWriteln ("Mongo AOS Database Initialized");
+		aosDatabase = mongo.getDB("AOSDatabase");
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Mongo AOS Database Initialized");
 
-			aosCollection = aosDatabase.getCollection("AOSCollection");
-			if (VM.useAOSDBVerbose)
-				VM.sysWriteln ("Mongo AOS Collection Initialized");
-			writeRequestsLock = new Semaphore (1);
-			
-			VM.sysWriteln ("RequestsLock created");
-			internalDB = new HashMap<String, MethodDatabaseElement> ();
-		}
-		catch (Exception e) {
+		aosCollection = aosDatabase.getCollection("AOSCollection");
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Mongo AOS Collection Initialized");
+		
+		dcgCollection = aosDatabase.getCollection("DCGCollection");
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Mongo AOS Collection Initialized");
+		
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			VM.sysWriteln ("EROOORRRRRRRRRRRRRRRR");
 			e.printStackTrace();
 		}
 	}
@@ -268,40 +295,51 @@ public class MongoMethodDatabase {
 		return -1;
 	}
 	
-	public int getOptLevelForMethod (RVMMethod m)
-	{
-		if (aosCollection == null)
-		{
-			return -1;
-		}
-		
+	public CompiledMethod methodOptCompile (NormalMethod m)
+	{		
 		String methodFullDesc = getMethodFullDesc (m);
-		if (methodFullDesc.contains("mongodb") || methodFullDesc.contains("bson") || methodFullDesc.contains("MethodDatabase") ||
-				methodFullDesc.contains("Formatter") || methodFullDesc.indexOf("Ljava/") == 0 ||
-				methodFullDesc.indexOf ("Lgnu/") == 0)
-			return -1;
+		
+		//if (methodFullDesc.contains("MethodDatabase") ||
+		//		methodFullDesc.indexOf("Ljava/") == 0 ||
+		//		methodFullDesc.indexOf ("Lgnu/") == 0)
+		//	return null;
 		
 		if (VM.useAOSDBVerbose)
 			VM.sysWriteln ("Getting opt level for Method "+ methodFullDesc);
 		
-		Document meth = aosCollection.find(eq("methodFullDesc", methodFullDesc)).first();
+		MethodDatabaseElement elem = internalDB.get(methodFullDesc);
 		
-		if (meth == null)
+		if (elem == null)
 		{
 			if (VM.useAOSDBVerbose)
-				VM.sysWriteln ("Cannot find opt level for Method " + methodFullDesc);
+				VM.sysWriteln ("Error: Cannot find opt level for Method " + methodFullDesc);
 			
-			return -1;
+			return null;
 		}
 		
-		int optLevel = ((Integer)meth.get("optLevel")).intValue();
-		
 		if (VM.useAOSDBVerbose)
-			VM.sysWriteln ("Opt Level for Method " + methodFullDesc + " is " + optLevel);
+			VM.sysWriteln ("Success: Opt Level for Method " + methodFullDesc + " is " + elem.optLevel);
 		
-		return optLevel;
+		if (elem.optLevel == -1)
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("Basecompiling as optlevel is -1");
+			return null;
+		}
+		 AOSInstrumentationPlan instrumentationPlan =
+	                new AOSInstrumentationPlan(Controller.options, m);
+	            CompilationPlan compPlan =
+	                new CompilationPlan(m,
+	                                       Controller.recompilationStrategy.getOptPlanForLevel(elem.optLevel),
+	                                        instrumentationPlan,
+	                                        Controller.recompilationStrategy.getOptOptionsForLevel(elem.optLevel));
+	            //org.jikesrvm.adaptive.measurements.instrumentation.Instrumentation.disableInstrumentation();
+	            CompiledMethod cm = RuntimeCompiler.optCompileWithFallBack(m, compPlan);
+	            //org.jikesrvm.adaptive.measurements.instrumentation.Instrumentation.enableInstrumentation();
+	            
+	            return cm;
 	}
-
+	
 	public static String getMethodFullDesc (int cmid)
 	{
 		CompiledMethod cm = CompiledMethods.getCompiledMethodUnchecked(cmid);
@@ -316,7 +354,8 @@ public class MongoMethodDatabase {
 		// TODO Auto-generated method stub
 		if (VM.useAOSDBVerbose)
 			VM.sysWriteln ("Increment Call Count");
-		if (aosCollection == null && writeRequestsLock == null)
+
+		if (writeRequestsLock == null)
 		{
 			return;
 		}
@@ -339,7 +378,7 @@ public class MongoMethodDatabase {
 		if (VM.useAOSDBVerbose)
 			VM.sysWriteln ("Method " + cmid + " will be incremented to MongoDB");
 		
-		if (writeRequests.size() >= bulkUpdateCount)
+		if (writeRequests.size() >= bulkUpdateCount  && aosCollection != null)
 			bulkWrite ();
 	}
 
@@ -350,7 +389,7 @@ public class MongoMethodDatabase {
 		if (VM.useAOSDBVerbose)
 			VM.sysWriteln ("Put Call Count");
 		
-		if (aosCollection == null && writeRequestsLock == null)
+		if (writeRequestsLock == null)
 		{
 			return;
 		}
@@ -359,7 +398,7 @@ public class MongoMethodDatabase {
 			VM.sysWriteln ("Initializing: Method " + cmid + " to put in MongoDB");
 		
 		int optLevel = getOptLevel (cmid);
-
+		
 		try {
 			writeRequestsLock.acquire();
 		} catch (InterruptedException e) {
@@ -373,19 +412,23 @@ public class MongoMethodDatabase {
 		if (VM.useAOSDBVerbose)
 			VM.sysWriteln ("Method " + cmid + " will be added to MongoDB");
 		
-		if (writeRequests.size() >= bulkUpdateCount)
+		if (writeRequests.size() >= bulkUpdateCount && aosCollection != null)
 			bulkWrite ();
 	}
 	
 	private double getCallCount (String methodFullDesc)
 	{
-		Document meth = aosCollection.find(eq("methodFullDesc", methodFullDesc)).first();
-		if (meth == null)
+		//Document meth = aosCollection.find(eq("methodFullDesc", methodFullDesc)).first();
+		
+		DBObject query = new BasicDBObject ("methodFullDesc", methodFullDesc);
+		DBCursor cursor = aosCollection.find (query);
+		
+		if (cursor.count () == 0)
 		{
 			return 0.0;
 		}
 		
-		return ((Double)meth.get("count")).doubleValue();
+		return ((Double)cursor.next().get("count")).doubleValue();
 	}
 	
 	public double getCallCount(int cmid) {
@@ -435,34 +478,180 @@ public class MongoMethodDatabase {
 	
 	public void flush ()
 	{
+		Controller.dcg.dumpGraph(this);
+		
 		if (writeRequests.size() == 0)
 			return;
 		
 		if (VM.useAOSDBVerbose)
 			VM.sysWriteln ("Flushing with write size is " + writeRequests.size());
 		
-		bulkWriteThread = new BulkWriteThread(aosCollection, writeRequests, 
-				writeRequestsLock);
+		if (bulkWriteThread == null)
+			bulkWriteThread = new BulkWriteThread(aosCollection, writeRequests, 
+					writeRequestsLock);
 		bulkWriteThread.run();
+	}
+	
+	public void insertDCGEntry (MemberReference callerRef, int callerLength, int callerIndex, 
+			MemberReference calleeRef, int calleeLength, double weight)
+	{
+		DBObject m = new BasicDBObject ();
+		m.put("callerRef", callerRef.toString());
+		m.put("callerLength", callerLength);
+		m.put("callerIndex", callerIndex);
+		m.put("calleeRef", calleeRef.toString());
+		m.put("calleeLength", calleeLength);
+		m.put("weight", weight);
+		
+		dcgCollection.insert(m);
 	}
 	
 	public void readAllDocuments ()
 	{
-		MongoCursor<Document> cur = aosCollection.find().iterator();
+		DBObject query = new BasicDBObject ("optLevel", new BasicDBObject("$ne", -1));
+		DBCursor cur = aosCollection.find(query);
 		if (VM.useAOSDBVerbose)
 			VM.sysWriteln ("Obtained cursor to the collection");
 		while (cur.hasNext())
 		{
-			Document d = cur.next();
-			String methFullDesc = d.getString("methodFullDesc");
-			int optLevel = d.getInteger("optLevel");
-			double counts = d.getDouble("count");
+			DBObject d = cur.next();
+			String methFullDesc = (String)d.get("methodFullDesc");
+			int optLevel = ((Integer)d.get("optLevel")).intValue();
+			double counts = ((Double)d.get("count")).doubleValue();
 			if (VM.useAOSDBVerbose)
-				VM.sysWriteln ("Read: " + methFullDesc + "  " + optLevel + "  " + counts);
+				VM.sysWriteln ("Read: " + methFullDesc + " opt level: " + optLevel + " counts: " + counts);
 			internalDB.put(methFullDesc, new MethodDatabaseElement(methFullDesc, counts, optLevel));
+			if (optLevel == -1)
+				continue;
+		}
+		
+		cur = dcgCollection.find();
+		
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Start: Reading DCGCollection ");
+		if (Controller.dcg == null) {
+			Controller.dcg = new PartialCallGraph(300);
+		} else {
+			Controller.dcg.reset();  // clear any values accumulated to this point
+		}
+		
+		if (VM.useAOSDBVerbose && Controller.dcg != null)
+			VM.sysWriteln ("DCG initialized");
+		
+		try
+		{
+			while (cur.hasNext())
+			{
+				DBObject d = cur.next();
+				String s = (String)d.get("callerRef");
+				s = s.replaceAll("\\{urls[^\\}]*\\}", ""); // strip classloader cruft we can't parse
+		        StringTokenizer parser = new StringTokenizer(s, " \n,");
+		        
+				if (VM.useAOSDBVerbose)
+				{
+					VM.sysWriteln ("Read DCG Entry: callerRef: " + (String)d.get("callerRef") +  
+							" callerLength: " + (Integer)d.get("callerLength") +
+							" callerIndex: " + (Integer)d.get("callerIndex") +
+							" calleeRef: " + (String)d.get("calleeRef") +
+							" calleeLength: " + (Integer)d.get("calleeLength") +
+							" weight: " + (Double)d.get("weight"));
+					VM.sysWriteln ("Creating DCG Entry");
+				}
+				
+				MemberReference callerKey = MemberReference.parse(parser, false);
+				if (callerKey == null) return;
+				MethodReference callerRef = callerKey.asMethodReference();
+				RVMMethod caller, callee;
+				caller = DynamicCallFileInfoReader.getMethod(callerRef);
+
+				int callerSize = (Integer)d.get("callerLength");
+				int bci = (Integer)d.get("callerIndex");
+				
+				s = (String)d.get("calleeRef");
+				s = s.replaceAll("\\{urls[^\\}]*\\}", ""); // strip classloader cruft we can't parse
+		        parser = new StringTokenizer(s, " \n,");
+				
+				MemberReference calleeKey = MemberReference.parse(parser, false);
+				if (calleeKey == null) return;
+				MethodReference calleeRef = calleeKey.asMethodReference();
+				callee = DynamicCallFileInfoReader.getMethod(calleeRef);
+
+				int calleeSize = (Integer)d.get("calleeLength");
+
+				float weight = (float)((Double)(d.get("weight"))).doubleValue();
+				if ((caller == null) || (callee == null)) {
+					Controller.dcg.incrementUnResolvedEdge(callerRef, bci, calleeRef, weight);
+				} else {
+					Controller.dcg.incrementEdge(caller, bci, callee, weight);
+				}
+				
+				if (VM.useAOSDBVerbose)
+					VM.sysWriteln ("DCG Entry Created");
+			}
+		}
+		catch (Exception e)
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("DCG Entry Creation Failed");
+			e.printStackTrace();
+		}
+		for (MethodDatabaseElement methElem : internalDB.values())
+		{
+			String methFullDesc = methElem.name;
+			int optLevel = methElem.optLevel;
+			
+			if (optLevel == -1)
+				continue;
+			
+			int o = methFullDesc.indexOf(';');
+			String clsName = methFullDesc.substring(0, o+1);
+			Atom at = Atom.findOrCreateUnicodeAtom(clsName);
+			ClassLoader cl = RVMClassLoader.findWorkableClassloader(at);
+			if (cl == null)
+			{
+				continue;
+			}
+
+			TypeReference tRef = TypeReference.findOrCreate(cl, at);
+			RVMClass cls = (RVMClass) tRef.peekType();
+
+			if (cls != null) {
+				// Ensure the class is properly loaded
+				if (!cls.isInstantiated()) {
+					if (!cls.isResolved()) {
+						cls.resolve();
+					}
+
+					cls.instantiate();
+				}
+
+				int r = methFullDesc.indexOf ('(');
+				String methName = methFullDesc.substring(o+1, r);
+				Atom methNameAtom = Atom.findOrCreateUnicodeAtom(methName);
+				String methSig = methFullDesc.substring(r);
+				Atom methSigAtom = Atom.findOrCreateUnicodeAtom(methSig);
+				if (VM.useAOSDBVerbose)
+					VM.sysWriteln ("Method " + methName + " compiling at level " + optLevel);
+
+				RVMMethod method = cls.findDeclaredMethod(methNameAtom, methSigAtom);
+
+				// If found, compile it
+				if ((method != null) &&
+						!method.hasNoOptCompileAnnotation() &&
+						(method instanceof org.jikesrvm.classloader.NormalMethod)) {
+					// if user's requirement is higher than advice
+					CompilationPlan compPlan;
+					compPlan = Controller.recompilationStrategy.createCompilationPlan((NormalMethod) method, optLevel, null);
+					if (RuntimeCompiler.recompileWithOpt(compPlan) == -1 && VM.useAOSDBVerbose)
+						VM.sysWriteln ("Compiling method " + methFullDesc + " failed at opt level " + optLevel); 
+					else if (VM.useAOSDBVerbose)
+						VM.sysWriteln ("Compiling method " + methFullDesc + " successfull at opt level " + optLevel);
+
+				}
+			} 
 		}
 	}
-	
+		
 	public void readAll ()
 	{
 		BulkReadThread b = new BulkReadThread (this);

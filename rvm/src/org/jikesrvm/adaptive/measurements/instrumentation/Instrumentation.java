@@ -117,7 +117,7 @@ public final class Instrumentation {
    * system shutdown.  Note, this method will not stop instrumentation
    * in currently compiled methods from executing.
    */
-  static void disableInstrumentation() {
+  public static void disableInstrumentation() {
     instrumentationEnabled = false;
   }
 
@@ -125,7 +125,7 @@ public final class Instrumentation {
    * Enable instrumentations, so that future compilations will not
    * perform any instrumentation.
    */
-  static void enableInstrumentation() {
+  public static void enableInstrumentation() {
     instrumentationEnabled = true;
   }
 

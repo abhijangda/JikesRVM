@@ -525,12 +525,8 @@ public class VM extends Properties {
 
     // Schedule "main" thread for execution.
     if (verboseBoot >= 2) VM.sysWriteln("Creating main thread");
-    // Create main thread.
-    if (verboseBoot >= 1) VM.sysWriteln("Constructing mainThread");
-    mainThread = new MainThread(applicationArguments);
-    
     if (useAOSDB || useAOSDBOptCompile || useAOSDBRead)
-    {
+    {    	
     	if ((useAOSDBRead || useAOSDBOptCompile) && !useAOSDB)
     		bulkUpdateCount = "0";
     	
@@ -538,21 +534,32 @@ public class VM extends Properties {
     		VM.sysWriteln ("Bulkupdatecount " + bulkUpdateCount);
     	
     	VM.methodDatabase = new MongoMethodDatabase (Integer.parseInt(bulkUpdateCount));
-    	
-    	if (useAOSDBRead)
-    		VM.methodDatabase.readAll ();
     }
+    
+    if (useAOSDB || useAOSDBOptCompile || useAOSDBRead)
+    {    	
+    	VM.methodDatabase.initializeMongoDB ();
+   
+    	if (useAOSDBRead)
+    		VM.methodDatabase.readAllDocuments();
+    }
+    // Create main thread.
+    if (verboseBoot >= 1) VM.sysWriteln("Constructing mainThread");
+    mainThread = new MainThread(applicationArguments);
     
     // Schedule "main" thread for execution.
     if (verboseBoot >= 1) VM.sysWriteln("Starting main thread");
     mainThread.start();
-
+    
     // End of boot thread.
     //
     if (VM.TraceThreads) RVMThread.trace("VM.boot", "completed - terminating");
     if (verboseBoot >= 2) {
       VM.sysWriteln("Boot sequence completed; finishing boot thread");
     }
+    
+    
+    
     VM.sysWriteln ("Created");
     
     RVMThread.getCurrentThread().terminate();
@@ -2363,6 +2370,8 @@ public class VM extends Properties {
   @NoInline
   @UninterruptibleNoWarn("We're never returning to the caller, so even though this code is preemptible it is safe to call from any context")
   public static void sysExit(int value) {
+	if (VM.useAOSDB)
+		VM.methodDatabase.flush();
     handlePossibleRecursiveCallToSysExit();
 
     if (VM.countThreadTransitions) {

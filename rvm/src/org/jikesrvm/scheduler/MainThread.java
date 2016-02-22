@@ -197,7 +197,7 @@ public final class MainThread extends Thread {
     // Notify other clients that the startup is complete.
     //
     Callbacks.notifyStartup();
-
+    
     if (dbg) VM.sysWriteln("[MainThread.run() invoking \"main\" method... ");
     // invoke "main" method with argument list
     Reflection.invoke(mainMethod, null, null, new Object[]{mainArgs}, true);

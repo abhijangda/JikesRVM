@@ -124,7 +124,7 @@ public class DynamicCallFileInfoReader {
    * @param ref The MethodReference
    * @return The RVMMethod, or {@code null} on failure.
    */
-  private static RVMMethod getMethod(MethodReference ref) {
+  public static RVMMethod getMethod(MethodReference ref) {
     if (ref.getType().getClassLoader() == RVMClassLoader.getApplicationClassLoader()) {
       try {
         return ref.resolve();

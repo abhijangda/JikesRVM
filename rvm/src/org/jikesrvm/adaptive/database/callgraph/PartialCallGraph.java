@@ -19,8 +19,10 @@ import java.io.OutputStreamWriter;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.TreeSet;
+
 import org.jikesrvm.VM;
 import org.jikesrvm.adaptive.controller.Controller;
+import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase;
 import org.jikesrvm.adaptive.measurements.Decayable;
 import org.jikesrvm.adaptive.measurements.Reportable;
 import org.jikesrvm.adaptive.util.UnResolvedCallSite;
@@ -241,6 +243,32 @@ public final class PartialCallGraph implements Decayable, Reportable {
     dumpGraph(Controller.options.DYNAMIC_CALL_FILE_OUTPUT);
   }
 
+  public synchronized void dumpGraph (final MongoMethodDatabase methodDatabase)
+  {
+	  if(VM.useAOSDBVerbose)
+		  VM.sysWriteln ("Start: Dumping DCG");
+	  TreeSet<CallSite> tmp = new TreeSet<CallSite>(new OrderByTotalWeight());
+	  tmp.addAll(callGraph.keySet());
+
+	  for (final CallSite cs : tmp) {
+		  WeightedCallTargets ct = callGraph.get(cs);
+		  ct.visitTargets(new WeightedCallTargets.Visitor() {
+			  @Override
+			  public void visit(RVMMethod callee, double weight) {
+				  CodeArray callerArray = cs.getMethod().getCurrentEntryCodeArray();
+				  CodeArray calleeArray = callee.getCurrentEntryCodeArray();				  
+				  methodDatabase.insertDCGEntry(
+							  cs.getMethod().getMemberRef(),
+							  callerArray.length(),
+							  cs.getBytecodeIndex(),
+							  callee.getMemberRef(),
+							  calleeArray.length(),
+							  weight);
+			  }
+		  });
+	  }
+  }
+  
   /**
    * Dump all profile data to the given file
    * @param fn output file name

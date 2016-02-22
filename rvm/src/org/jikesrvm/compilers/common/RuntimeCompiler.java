@@ -38,6 +38,7 @@ import org.jikesrvm.compilers.opt.driver.CompilationPlan;
 import org.jikesrvm.compilers.opt.driver.OptimizationPlanElement;
 import org.jikesrvm.compilers.opt.driver.OptimizationPlanner;
 import org.jikesrvm.compilers.opt.driver.OptimizingCompiler;
+import org.jikesrvm.compilers.opt.runtimesupport.OptCompiledMethod;
 import org.jikesrvm.runtime.Callbacks;
 import org.jikesrvm.runtime.Time;
 import org.jikesrvm.scheduler.RVMThread;
@@ -357,7 +358,15 @@ public class RuntimeCompiler implements Callbacks.ExitMonitor {
       if (VM.VerifyAssertions) {
         VM._assert(compilationInProgress, "Failed to acquire compilationInProgress \"lock\"");
       }
-
+      /*CompiledMethod cm = method.getCurrentCompiledMethod();
+      if (VM.useAOSDB)
+      {
+    	  if (cm instanceof OptCompiledMethod)
+    		  VM.methodDatabase.putOptLevel (cm.cmid, ((OptCompiledMethod) cm).getOptLevel());
+    	  else
+    		  VM.methodDatabase.putOptLevel (cm.cmid, -1);
+      }*/
+      
       Callbacks.notifyMethodCompile(method, CompiledMethod.OPT);
       long start = 0;
       CompiledMethod cm = null;
@@ -662,13 +671,45 @@ public class RuntimeCompiler implements Callbacks.ExitMonitor {
    */
   public static CompiledMethod compile(NormalMethod method) {
     if (VM.BuildForAdaptiveSystem) {
-      CompiledMethod cm;
+      CompiledMethod cm = null;
       if (!Controller.enabled) {
         // System still early in boot process; compile with baseline compiler
         cm = baselineCompile(method);
         ControllerMemory.incrementNumBase();
       } else {
-        if (Controller.options.optIRC()) {
+    	  if (VM.useAOSDBOptCompile && VM.methodDatabase != null)
+          {	
+    		  if (VM.useAOSDBVerbose)
+    			  VM.sysWriteln ("Use AOS DB Opt Compile");
+        	  if (method.isClassInitializer() ||
+              // exception in progress. can't use opt compiler:
+              // it uses exceptions and runtime doesn't support
+              // multiple pending (undelivered) exceptions [--DL]
+              RVMThread.getCurrentThread().getExceptionRegisters().getInUse())
+        	  {
+        		  if (VM.useAOSDBVerbose)
+        			  VM.sysWriteln ("Class Initializer");
+        		  cm = baselineCompile(method);
+                  ControllerMemory.incrementNumBase();
+        	  }
+        	  else
+        	  {
+        		  if (VM.useAOSDBVerbose)
+        			  VM.sysWriteln ("let us opt compile");
+        		  cm = VM.methodDatabase.methodOptCompile (method);
+        		  if (VM.useAOSDBVerbose)
+        			  VM.sysWriteln ("opt compile done");
+        		  if (cm == null)
+        		  {
+        			  if (VM.useAOSDBVerbose)
+        				  VM.sysWriteln ("cm is null basecompile it");
+        			  cm = baselineCompile(method);
+        			  ControllerMemory.incrementNumBase();
+        			  if (VM.useAOSDBVerbose)
+        				  VM.sysWriteln ("basecompiling done");
+        		  }
+        	  }
+          } else if (Controller.options.optIRC()) {
           if (// will only run once: don't bother optimizing
               method.isClassInitializer() ||
               // exception in progress. can't use opt compiler:
