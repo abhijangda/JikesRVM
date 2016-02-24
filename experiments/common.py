@@ -48,6 +48,15 @@ def checkout_and_build_jikes(commit):
     args = ['git', 'checkout', commit]
     subprocess.call(args)
 
+    # replace the host configuration files in the new repository with a symlink to the main one,
+    # so that local changes to paths etc. can be propagated without having to include them in other branches.
+    shutil.rmtree(os.path.join(__JIKES_EXPERIMENT_TEMP_ROOT__, 'build', 'hosts'))
+
+    args = ['ln', '-s',
+            os.path.join(__JIKES_EXPERIMENT_ORIGINAL_ROOT__, 'build', 'hosts'),
+            os.path.join(__JIKES_EXPERIMENT_TEMP_ROOT__, 'build', 'hosts')]
+    subprocess.call(args)
+
     # create a symlink to this original repo's components folder to avoid duplicate downloads
     args = ['ln', '-s',
             os.path.join(__JIKES_EXPERIMENT_ORIGINAL_ROOT__, 'components'),
