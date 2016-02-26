@@ -65,13 +65,13 @@ ln -s $MONGO_VERSION/bin/mongo $PREFIX/bin/
 # === Get Jikes Repository ===
 cd ~
 git clone $JIKES_REPO JikesRVM
+cd JikesRVM
 git checkout experiments
 
 # === Apply fixes to Jikes Repository ===
-cd JikesRVM
 
 # Correct the path to bison binary
-patch build/host/x86_64-linux.properties <<EOF
+patch build/hosts/x86_64-linux.properties <<EOF
 @@ -13,1 +13,1 @@
 -bison.exe=/usr/bin/bison
 +bison.exe=${PREFIX}/bin/bison
@@ -110,7 +110,7 @@ ant -f build/components/classpath.xml -Dhost.name=x86_64-linux -Dconfig.name=dev
 # compile Jikes
 ant -Dhost.name=x86_64-linux -Dconfig.name=development
 
-echo <<EOF
+cat <<EOF
 Remember to set the PATH on every new shell: export PATH=$PREFIX/bin:\$PATH
 Start the mongo server: (mongod --dbpath $MONGO_DBPATH </dev/null >/dev/null 2>&1) &
 Run experiments: cd experiments && python ./1_naive_overhead.py
