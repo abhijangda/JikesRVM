@@ -39,6 +39,8 @@ try:
                 normal_time = common.run_dacapo(b, timelimit=TIMELIMIT)
                 aos_time = common.run_dacapo(b, vm_args=['-use_aosdb'], timelimit=TIMELIMIT)
                 r.writerow([i, str(normal_time), str(aos_time)])
-
+except Exception as e:
+    print e
+    raw_input("Continue?")
 finally:
     common.teardown()

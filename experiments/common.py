@@ -87,8 +87,7 @@ def teardown():
     os.chdir(__JIKES_EXPERIMENT_ORIGINAL_ROOT__)
 
     if (__JIKES_EXPERIMENT_TEMP_ROOT__):
-        print "Going to delete", __JIKES_EXPERIMENT_TEMP_ROOT__
-        raw_input("Press enter confirm: ")
+        print "Deleting temporary folder", __JIKES_EXPERIMENT_TEMP_ROOT__
         shutil.rmtree(__JIKES_EXPERIMENT_TEMP_ROOT__)
         __JIKES_EXPERIMENT_TEMP_ROOT__ = ''
     else:

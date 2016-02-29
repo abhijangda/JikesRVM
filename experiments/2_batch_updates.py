@@ -53,6 +53,8 @@ try:
                     aos_time += [common.run_dacapo(b, vm_args=['-use_aosdb'+str(bs)], timelimit = timelimit)]
 
                 r.writerow([baseline_time] + map(str, aos_time))
-
+except Exception as e:
+    print e
+    raw_input("Continue?")
 finally:
     common.teardown()

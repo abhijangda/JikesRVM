@@ -38,6 +38,8 @@ try:
             for i in range(n):
                 time = common.run_dacapo(b, vm_args=['-X:aos:initial_compiler=opt'], timelimit=180)
                 r.writerow([i, str(time)])
-
+except Exception as e:
+    print e
+    raw_input("Continue?")
 finally:
     common.teardown()

@@ -58,6 +58,8 @@ try:
 
                 # convert all results to strings and store them
                 r.writerow([i] + map(str, results))
-
+except Exception as e:
+    print e
+    raw_input("Continue?")
 finally:
     common.teardown()
