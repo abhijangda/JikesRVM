@@ -52,9 +52,10 @@ try:
                     results += [common.run_dacapo(b, timelimit=TIMELIMIT)]
 
                 # AOS database enabled runs
-                for k in range(2):
-                    print '--', b, 'AOSDB VM', k + 1, '--'
-                    results += [common.run_dacapo(b, vm_args=['-use_aosdb1000', '-use_aosdbread'], timelimit=TIMELIMIT)]
+                print '--', b, 'AOSDB VM Writing', '--'
+                results += [common.run_dacapo(b, vm_args=['-use_aosdb1000'], timelimit=TIMELIMIT)]
+                print '--', b, 'AOSDB VM Reading', '--'
+                results += [common.run_dacapo(b, vm_args=['-use_aosdbread'], timelimit=TIMELIMIT)]
 
                 # convert all results to strings and store them
                 r.writerow([i] + map(str, results))
