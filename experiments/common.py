@@ -12,6 +12,7 @@ import urllib
 
 # === configuration options ===
 __DACAPO_DOWNLOAD__ = 'http://downloads.sourceforge.net/project/dacapobench/9.12-bach/dacapo-9.12-bach.jar?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fdacapobench%2Ffiles%2F9.12-bach%2F&ts=1455100129&use_mirror=kent'
+__MONGO_DRIVER_JAR__ = 'mongo-java-driver-2.11.3.jar'
 
 # === 'static' variables needed by module functions below - do not change ===
 # set a temporary repository root if an experiment requires a specific commit checked out
@@ -102,7 +103,7 @@ def run_rvm(args, timelimit = 0):
 
     # generate rvm arguments using absolute paths if needed
     rvm_exec = 'rvm'
-    bootclasspath = '-Xbootclasspath/p:' + os.path.join(__JIKES_EXPERIMENT_TEMP_ROOT__, 'mongo-java-driver-3.2.1.jar')
+    bootclasspath = '-Xbootclasspath/p:' + os.path.join(__JIKES_EXPERIMENT_TEMP_ROOT__, __MONGO_DRIVER_JAR__)
 
     if (__JIKES_EXPERIMENT_TEMP_BIN__):
         rvm_exec = os.path.join(__JIKES_EXPERIMENT_TEMP_BIN__, rvm_exec)
