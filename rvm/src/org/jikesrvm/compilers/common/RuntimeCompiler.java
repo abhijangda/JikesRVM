@@ -695,19 +695,16 @@ public class RuntimeCompiler implements Callbacks.ExitMonitor {
         	  else
         	  {
         		  if (VM.useAOSDBVerbose)
-        			  VM.sysWriteln ("let us opt compile");
-        		  cm = VM.methodDatabase.methodOptCompile (method);
+        			  VM.sysWriteln ("basecompile method");
+        		  cm = baselineCompile(method);
+        		  
         		  if (VM.useAOSDBVerbose)
-        			  VM.sysWriteln ("opt compile done");
-        		  if (cm == null)
-        		  {
-        			  if (VM.useAOSDBVerbose)
-        				  VM.sysWriteln ("cm is null basecompile it");
-        			  cm = baselineCompile(method);
-        			  ControllerMemory.incrementNumBase();
-        			  if (VM.useAOSDBVerbose)
-        				  VM.sysWriteln ("basecompiling done");
-        		  }
+        			  VM.sysWriteln ("let us opt compile in other thread");
+        		  VM.methodDatabase.methodOptCompile (method, cm.cmid);
+        		  
+        		  ControllerMemory.incrementNumBase();
+        		  if (VM.useAOSDBVerbose)
+        			  VM.sysWriteln ("basecompiling done");
         	  }
           } else if (Controller.options.optIRC()) {
           if (// will only run once: don't bother optimizing

@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 
 import org.jikesrvm.VM;
 import org.jikesrvm.adaptive.controller.Controller;
+import org.jikesrvm.adaptive.controller.ControllerPlan;
 import org.jikesrvm.adaptive.database.callgraph.PartialCallGraph;
 import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase.WriteRequest.WriteRequestType;
 import org.jikesrvm.adaptive.recompilation.InvocationCounts;
@@ -58,9 +59,23 @@ public class MongoMethodDatabase {
 	private Semaphore writeRequestsLock;
 	private HashMap<String, MethodDatabaseElement> internalDB;
 	private int bulkUpdateCount;
-
-	private  List<WriteRequest> writeRequests;
+	private Vector<MethodToCompileAsync> methodsToCompileAsync;
+	private List<WriteRequest> writeRequests;
+	private boolean readingCompleted;
 	
+	static class MethodToCompileAsync
+	{
+		public final String desc;
+		public final Integer cmid;
+		public final NormalMethod normalMethod;
+		public MethodToCompileAsync(String desc, Integer cmid,
+				NormalMethod normalMethod) {
+			super();
+			this.desc = desc;
+			this.cmid = cmid;
+			this.normalMethod = normalMethod;
+		}
+	}
 	static class WriteRequest
 	{
 		public final int cmid;
@@ -233,6 +248,7 @@ public class MongoMethodDatabase {
 		writeRequestsLock = new Semaphore (1);
 		VM.sysWriteln ("RequestsLock created");
 		internalDB = new HashMap<String, MethodDatabaseElement> ();
+		methodsToCompileAsync = new Vector<MethodToCompileAsync> ();
 	}
 	
 	public void initializeMongoDB ()
@@ -295,14 +311,10 @@ public class MongoMethodDatabase {
 		return -1;
 	}
 	
-	public CompiledMethod methodOptCompile (NormalMethod m)
+	@Inline
+	public void methodOptCompile (NormalMethod m, int cmid)
 	{		
 		String methodFullDesc = getMethodFullDesc (m);
-		
-		//if (methodFullDesc.contains("MethodDatabase") ||
-		//		methodFullDesc.indexOf("Ljava/") == 0 ||
-		//		methodFullDesc.indexOf ("Lgnu/") == 0)
-		//	return null;
 		
 		if (VM.useAOSDBVerbose)
 			VM.sysWriteln ("Getting opt level for Method "+ methodFullDesc);
@@ -314,7 +326,15 @@ public class MongoMethodDatabase {
 			if (VM.useAOSDBVerbose)
 				VM.sysWriteln ("Error: Cannot find opt level for Method " + methodFullDesc);
 			
-			return null;
+			if (!readingCompleted)
+			{
+				if (VM.useAOSDBVerbose)
+					VM.sysWriteln("Reading not completed will see it later");
+			
+				methodsToCompileAsync.add(new MethodToCompileAsync(methodFullDesc, cmid, m));
+			}
+			
+			return;
 		}
 		
 		if (VM.useAOSDBVerbose)
@@ -324,20 +344,41 @@ public class MongoMethodDatabase {
 		{
 			if (VM.useAOSDBVerbose)
 				VM.sysWriteln ("Basecompiling as optlevel is -1");
-			return null;
+			
+			return;
 		}
-		 AOSInstrumentationPlan instrumentationPlan =
-	                new AOSInstrumentationPlan(Controller.options, m);
-	            CompilationPlan compPlan =
-	                new CompilationPlan(m,
-	                                       Controller.recompilationStrategy.getOptPlanForLevel(elem.optLevel),
-	                                        instrumentationPlan,
-	                                        Controller.recompilationStrategy.getOptOptionsForLevel(elem.optLevel));
-	            //org.jikesrvm.adaptive.measurements.instrumentation.Instrumentation.disableInstrumentation();
-	            CompiledMethod cm = RuntimeCompiler.optCompileWithFallBack(m, compPlan);
-	            //org.jikesrvm.adaptive.measurements.instrumentation.Instrumentation.enableInstrumentation();
-	            
-	            return cm;
+		
+		if (!readingCompleted)
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("Reading not completed " + methodFullDesc + " will see it later");
+			
+			methodsToCompileAsync.add(new MethodToCompileAsync(methodFullDesc, cmid, m));
+			return;
+		}
+		
+		elem.m = m;
+		elem.baseCMID = cmid;
+		
+		putOptCompilationOnQueue (elem);
+	}
+	
+	@Inline
+	public void putOptCompilationOnQueue (MethodDatabaseElement elem)
+	{
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln("Putting ControllerPlan on Compilation Queue");
+		
+		AOSInstrumentationPlan instrumentationPlan =
+                new AOSInstrumentationPlan(Controller.options, elem.m);
+            CompilationPlan compPlan =
+                new CompilationPlan(elem.m,
+                                    Controller.recompilationStrategy.getOptPlanForLevel(elem.optLevel),
+                                    instrumentationPlan,
+                                    Controller.recompilationStrategy.getOptOptionsForLevel(elem.optLevel));
+            
+        ControllerPlan cp = new ControllerPlan (compPlan, 1000, elem.baseCMID, 10000, 10, elem.count);
+    	cp.execute();
 	}
 	
 	public static String getMethodFullDesc (int cmid)
@@ -508,6 +549,7 @@ public class MongoMethodDatabase {
 	
 	public void readAllDocuments ()
 	{
+		readingCompleted = false;
 		DBObject query = new BasicDBObject ("optLevel", new BasicDBObject("$ne", -1));
 		DBCursor cur = aosCollection.find(query);
 		if (VM.useAOSDBVerbose)
@@ -595,7 +637,23 @@ public class MongoMethodDatabase {
 				VM.sysWriteln ("DCG Entry Creation Failed");
 			e.printStackTrace();
 		}
-		for (MethodDatabaseElement methElem : internalDB.values())
+		
+		readingCompleted = true;
+		
+		for (int i = 0; i < methodsToCompileAsync.size(); i++)
+		{
+			MethodToCompileAsync meth = methodsToCompileAsync.get(i);
+			MethodDatabaseElement elem = internalDB.get(meth.desc);
+			if (elem == null)
+				continue;
+			elem.baseCMID = meth.cmid;
+			elem.m = meth.normalMethod;
+			putOptCompilationOnQueue(elem);
+		}
+		
+		methodsToCompileAsync.clear();
+		
+		/*for (MethodDatabaseElement methElem : internalDB.values())
 		{
 			String methFullDesc = methElem.name;
 			int optLevel = methElem.optLevel;
@@ -649,7 +707,7 @@ public class MongoMethodDatabase {
 
 				}
 			} 
-		}
+		}*/
 	}
 		
 	public void readAll ()

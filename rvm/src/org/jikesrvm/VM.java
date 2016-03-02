@@ -533,15 +533,11 @@ public class VM extends Properties {
     	if (VM.useAOSDBVerbose)
     		VM.sysWriteln ("Bulkupdatecount " + bulkUpdateCount);
     	
-    	VM.methodDatabase = new MongoMethodDatabase (Integer.parseInt(bulkUpdateCount));
-    }
-    
-    if (useAOSDB || useAOSDBOptCompile || useAOSDBRead)
-    {    	
+    	VM.methodDatabase = new MongoMethodDatabase (Integer.parseInt(bulkUpdateCount));    	
     	VM.methodDatabase.initializeMongoDB ();
    
     	if (useAOSDBRead)
-    		VM.methodDatabase.readAllDocuments();
+    		VM.methodDatabase.readAll();
     }
     // Create main thread.
     if (verboseBoot >= 1) VM.sysWriteln("Constructing mainThread");
