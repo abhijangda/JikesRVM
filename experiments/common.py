@@ -2,6 +2,7 @@
 # beyond build requirements for Jikes, requires installation of the timelimit utility.
 
 import csv
+import logging
 import os
 import re
 import shutil
@@ -25,6 +26,7 @@ __TIMELIMIT__ = 0
 __PREFIX__ = 'none'
 __CSV_FILE__ = None
 __CSV_WRITER__ = None
+__LOG__ = logging
 
 # set a temporary repository root if an experiment requires a specific commit checked out
 __JIKES_EXPERIMENT_TEMP_ROOT__ = ''
@@ -41,7 +43,7 @@ def reset_root(root=__JIKES_EXPERIMENT_ORIGINAL_ROOT__):
     __JIKES_EXPERIMENT_TEMP_BIN__ = os.path.join(root, 'dist/development_x86_64-linux/')
 
 def init(prefix, commit, timelimit=0):
-    global __NUM_REPETITIONS__, __PREFIX__, __RESULTS_DIR__, __TIMELIMIT__, __ARGS__
+    global __NUM_REPETITIONS__, __PREFIX__, __RESULTS_DIR__, __TIMELIMIT__, __ARGS__, __LOG__
 
     __TIMELIMIT__ = timelimit
     __ARGS__ = parse_arguments()
@@ -67,11 +69,19 @@ def init(prefix, commit, timelimit=0):
     if not os.path.exists(__RESULTS_DIR__):
         os.makedirs(__RESULTS_DIR__)
 
+    # initialise a log file in this directory
+    __LOG__ = logging.getLogger('common')
+    __LOG__.setLevel(logging.INFO)
+    handler = logging.FileHandler(os.path.join(__RESULTS_DIR__, 'experiment.log'))
+    formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
+    handler.setFormatter(formatter)
+    __LOG__.addHandler(handler)
+
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('--no-delete', action='store_true', help='Do not delete the temporary folder after completing the experiment. Useful to manually re-run some tests.')
-    parser.add_argument('--compile-only', action='store_true', help='Build jikes and exit. Implies --no-delete.')
     parser.add_argument('--reuse-root', help='Pass the path to a previously built Jikes repository root to re-use binaries from there instead of re-building. Implies --no-delete')
+    parser.add_argument('--compile-only', action='store_true', help='Build jikes and exit. Implies --no-delete.')
     parser.add_argument('-n', help='override the number of repetitions')
     parser.add_argument('-t', help='override the time limit for each benchmark (seconds)')
 
@@ -143,6 +153,9 @@ def teardown():
     global __JIKES_EXPERIMENT_TEMP_ROOT__, __JIKES_EXPERIMENT_ORIGINAL_ROOT__
 
     os.chdir(__JIKES_EXPERIMENT_ORIGINAL_ROOT__)
+    logging.shutdown()
+
+    print "Teardown. changed back to original root and shut down the logging."
 
     # If no-delete is set, simply print the name of the temp dir for later use, and return early
     if __ARGS__.no_delete:
@@ -156,6 +169,7 @@ def teardown():
         __JIKES_EXPERIMENT_TEMP_ROOT__ = ''
     else:
         print 'WARN', 'teardown() called with no temporary repository root previously defined.'
+
 
 def run_rvm(args):
     ''' runs the rvm with the given arguments and returns the output as a string. '''
@@ -179,7 +193,7 @@ def run_rvm(args):
     args = timelimit_args + rvm_args + args
 
     # print executed command:
-    print string.join(args)
+    __LOG__.info(string.join(args))
 
     try:
         return subprocess.check_output(args, stderr=subprocess.STDOUT)
@@ -205,8 +219,9 @@ def run_dacapo(benchmark, size='default', repetitions=1, vm_args=[], dacapo_args
         time = int(re.findall(r'PASSED in (\d+)', output)[0])
     except IndexError:
         time = -1
-        print 'ERROR', 'dacapo benchmark may have failed, could not determine PASSED time, recording -1'
+        __LOG__.warn('dacapo benchmark may have failed, could not determine PASSED time, recording -1')
 
+    __LOG__.info(str(time))
     return time
 
 def download_dacapo():
@@ -239,8 +254,7 @@ def write_csv(values):
     if __CSV_WRITER__:
         __CSV_WRITER__.writerow(values)
     else:
-        print 'ERROR', 'write_csv called with no csv file opened. Call open_csv(basename) first.'
-    print string.join(map(str, values), ',')
+        __LOG__.error('write_csv called with no csv file opened. Call open_csv(basename) first.')
 
 def close_csv():
     global __CSV_WRITER__
