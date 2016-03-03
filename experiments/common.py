@@ -78,18 +78,25 @@ def init(prefix, commit, timelimit=0):
     __LOG__.addHandler(handler)
 
 def parse_arguments():
+    global __NUM_REPETITIONS__, __TIMELIMIT__
+
     parser = argparse.ArgumentParser()
     parser.add_argument('--no-delete', action='store_true', help='Do not delete the temporary folder after completing the experiment. Useful to manually re-run some tests.')
     parser.add_argument('--reuse-root', help='Pass the path to a previously built Jikes repository root to re-use binaries from there instead of re-building. Implies --no-delete')
     parser.add_argument('--compile-only', action='store_true', help='Build jikes and exit. Implies --no-delete.')
-    parser.add_argument('-n', help='override the number of repetitions')
-    parser.add_argument('-t', help='override the time limit for each benchmark (seconds)')
+    parser.add_argument('-n', help='override the number of repetitions', type=int)
+    parser.add_argument('-t', help='override the time limit for each benchmark (seconds)', type=int)
 
     args = parser.parse_args()
 
     if args.reuse_root or args.compile_only:
         args.no_delete = True
 
+    if args.n and args.n > 0:
+        __NUM_REPETITIONS__ = args.n
+
+    if args.t and args.t > 0:
+        __TIMELIMIT__ = args.t
     return args
 
 def get_repetitions():
@@ -158,7 +165,7 @@ def teardown():
     print "Teardown. changed back to original root and shut down the logging."
 
     # If no-delete is set, simply print the name of the temp dir for later use, and return early
-    if __ARGS__.no_delete:
+    if __ARGS__ and __ARGS__.no_delete:
         print __JIKES_EXPERIMENT_TEMP_ROOT__
         return
 
