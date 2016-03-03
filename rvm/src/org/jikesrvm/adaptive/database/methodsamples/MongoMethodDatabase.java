@@ -640,74 +640,79 @@ public class MongoMethodDatabase {
 		
 		readingCompleted = true;
 		
-		for (int i = 0; i < methodsToCompileAsync.size(); i++)
+		if (!VM.useAOSDBBulkCompile)
 		{
-			MethodToCompileAsync meth = methodsToCompileAsync.get(i);
-			MethodDatabaseElement elem = internalDB.get(meth.desc);
-			if (elem == null)
-				continue;
-			elem.baseCMID = meth.cmid;
-			elem.m = meth.normalMethod;
-			putOptCompilationOnQueue(elem);
-		}
-		
-		methodsToCompileAsync.clear();
-		
-		/*for (MethodDatabaseElement methElem : internalDB.values())
-		{
-			String methFullDesc = methElem.name;
-			int optLevel = methElem.optLevel;
-			
-			if (optLevel == -1)
-				continue;
-			
-			int o = methFullDesc.indexOf(';');
-			String clsName = methFullDesc.substring(0, o+1);
-			Atom at = Atom.findOrCreateUnicodeAtom(clsName);
-			ClassLoader cl = RVMClassLoader.findWorkableClassloader(at);
-			if (cl == null)
+			for (int i = 0; i < methodsToCompileAsync.size(); i++)
 			{
-				continue;
+				MethodToCompileAsync meth = methodsToCompileAsync.get(i);
+				MethodDatabaseElement elem = internalDB.get(meth.desc);
+				if (elem == null)
+					continue;
+				elem.baseCMID = meth.cmid;
+				elem.m = meth.normalMethod;
+				putOptCompilationOnQueue(elem);
 			}
+		
+		    methodsToCompileAsync.clear();
+		}
+		else
+		{
+			for (MethodDatabaseElement methElem : internalDB.values())
+			{
+				String methFullDesc = methElem.name;
+				int optLevel = methElem.optLevel;
 
-			TypeReference tRef = TypeReference.findOrCreate(cl, at);
-			RVMClass cls = (RVMClass) tRef.peekType();
+				if (optLevel == -1)
+					continue;
 
-			if (cls != null) {
-				// Ensure the class is properly loaded
-				if (!cls.isInstantiated()) {
-					if (!cls.isResolved()) {
-						cls.resolve();
+				int o = methFullDesc.indexOf(';');
+				String clsName = methFullDesc.substring(0, o+1);
+				Atom at = Atom.findOrCreateUnicodeAtom(clsName);
+				ClassLoader cl = RVMClassLoader.findWorkableClassloader(at);
+				if (cl == null)
+				{
+					continue;
+				}
+
+				TypeReference tRef = TypeReference.findOrCreate(cl, at);
+				RVMClass cls = (RVMClass) tRef.peekType();
+
+				if (cls != null) {
+					// Ensure the class is properly loaded
+					if (!cls.isInstantiated()) {
+						if (!cls.isResolved()) {
+							cls.resolve();
+						}
+
+						cls.instantiate();
 					}
 
-					cls.instantiate();
-				}
+					int r = methFullDesc.indexOf ('(');
+					String methName = methFullDesc.substring(o+1, r);
+					Atom methNameAtom = Atom.findOrCreateUnicodeAtom(methName);
+					String methSig = methFullDesc.substring(r);
+					Atom methSigAtom = Atom.findOrCreateUnicodeAtom(methSig);
+					if (VM.useAOSDBVerbose)
+						VM.sysWriteln ("Method " + methName + " compiling at level " + optLevel);
 
-				int r = methFullDesc.indexOf ('(');
-				String methName = methFullDesc.substring(o+1, r);
-				Atom methNameAtom = Atom.findOrCreateUnicodeAtom(methName);
-				String methSig = methFullDesc.substring(r);
-				Atom methSigAtom = Atom.findOrCreateUnicodeAtom(methSig);
-				if (VM.useAOSDBVerbose)
-					VM.sysWriteln ("Method " + methName + " compiling at level " + optLevel);
+					RVMMethod method = cls.findDeclaredMethod(methNameAtom, methSigAtom);
 
-				RVMMethod method = cls.findDeclaredMethod(methNameAtom, methSigAtom);
+					// If found, compile it
+					if ((method != null) &&
+							!method.hasNoOptCompileAnnotation() &&
+							(method instanceof org.jikesrvm.classloader.NormalMethod)) {
+						// if user's requirement is higher than advice
+						CompilationPlan compPlan;
+						compPlan = Controller.recompilationStrategy.createCompilationPlan((NormalMethod) method, optLevel, null);
+						if (RuntimeCompiler.recompileWithOpt(compPlan) == -1 && VM.useAOSDBVerbose)
+							VM.sysWriteln ("Compiling method " + methFullDesc + " failed at opt level " + optLevel); 
+						else if (VM.useAOSDBVerbose)
+							VM.sysWriteln ("Compiling method " + methFullDesc + " successfull at opt level " + optLevel);
 
-				// If found, compile it
-				if ((method != null) &&
-						!method.hasNoOptCompileAnnotation() &&
-						(method instanceof org.jikesrvm.classloader.NormalMethod)) {
-					// if user's requirement is higher than advice
-					CompilationPlan compPlan;
-					compPlan = Controller.recompilationStrategy.createCompilationPlan((NormalMethod) method, optLevel, null);
-					if (RuntimeCompiler.recompileWithOpt(compPlan) == -1 && VM.useAOSDBVerbose)
-						VM.sysWriteln ("Compiling method " + methFullDesc + " failed at opt level " + optLevel); 
-					else if (VM.useAOSDBVerbose)
-						VM.sysWriteln ("Compiling method " + methFullDesc + " successfull at opt level " + optLevel);
-
-				}
-			} 
-		}*/
+					}
+				} 
+			}
+		}
 	}
 		
 	public void readAll ()
