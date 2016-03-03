@@ -1,13 +1,16 @@
 # python 2.7
 # beyond build requirements for Jikes, requires installation of the timelimit utility.
 
+import csv
 import os
 import re
-import csv
-import subprocess
-import tempfile
-import string
 import shutil
+import socket
+import string
+import subprocess
+import sys
+import tempfile
+import time
 import urllib
 
 # === configuration options ===
@@ -15,6 +18,13 @@ __DACAPO_DOWNLOAD__ = 'http://downloads.sourceforge.net/project/dacapobench/9.12
 __MONGO_DRIVER_JAR__ = 'mongo-java-driver-2.11.3.jar'
 
 # === 'static' variables needed by module functions below - do not change ===
+# state taken from funciton or program arguments
+__NUM_REPETITIONS__ = 3
+__TIMELIMIT__ = 0
+__PREFIX__ = 'none'
+__CSV_FILE__ = None
+__CSV_WRITER__ = None
+
 # set a temporary repository root if an experiment requires a specific commit checked out
 __JIKES_EXPERIMENT_TEMP_ROOT__ = ''
 __JIKES_EXPERIMENT_TEMP_BIN__ = ''
@@ -28,6 +38,38 @@ def reset_root():
     global __JIKES_EXPERIMENT_TEMP_ROOT__, __JIKES_EXPERIMENT_TEMP_BIN__
     __JIKES_EXPERIMENT_TEMP_ROOT__ = __JIKES_EXPERIMENT_ORIGINAL_ROOT__
     __JIKES_EXPERIMENT_TEMP_BIN__ = os.path.join(__JIKES_EXPERIMENT_ORIGINAL_ROOT__, 'dist/development_x86_64-linux/')
+
+
+def init(prefix, commit, timelimit=0):
+    global __NUM_REPETITIONS__, __PREFIX__, __RESULTS_DIR__, __TIMELIMIT__
+
+    __TIMELIMIT__ = timelimit
+
+    # TODO: Parse more arguments with help of argparse module and put this into a separate function.
+    if len(sys.argv) > 1:
+        try:
+            __NUM_REPETITIONS__ = int(sys.argv[1])
+        except:
+            print "Invalid number of iterations given"
+            pass
+
+    # The prefix identifies the experiment.
+    # We create a name for our results directory based on this, the system hostname, and current time.
+    __PREFIX__ = prefix
+    hostname = socket.gethostname()
+    timestamp = int(time.time())
+    __RESULTS_DIR__ = os.path.abspath(os.path.join('results', string.join([__PREFIX__, '-', hostname, '-', str(timestamp)], '')))
+    print 'Results will be stored in', __RESULTS_DIR__
+
+    if not os.path.exists(__RESULTS_DIR__):
+        os.makedirs(__RESULTS_DIR__)
+
+    # Finally we need to build the Jikes binaries in a temporary checkout location
+    checkout_and_build_jikes(commit)
+
+def get_repetitions():
+    ''' get the number of repetitions set by default or from a command line argument in init. '''
+    return __NUM_REPETITIONS__
 
 def checkout_and_build_jikes(commit):
     ''' creates a folder with a fresh build of the given commit hash
@@ -94,12 +136,12 @@ def teardown():
     else:
         print 'WARN', 'teardown() called with no temporary repository root previously defined.'
 
-def run_rvm(args, timelimit = 0):
+def run_rvm(args):
     ''' runs the rvm with the given arguments and returns the output as a string. '''
     # generate timelimit arguments if needed
     timelimit_args = []
-    if timelimit > 0:
-        timelimit_args = ['timelimit', '-t', str(timelimit), '-T', str(1)]
+    if __TIMELIMIT__ > 0:
+        timelimit_args = ['timelimit', '-t', str(__TIMELIMIT__), '-T', str(1)]
 
     # generate rvm arguments using absolute paths if needed
     rvm_exec = 'rvm'
@@ -124,7 +166,7 @@ def run_rvm(args, timelimit = 0):
         print 'ERROR', 'child process exited with non-zero exit code', error.returncode
         return error.output
 
-def run_dacapo(benchmark, size='default', repetitions=1, vm_args=[], dacapo_args=[], timelimit = 0):
+def run_dacapo(benchmark, size='default', repetitions=1, vm_args=[], dacapo_args=[]):
     ''' runs the specified dacapo instance on the newly built rvm and returns
     its runtime in milliseconds. Use vm_args to specify -use_aosdb etc. '''
     dacapo_path = download_dacapo()
@@ -133,7 +175,7 @@ def run_dacapo(benchmark, size='default', repetitions=1, vm_args=[], dacapo_args
     args = vm_args + ['-jar', dacapo_path, benchmark, '-s', size, '-n', str(repetitions)] + dacapo_args
 
     # run the RVM with these arguments
-    output = run_rvm(args, timelimit = timelimit)
+    output = run_rvm(args)
 
     # attempt to find the PASSED time reported by the dacapo benchmark.
     # report an error and log the runtime as -1 if this line is missing from the output.
@@ -155,7 +197,7 @@ def download_dacapo():
 
     return dacapo_path
 
-def dropMongoCollection(database, collection):
+def drop_mongo_collection(database, collection):
     ''' uses the mongo shell to drop the specified collection from a database. '''
     args = ['mongo']
     commands = ['use '+database, 'db.'+collection+'.drop()', 'exit']
@@ -163,3 +205,23 @@ def dropMongoCollection(database, collection):
     p = subprocess.Popen(args, stdin=subprocess.PIPE)
     p.communicate(string.join(commands, '\n'))
     p.wait()
+
+
+# These methods, open_csv, write_csv, close_csv must be called in this order to ensure only one file is open a time.
+def open_csv(basename):
+    global __CSV_FILE__, __CSV_WRITER__
+    __CSV_FILE__ = open(os.path.join(__RESULTS_DIR__, basename+'.csv'), 'wb')
+    __CSV_WRITER__ = csv.writer(__CSV_FILE__, delimiter=',')
+
+def write_csv(values):
+    ''' writes a list of values to the csv file and to standard output. '''
+    if __CSV_WRITER__:
+        __CSV_WRITER__.writerow(values)
+    else:
+        print 'ERROR', 'write_csv called with no csv file opened. Call open_csv(basename) first.'
+    print string.join(map(str, values), ',')
+
+def close_csv():
+    global __CSV_WRITER__
+    __CSV_WRITER__ = None
+    __CSV_FILE__.close()

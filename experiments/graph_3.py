@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 import csv
+import sys
 
 # Output directory (relative to working dir)
 graphs_dir = 'figures'
@@ -15,9 +16,8 @@ if not os.path.exists(graphs_dir):
 
 # 1) naive mongodb calls to measure overhead.
 # A single bar graph with a pair of bars for each benchmark.
-basename = '3_prepopulation'
-csv_dir = 'results'
-csv_prefix = '3_'
+basename = '3'
+csv_dir = sys.argv[1]
 benchmarks = ['avrora', 'lusearch', 'jython', 'luindex', 'xalan', 'pmd', 'sunflow']
 
 fig, ax = plt.subplots()
@@ -28,7 +28,7 @@ width = 0.2
 base1, base2, vm1, vm2 = [], [], [], []
 for b in benchmarks:
     # get data columns from csv file
-    csvname = csv_prefix + b + '.csv'
+    csvname = b + '.csv'
     raw_data = np.recfromcsv(os.path.join(csv_dir, csvname))
 
     # Filter out -1 values and scale to seconds,
