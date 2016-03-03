@@ -12,6 +12,7 @@ import sys
 import tempfile
 import time
 import urllib
+import argparse
 
 # === configuration options ===
 __DACAPO_DOWNLOAD__ = 'http://downloads.sourceforge.net/project/dacapobench/9.12-bach/dacapo-9.12-bach.jar?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fdacapobench%2Ffiles%2F9.12-bach%2F&ts=1455100129&use_mirror=kent'
@@ -32,26 +33,28 @@ __JIKES_EXPERIMENT_TEMP_BIN__ = ''
 # keep the original repository root constant for returning here after teardown.
 __JIKES_EXPERIMENT_ORIGINAL_ROOT__ = os.path.abspath(os.path.join(os.path.dirname(__file__),'..'))
 
-def reset_root():
+def reset_root(root=__JIKES_EXPERIMENT_ORIGINAL_ROOT__):
     ''' for manual inclusion of common.py, this function can be called to set the temp-root and temp-bin
-    paths to be within the original root directory '''
+    paths to be within the original root directory or any other check out of the repository. '''
     global __JIKES_EXPERIMENT_TEMP_ROOT__, __JIKES_EXPERIMENT_TEMP_BIN__
-    __JIKES_EXPERIMENT_TEMP_ROOT__ = __JIKES_EXPERIMENT_ORIGINAL_ROOT__
-    __JIKES_EXPERIMENT_TEMP_BIN__ = os.path.join(__JIKES_EXPERIMENT_ORIGINAL_ROOT__, 'dist/development_x86_64-linux/')
-
+    __JIKES_EXPERIMENT_TEMP_ROOT__ = root
+    __JIKES_EXPERIMENT_TEMP_BIN__ = os.path.join(root, 'dist/development_x86_64-linux/')
 
 def init(prefix, commit, timelimit=0):
-    global __NUM_REPETITIONS__, __PREFIX__, __RESULTS_DIR__, __TIMELIMIT__
+    global __NUM_REPETITIONS__, __PREFIX__, __RESULTS_DIR__, __TIMELIMIT__, __ARGS__
 
     __TIMELIMIT__ = timelimit
+    __ARGS__ = parse_arguments()
 
-    # TODO: Parse more arguments with help of argparse module and put this into a separate function.
-    if len(sys.argv) > 1:
-        try:
-            __NUM_REPETITIONS__ = int(sys.argv[1])
-        except:
-            print "Invalid number of iterations given"
-            pass
+    if not __ARGS__.reuse_root:
+        # Finally we need to build the Jikes binaries in a temporary checkout location
+        checkout_and_build_jikes(commit)
+    else:
+        # Or re-use an existing repository checkout with pre-built binaries.
+        reset_root(root=__ARGS__.reuse_root)
+
+    if __ARGS__.compile_only:
+        exit()
 
     # The prefix identifies the experiment.
     # We create a name for our results directory based on this, the system hostname, and current time.
@@ -64,8 +67,20 @@ def init(prefix, commit, timelimit=0):
     if not os.path.exists(__RESULTS_DIR__):
         os.makedirs(__RESULTS_DIR__)
 
-    # Finally we need to build the Jikes binaries in a temporary checkout location
-    checkout_and_build_jikes(commit)
+def parse_arguments():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--no-delete', action='store_true', help='Do not delete the temporary folder after completing the experiment. Useful to manually re-run some tests.')
+    parser.add_argument('--compile-only', action='store_true', help='Build jikes and exit. Implies --no-delete.')
+    parser.add_argument('--reuse-root', help='Pass the path to a previously built Jikes repository root to re-use binaries from there instead of re-building. Implies --no-delete')
+    parser.add_argument('-n', help='override the number of repetitions')
+    parser.add_argument('-t', help='override the time limit for each benchmark (seconds)')
+
+    args = parser.parse_args()
+
+    if args.reuse_root or args.compile_only:
+        args.no_delete = True
+
+    return args
 
 def get_repetitions():
     ''' get the number of repetitions set by default or from a command line argument in init. '''
@@ -129,6 +144,12 @@ def teardown():
 
     os.chdir(__JIKES_EXPERIMENT_ORIGINAL_ROOT__)
 
+    # If no-delete is set, simply print the name of the temp dir for later use, and return early
+    if __ARGS__.no_delete:
+        print __JIKES_EXPERIMENT_TEMP_ROOT__
+        return
+
+    # Otherwise, delete the temp root if one has been set.
     if (__JIKES_EXPERIMENT_TEMP_ROOT__):
         print "Deleting temporary folder", __JIKES_EXPERIMENT_TEMP_ROOT__
         shutil.rmtree(__JIKES_EXPERIMENT_TEMP_ROOT__)
