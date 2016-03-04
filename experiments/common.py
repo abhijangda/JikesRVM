@@ -249,6 +249,8 @@ def drop_mongo_collection(database, collection):
     p.communicate(string.join(commands, '\n'))
     p.wait()
 
+    __LOG__.info('dropped mongo collection '+database+' : '+collection)
+
 
 # These methods, open_csv, write_csv, close_csv must be called in this order to ensure only one file is open a time.
 def open_csv(basename):

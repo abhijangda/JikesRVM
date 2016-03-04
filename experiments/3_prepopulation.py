@@ -24,6 +24,7 @@ try:
 
             # Clean MongoDB collection
             common.drop_mongo_collection('AOSDatabase', 'AOSCollection')
+            common.drop_mongo_collection('AOSDatabase', 'DCGCollection')
 
             # Baseline runs
             for k in range(2):
