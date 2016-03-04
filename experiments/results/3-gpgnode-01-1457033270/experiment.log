@@ -1,0 +1,569 @@
+2016-03-03 19:27:50,100 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:27:55,724 INFO: 4777
+2016-03-03 19:27:55,725 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:28:01,334 INFO: 4668
+2016-03-03 19:28:01,335 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:28:07,846 INFO: 5114
+2016-03-03 19:28:07,885 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:28:14,746 INFO: 5549
+2016-03-03 19:28:14,795 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:28:20,837 INFO: 5070
+2016-03-03 19:28:20,837 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:28:26,659 INFO: 4862
+2016-03-03 19:28:26,660 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:28:32,868 INFO: 4887
+2016-03-03 19:28:32,869 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:28:40,990 INFO: 6166
+2016-03-03 19:28:41,056 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:28:46,929 INFO: 4879
+2016-03-03 19:28:46,929 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:28:52,764 INFO: 4882
+2016-03-03 19:28:52,765 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:28:59,345 INFO: 5130
+2016-03-03 19:28:59,346 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:29:06,619 INFO: 6045
+2016-03-03 19:29:06,668 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:29:12,616 INFO: 4998
+2016-03-03 19:29:12,616 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:29:19,034 INFO: 4904
+2016-03-03 19:29:19,064 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:29:25,441 INFO: 4790
+2016-03-03 19:29:25,442 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:29:32,900 INFO: 6087
+2016-03-03 19:29:32,948 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:29:38,949 INFO: 5019
+2016-03-03 19:29:38,950 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:29:44,952 INFO: 5065
+2016-03-03 19:29:44,952 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:29:51,880 INFO: 5045
+2016-03-03 19:29:51,916 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:29:59,343 INFO: 6070
+2016-03-03 19:29:59,392 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:30:05,351 INFO: 4982
+2016-03-03 19:30:05,352 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:30:11,266 INFO: 4959
+2016-03-03 19:30:11,268 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:30:17,612 INFO: 4989
+2016-03-03 19:30:17,613 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:30:24,564 INFO: 5262
+2016-03-03 19:30:24,613 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:30:30,535 INFO: 4978
+2016-03-03 19:30:30,535 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:30:36,391 INFO: 4898
+2016-03-03 19:30:36,392 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:30:42,678 INFO: 4965
+2016-03-03 19:30:42,679 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:30:49,822 INFO: 5374
+2016-03-03 19:30:49,871 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:30:56,700 INFO: 5294
+2016-03-03 19:30:56,706 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:31:02,518 INFO: 4802
+2016-03-03 19:31:02,519 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:31:08,719 INFO: 4824
+2016-03-03 19:31:08,720 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:31:16,250 INFO: 5466
+2016-03-03 19:31:16,309 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:31:22,153 INFO: 4908
+2016-03-03 19:31:22,154 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:31:28,101 INFO: 4922
+2016-03-03 19:31:28,101 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:31:35,017 INFO: 4896
+2016-03-03 19:31:35,018 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:31:42,599 INFO: 6172
+2016-03-03 19:31:42,648 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:31:48,502 INFO: 4894
+2016-03-03 19:31:48,503 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:31:54,918 INFO: 4891
+2016-03-03 19:31:54,919 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:32:01,192 INFO: 4870
+2016-03-03 19:32:01,193 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-03 19:32:08,774 INFO: 5668
+2016-03-03 19:32:08,826 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:32:16,937 INFO: 6383
+2016-03-03 19:32:16,938 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:32:23,603 INFO: 5425
+2016-03-03 19:32:23,604 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:32:32,201 INFO: 6888
+2016-03-03 19:32:32,201 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:32:40,310 INFO: 6667
+2016-03-03 19:32:40,360 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:32:47,785 INFO: 6192
+2016-03-03 19:32:47,786 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:32:55,620 INFO: 6482
+2016-03-03 19:32:55,621 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:33:03,907 INFO: 6048
+2016-03-03 19:33:03,908 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:33:12,801 INFO: 7409
+2016-03-03 19:33:12,852 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:33:19,960 INFO: 5859
+2016-03-03 19:33:19,960 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:33:27,917 INFO: 6736
+2016-03-03 19:33:27,917 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:33:36,175 INFO: 6419
+2016-03-03 19:33:36,176 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:33:46,575 INFO: 8826
+2016-03-03 19:33:46,625 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:33:54,113 INFO: 6181
+2016-03-03 19:33:54,114 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:34:01,028 INFO: 5777
+2016-03-03 19:34:01,029 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:34:08,652 INFO: 5753
+2016-03-03 19:34:08,652 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:34:19,234 INFO: 8812
+2016-03-03 19:34:19,282 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:34:27,005 INFO: 6470
+2016-03-03 19:34:27,006 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:34:34,601 INFO: 5947
+2016-03-03 19:34:34,602 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:34:42,719 INFO: 6046
+2016-03-03 19:34:42,720 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:34:53,791 INFO: 9571
+2016-03-03 19:34:53,841 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:35:01,363 INFO: 5970
+2016-03-03 19:35:01,364 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:35:09,113 INFO: 6508
+2016-03-03 19:35:09,114 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:35:16,857 INFO: 5837
+2016-03-03 19:35:16,858 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:35:24,408 INFO: 6057
+2016-03-03 19:35:24,458 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:35:31,644 INFO: 5728
+2016-03-03 19:35:31,645 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:35:39,544 INFO: 6301
+2016-03-03 19:35:39,544 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:35:49,043 INFO: 7530
+2016-03-03 19:35:49,044 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:35:59,498 INFO: 8830
+2016-03-03 19:35:59,548 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:36:06,417 INFO: 5705
+2016-03-03 19:36:06,418 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:36:15,086 INFO: 7080
+2016-03-03 19:36:15,087 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:36:23,132 INFO: 6440
+2016-03-03 19:36:23,133 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:36:32,814 INFO: 7482
+2016-03-03 19:36:32,937 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:36:40,578 INFO: 6248
+2016-03-03 19:36:40,578 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:36:48,210 INFO: 6102
+2016-03-03 19:36:48,211 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:36:55,882 INFO: 5931
+2016-03-03 19:36:55,883 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:37:06,125 INFO: 8347
+2016-03-03 19:37:06,173 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:37:13,921 INFO: 6463
+2016-03-03 19:37:13,922 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:37:22,189 INFO: 6480
+2016-03-03 19:37:22,190 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:37:30,377 INFO: 6355
+2016-03-03 19:37:30,378 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-03 19:37:40,542 INFO: 8540
+2016-03-03 19:37:40,594 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:38:01,394 INFO: 13891
+2016-03-03 19:38:01,395 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:38:21,585 INFO: 14020
+2016-03-03 19:38:21,586 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:38:45,321 INFO: 15147
+2016-03-03 19:38:45,321 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:40:45,455 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-03 19:40:45,456 INFO: -1
+2016-03-03 19:40:45,506 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:41:05,665 INFO: 13458
+2016-03-03 19:41:05,665 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:41:26,315 INFO: 13900
+2016-03-03 19:41:26,316 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:41:49,315 INFO: 13870
+2016-03-03 19:41:49,317 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:43:49,508 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-03 19:43:49,512 INFO: -1
+2016-03-03 19:43:49,611 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:44:10,332 INFO: 14132
+2016-03-03 19:44:10,332 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:44:31,982 INFO: 14264
+2016-03-03 19:44:31,982 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:44:55,026 INFO: 14896
+2016-03-03 19:44:55,027 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:46:55,158 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-03 19:46:55,159 INFO: -1
+2016-03-03 19:46:55,210 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:47:20,548 INFO: 15555
+2016-03-03 19:47:20,549 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:47:40,814 INFO: 13949
+2016-03-03 19:47:40,815 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:48:03,866 INFO: 14281
+2016-03-03 19:48:03,867 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:50:03,998 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-03 19:50:03,998 INFO: -1
+2016-03-03 19:50:04,049 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:50:26,116 INFO: 15464
+2016-03-03 19:50:26,116 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:50:46,008 INFO: 13634
+2016-03-03 19:50:46,009 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:51:11,448 INFO: 16332
+2016-03-03 19:51:11,450 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:53:11,581 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-03 19:53:11,582 INFO: -1
+2016-03-03 19:53:11,631 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:53:33,264 INFO: 14721
+2016-03-03 19:53:33,264 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:53:53,302 INFO: 13606
+2016-03-03 19:53:53,302 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:54:16,485 INFO: 14410
+2016-03-03 19:54:16,486 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:56:16,616 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-03 19:56:16,617 INFO: -1
+2016-03-03 19:56:16,667 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:56:38,185 INFO: 14434
+2016-03-03 19:56:38,186 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:56:57,781 INFO: 13457
+2016-03-03 19:56:57,781 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:57:21,092 INFO: 14628
+2016-03-03 19:57:21,094 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:59:21,226 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-03 19:59:21,227 INFO: -1
+2016-03-03 19:59:21,278 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 19:59:42,402 INFO: 14346
+2016-03-03 19:59:42,414 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 20:00:02,362 INFO: 13526
+2016-03-03 20:00:02,363 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 20:00:27,792 INFO: 15891
+2016-03-03 20:00:27,793 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 20:02:27,925 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-03 20:02:27,926 INFO: -1
+2016-03-03 20:02:27,977 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 20:02:48,803 INFO: 14169
+2016-03-03 20:02:48,804 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 20:03:11,370 INFO: 15767
+2016-03-03 20:03:11,370 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 20:03:35,461 INFO: 15762
+2016-03-03 20:03:35,463 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 20:03:59,597 INFO: 16084
+2016-03-03 20:03:59,647 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 20:04:19,569 INFO: 13641
+2016-03-03 20:04:19,570 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 20:04:39,609 INFO: 13700
+2016-03-03 20:04:39,610 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 20:05:02,388 INFO: 14453
+2016-03-03 20:05:02,388 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-03 20:07:02,521 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-03 20:07:02,521 INFO: -1
+2016-03-03 20:07:02,573 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:07:07,823 INFO: 2704
+2016-03-03 20:07:07,824 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:07:12,521 INFO: 2585
+2016-03-03 20:07:12,522 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:07:18,064 INFO: 2678
+2016-03-03 20:07:18,094 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:07:24,993 INFO: 3632
+2016-03-03 20:07:25,042 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:07:29,915 INFO: 2681
+2016-03-03 20:07:29,916 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:07:34,882 INFO: 2675
+2016-03-03 20:07:34,883 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:07:40,422 INFO: 2751
+2016-03-03 20:07:40,423 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:07:47,213 INFO: 3610
+2016-03-03 20:07:47,262 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:07:51,909 INFO: 2599
+2016-03-03 20:07:51,910 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:07:56,693 INFO: 2552
+2016-03-03 20:07:56,693 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:08:02,051 INFO: 2606
+2016-03-03 20:08:02,051 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:08:09,191 INFO: 3881
+2016-03-03 20:08:09,241 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:08:14,039 INFO: 2594
+2016-03-03 20:08:14,040 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:08:18,947 INFO: 2615
+2016-03-03 20:08:18,947 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:08:24,347 INFO: 2690
+2016-03-03 20:08:24,347 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:08:30,796 INFO: 3470
+2016-03-03 20:08:30,844 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:08:35,748 INFO: 2679
+2016-03-03 20:08:35,749 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:08:40,501 INFO: 2593
+2016-03-03 20:08:40,502 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:08:46,208 INFO: 2596
+2016-03-03 20:08:46,209 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:08:52,309 INFO: 3200
+2016-03-03 20:08:52,359 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:08:57,042 INFO: 2525
+2016-03-03 20:08:57,042 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:01,609 INFO: 2500
+2016-03-03 20:09:01,610 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:06,917 INFO: 2535
+2016-03-03 20:09:06,918 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:12,779 INFO: 3285
+2016-03-03 20:09:12,830 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:17,636 INFO: 2643
+2016-03-03 20:09:17,636 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:22,284 INFO: 2546
+2016-03-03 20:09:22,284 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:27,746 INFO: 2651
+2016-03-03 20:09:27,746 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:33,835 INFO: 3356
+2016-03-03 20:09:33,885 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:38,612 INFO: 2571
+2016-03-03 20:09:38,613 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:43,412 INFO: 2598
+2016-03-03 20:09:43,412 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:48,966 INFO: 2678
+2016-03-03 20:09:48,967 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:54,861 INFO: 3313
+2016-03-03 20:09:54,909 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:09:59,650 INFO: 2624
+2016-03-03 20:09:59,650 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:10:04,291 INFO: 2509
+2016-03-03 20:10:04,292 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:10:09,818 INFO: 2657
+2016-03-03 20:10:09,818 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:10:16,193 INFO: 3350
+2016-03-03 20:10:16,243 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:10:20,939 INFO: 2573
+2016-03-03 20:10:20,940 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:10:25,726 INFO: 2645
+2016-03-03 20:10:25,727 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:10:31,178 INFO: 2696
+2016-03-03 20:10:31,178 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-03 20:10:36,667 INFO: 2818
+2016-03-03 20:10:36,718 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:10:40,610 INFO: 2808
+2016-03-03 20:10:40,611 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:10:44,510 INFO: 2803
+2016-03-03 20:10:44,511 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:10:49,724 INFO: 2913
+2016-03-03 20:10:49,725 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:10:55,277 INFO: 4284
+2016-03-03 20:10:55,328 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:10:59,001 INFO: 2556
+2016-03-03 20:10:59,002 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:03,078 INFO: 2926
+2016-03-03 20:11:03,079 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:08,847 INFO: 3531
+2016-03-03 20:11:08,848 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:14,301 INFO: 4188
+2016-03-03 20:11:14,462 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:18,333 INFO: 2769
+2016-03-03 20:11:18,333 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:22,427 INFO: 2953
+2016-03-03 20:11:22,427 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:27,821 INFO: 3021
+2016-03-03 20:11:27,822 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:33,824 INFO: 4722
+2016-03-03 20:11:33,873 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:37,651 INFO: 2699
+2016-03-03 20:11:37,652 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:41,786 INFO: 3073
+2016-03-03 20:11:41,786 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:47,517 INFO: 3472
+2016-03-03 20:11:47,518 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:52,801 INFO: 3938
+2016-03-03 20:11:52,850 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:11:56,939 INFO: 2998
+2016-03-03 20:11:56,940 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:00,639 INFO: 2589
+2016-03-03 20:12:00,640 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:05,892 INFO: 3029
+2016-03-03 20:12:05,893 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:11,384 INFO: 4110
+2016-03-03 20:12:11,434 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:15,399 INFO: 2921
+2016-03-03 20:12:15,400 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:19,560 INFO: 3036
+2016-03-03 20:12:19,560 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:25,135 INFO: 3229
+2016-03-03 20:12:25,136 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:30,497 INFO: 4079
+2016-03-03 20:12:30,546 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:34,424 INFO: 2820
+2016-03-03 20:12:34,424 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:38,615 INFO: 3132
+2016-03-03 20:12:38,616 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:44,109 INFO: 3293
+2016-03-03 20:12:44,110 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:49,611 INFO: 4139
+2016-03-03 20:12:49,660 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:53,405 INFO: 2670
+2016-03-03 20:12:53,405 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:12:58,090 INFO: 3603
+2016-03-03 20:12:58,091 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:13:03,180 INFO: 3004
+2016-03-03 20:13:03,181 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:13:09,180 INFO: 4615
+2016-03-03 20:13:09,229 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:13:13,219 INFO: 2882
+2016-03-03 20:13:13,220 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:13:17,313 INFO: 3095
+2016-03-03 20:13:17,314 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:13:22,495 INFO: 3040
+2016-03-03 20:13:22,496 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:13:28,751 INFO: 4924
+2016-03-03 20:13:28,801 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:13:32,562 INFO: 2681
+2016-03-03 20:13:32,562 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:13:36,595 INFO: 2889
+2016-03-03 20:13:36,595 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:13:41,836 INFO: 3160
+2016-03-03 20:13:41,837 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-03 20:13:46,946 INFO: 3825
+2016-03-03 20:13:46,997 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:13:51,620 INFO: 3382
+2016-03-03 20:13:51,620 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:13:56,629 INFO: 3754
+2016-03-03 20:13:56,630 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:14:02,420 INFO: 3247
+2016-03-03 20:14:02,421 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:14:09,760 INFO: 5599
+2016-03-03 20:14:09,809 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:14:14,546 INFO: 3509
+2016-03-03 20:14:14,547 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:14:19,578 INFO: 3791
+2016-03-03 20:14:19,579 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:14:25,895 INFO: 3479
+2016-03-03 20:14:25,896 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:14:32,909 INFO: 5338
+2016-03-03 20:14:32,958 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:14:37,694 INFO: 3508
+2016-03-03 20:14:37,694 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:14:42,460 INFO: 3499
+2016-03-03 20:14:42,461 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:14:48,864 INFO: 3351
+2016-03-03 20:14:48,865 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:14:57,079 INFO: 6575
+2016-03-03 20:14:57,126 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:15:01,774 INFO: 3417
+2016-03-03 20:15:01,775 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:15:06,480 INFO: 3462
+2016-03-03 20:15:06,481 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:15:13,689 INFO: 4034
+2016-03-03 20:15:13,690 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:15:21,757 INFO: 6269
+2016-03-03 20:15:21,807 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:15:27,172 INFO: 3856
+2016-03-03 20:15:27,173 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:15:32,044 INFO: 3664
+2016-03-03 20:15:32,044 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:15:38,477 INFO: 3702
+2016-03-03 20:15:38,478 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:15:45,601 INFO: 5562
+2016-03-03 20:15:45,649 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:15:51,073 INFO: 3980
+2016-03-03 20:15:51,074 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:15:55,508 INFO: 3237
+2016-03-03 20:15:55,509 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:16:01,662 INFO: 3368
+2016-03-03 20:16:01,663 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:16:09,261 INFO: 6076
+2016-03-03 20:16:09,310 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:16:14,013 INFO: 3341
+2016-03-03 20:16:14,013 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:16:19,184 INFO: 3884
+2016-03-03 20:16:19,185 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:16:25,557 INFO: 3530
+2016-03-03 20:16:25,584 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:16:32,852 INFO: 5542
+2016-03-03 20:16:32,902 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:16:37,388 INFO: 3302
+2016-03-03 20:16:37,388 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:16:41,877 INFO: 3301
+2016-03-03 20:16:41,877 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:16:47,966 INFO: 3502
+2016-03-03 20:16:47,967 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:16:55,761 INFO: 5874
+2016-03-03 20:16:55,810 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:17:00,406 INFO: 3398
+2016-03-03 20:17:00,407 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:17:04,960 INFO: 3285
+2016-03-03 20:17:04,960 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:17:10,966 INFO: 3307
+2016-03-03 20:17:10,967 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:17:18,096 INFO: 5424
+2016-03-03 20:17:18,147 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:17:23,101 INFO: 3635
+2016-03-03 20:17:23,102 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:17:28,459 INFO: 4076
+2016-03-03 20:17:28,459 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:17:34,986 INFO: 3548
+2016-03-03 20:17:34,987 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-03 20:17:42,084 INFO: 5300
+2016-03-03 20:17:42,137 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:17:45,641 INFO: 3139
+2016-03-03 20:17:45,641 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:17:49,305 INFO: 3283
+2016-03-03 20:17:49,305 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:17:56,117 INFO: 5999
+2016-03-03 20:17:56,117 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:00,642 INFO: 3993
+2016-03-03 20:18:00,691 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:04,763 INFO: 3707
+2016-03-03 20:18:04,764 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:08,841 INFO: 3690
+2016-03-03 20:18:08,842 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:13,977 INFO: 4383
+2016-03-03 20:18:13,993 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:19,112 INFO: 4523
+2016-03-03 20:18:19,162 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:22,723 INFO: 3182
+2016-03-03 20:18:22,724 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:26,564 INFO: 3469
+2016-03-03 20:18:26,565 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:32,956 INFO: 5608
+2016-03-03 20:18:32,957 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:37,852 INFO: 4405
+2016-03-03 20:18:37,901 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:42,216 INFO: 3914
+2016-03-03 20:18:42,217 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:45,865 INFO: 3282
+2016-03-03 20:18:45,866 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:51,184 INFO: 4449
+2016-03-03 20:18:51,185 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:55,816 INFO: 4127
+2016-03-03 20:18:55,866 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:18:59,881 INFO: 3598
+2016-03-03 20:18:59,881 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:03,739 INFO: 3426
+2016-03-03 20:19:03,740 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:10,854 INFO: 6269
+2016-03-03 20:19:10,855 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:15,219 INFO: 3873
+2016-03-03 20:19:15,268 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:19,369 INFO: 3725
+2016-03-03 20:19:19,370 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:23,042 INFO: 3291
+2016-03-03 20:19:23,043 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:29,926 INFO: 6125
+2016-03-03 20:19:29,927 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:34,372 INFO: 3948
+2016-03-03 20:19:34,422 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:38,125 INFO: 3322
+2016-03-03 20:19:38,126 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:42,309 INFO: 3803
+2016-03-03 20:19:42,310 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:47,340 INFO: 4256
+2016-03-03 20:19:47,341 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:51,913 INFO: 4056
+2016-03-03 20:19:51,963 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:55,469 INFO: 3135
+2016-03-03 20:19:55,470 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:19:59,240 INFO: 3403
+2016-03-03 20:19:59,241 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:20:07,455 INFO: 7420
+2016-03-03 20:20:07,455 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:20:12,398 INFO: 4427
+2016-03-03 20:20:12,447 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:20:16,122 INFO: 3294
+2016-03-03 20:20:16,122 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:20:19,830 INFO: 3340
+2016-03-03 20:20:19,831 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:20:26,116 INFO: 5518
+2016-03-03 20:20:26,116 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:20:31,058 INFO: 4448
+2016-03-03 20:20:31,108 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:20:34,929 INFO: 3451
+2016-03-03 20:20:34,930 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:20:38,821 INFO: 3507
+2016-03-03 20:20:38,822 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:20:44,492 INFO: 4783
+2016-03-03 20:20:44,493 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdboptcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-03 20:20:49,804 INFO: 4824
