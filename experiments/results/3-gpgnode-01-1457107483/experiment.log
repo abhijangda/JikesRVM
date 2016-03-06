@@ -1,0 +1,703 @@
+2016-03-04 16:04:43,624 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:04:43,670 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:04:43,670 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:04:49,427 INFO: 4879
+2016-03-04 16:04:49,428 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:04:55,387 INFO: 4947
+2016-03-04 16:04:55,388 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:05:01,902 INFO: 5031
+2016-03-04 16:05:01,903 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:05:21,449 INFO: 4723
+2016-03-04 16:05:21,498 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:05:21,543 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:05:21,543 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:05:27,306 INFO: 4760
+2016-03-04 16:05:27,307 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:05:33,068 INFO: 4713
+2016-03-04 16:05:33,068 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:05:39,309 INFO: 4848
+2016-03-04 16:05:39,310 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:05:55,822 INFO: 4521
+2016-03-04 16:05:55,872 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:05:55,918 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:05:55,919 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:06:01,840 INFO: 4956
+2016-03-04 16:06:01,841 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:06:07,658 INFO: 4863
+2016-03-04 16:06:07,659 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:06:14,077 INFO: 4983
+2016-03-04 16:06:14,077 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:06:32,729 INFO: 4878
+2016-03-04 16:06:32,777 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:06:32,821 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:06:32,821 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:06:38,729 INFO: 4943
+2016-03-04 16:06:38,729 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:06:44,848 INFO: 5179
+2016-03-04 16:06:44,848 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:06:51,302 INFO: 5046
+2016-03-04 16:06:51,303 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:07:10,389 INFO: 4692
+2016-03-04 16:07:10,437 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:07:10,484 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:07:10,484 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:07:16,250 INFO: 4848
+2016-03-04 16:07:16,250 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:07:22,071 INFO: 4880
+2016-03-04 16:07:22,072 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:07:28,446 INFO: 4927
+2016-03-04 16:07:28,447 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:07:34,809 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-04 16:07:34,810 INFO: -1
+2016-03-04 16:07:34,858 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:07:34,913 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:07:34,914 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:07:40,963 INFO: 5130
+2016-03-04 16:07:40,964 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:07:46,789 INFO: 4831
+2016-03-04 16:07:46,790 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:07:52,799 INFO: 4680
+2016-03-04 16:07:52,799 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:08:08,891 INFO: 4707
+2016-03-04 16:08:08,940 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:08:08,987 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:08:08,987 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:08:14,702 INFO: 4756
+2016-03-04 16:08:14,703 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:08:20,582 INFO: 4953
+2016-03-04 16:08:20,582 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:08:27,044 INFO: 4959
+2016-03-04 16:08:27,044 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:08:43,927 INFO: 4612
+2016-03-04 16:08:43,976 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:08:44,022 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:08:44,023 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:08:50,000 INFO: 4994
+2016-03-04 16:08:50,000 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:08:56,139 INFO: 5159
+2016-03-04 16:08:56,140 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:09:02,519 INFO: 4998
+2016-03-04 16:09:02,519 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:09:24,448 INFO: 4530
+2016-03-04 16:09:24,496 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:09:24,541 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:09:24,542 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:09:30,325 INFO: 4840
+2016-03-04 16:09:30,325 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:09:36,036 INFO: 4787
+2016-03-04 16:09:36,036 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:09:42,713 INFO: 5194
+2016-03-04 16:09:42,714 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:09:57,772 INFO: 4638
+2016-03-04 16:09:57,820 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:09:57,869 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:09:57,870 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:10:03,780 INFO: 4821
+2016-03-04 16:10:03,780 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:10:09,518 INFO: 4772
+2016-03-04 16:10:09,518 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:10:16,146 INFO: 5078
+2016-03-04 16:10:16,146 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar avrora -s default -n 1
+2016-03-04 16:10:34,069 INFO: 4471
+2016-03-04 16:10:34,119 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:10:34,164 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:10:34,164 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:10:40,953 INFO: 5444
+2016-03-04 16:10:40,953 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:10:48,011 INFO: 5625
+2016-03-04 16:10:48,011 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:10:56,579 INFO: 6777
+2016-03-04 16:10:56,579 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:11:12,451 INFO: 6338
+2016-03-04 16:11:12,501 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:11:12,547 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:11:12,547 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:11:20,053 INFO: 6324
+2016-03-04 16:11:20,053 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:11:27,468 INFO: 6120
+2016-03-04 16:11:27,468 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:11:37,755 INFO: 8472
+2016-03-04 16:11:37,755 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:11:54,667 INFO: 6558
+2016-03-04 16:11:54,715 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:11:54,764 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:11:54,765 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:12:02,049 INFO: 6096
+2016-03-04 16:12:02,049 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:12:10,186 INFO: 6718
+2016-03-04 16:12:10,186 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:12:17,801 INFO: 6041
+2016-03-04 16:12:17,801 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:12:31,813 INFO: 6698
+2016-03-04 16:12:31,862 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:12:31,909 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:12:31,909 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:12:39,091 INFO: 6061
+2016-03-04 16:12:39,091 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:12:47,279 INFO: 6636
+2016-03-04 16:12:47,280 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:12:55,669 INFO: 6671
+2016-03-04 16:12:55,670 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:13:11,518 INFO: 5775
+2016-03-04 16:13:11,568 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:13:11,613 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:13:11,614 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:13:18,742 INFO: 5952
+2016-03-04 16:13:18,743 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:13:25,741 INFO: 5830
+2016-03-04 16:13:25,741 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:13:33,739 INFO: 6341
+2016-03-04 16:13:33,739 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:13:46,582 INFO: 6086
+2016-03-04 16:13:46,633 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:13:46,678 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:13:46,679 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:13:54,234 INFO: 5939
+2016-03-04 16:13:54,234 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:14:01,586 INFO: 6157
+2016-03-04 16:14:01,586 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:14:09,469 INFO: 6131
+2016-03-04 16:14:09,470 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:14:24,486 INFO: 6211
+2016-03-04 16:14:24,534 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:14:24,580 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:14:24,580 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:14:32,307 INFO: 6426
+2016-03-04 16:14:32,307 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:14:39,322 INFO: 5834
+2016-03-04 16:14:39,323 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:14:48,058 INFO: 7038
+2016-03-04 16:14:48,059 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:15:03,664 INFO: 6701
+2016-03-04 16:15:03,712 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:15:03,759 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:15:03,759 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:15:11,201 INFO: 6229
+2016-03-04 16:15:11,201 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:17:11,335 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-04 16:17:11,335 INFO: -1
+2016-03-04 16:17:11,336 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:17:20,140 INFO: 6826
+2016-03-04 16:17:20,141 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:17:36,108 INFO: 6449
+2016-03-04 16:17:36,157 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:17:36,203 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:17:36,203 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:17:43,340 INFO: 6083
+2016-03-04 16:17:43,341 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:17:51,183 INFO: 6201
+2016-03-04 16:17:51,184 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:17:59,320 INFO: 6367
+2016-03-04 16:17:59,320 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:18:17,127 INFO: 6666
+2016-03-04 16:18:17,174 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:18:17,221 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:18:17,221 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:18:25,148 INFO: 6747
+2016-03-04 16:18:25,149 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:20:25,286 WARNING: dacapo benchmark may have failed, could not determine PASSED time, recording -1
+2016-03-04 16:20:25,286 INFO: -1
+2016-03-04 16:20:25,287 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:20:33,052 INFO: 5899
+2016-03-04 16:20:33,052 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar lusearch -s default -n 1
+2016-03-04 16:20:45,715 INFO: 6245
+2016-03-04 16:20:45,765 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:20:45,811 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:20:45,811 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:21:05,846 INFO: 13735
+2016-03-04 16:21:05,846 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:21:26,236 INFO: 14277
+2016-03-04 16:21:26,237 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:21:51,180 INFO: 15587
+2016-03-04 16:21:51,181 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:22:31,113 INFO: 13339
+2016-03-04 16:22:31,164 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:22:31,212 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:22:31,212 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:22:52,051 INFO: 14485
+2016-03-04 16:22:52,052 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:23:12,612 INFO: 14046
+2016-03-04 16:23:12,612 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:23:37,502 INFO: 15149
+2016-03-04 16:23:37,503 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:24:16,611 INFO: 14443
+2016-03-04 16:24:16,663 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:24:16,708 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:24:16,708 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:24:37,740 INFO: 14490
+2016-03-04 16:24:37,741 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:24:57,166 INFO: 13387
+2016-03-04 16:24:57,167 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:25:21,144 INFO: 14553
+2016-03-04 16:25:21,144 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:25:59,883 INFO: 13353
+2016-03-04 16:25:59,931 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:25:59,978 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:25:59,978 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:26:20,043 INFO: 14007
+2016-03-04 16:26:20,043 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:26:40,223 INFO: 14238
+2016-03-04 16:26:40,223 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:27:03,506 INFO: 14736
+2016-03-04 16:27:03,506 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:27:38,479 INFO: 13137
+2016-03-04 16:27:38,528 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:27:38,575 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:27:38,576 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:27:58,556 INFO: 13799
+2016-03-04 16:27:58,556 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:28:18,175 INFO: 13517
+2016-03-04 16:28:18,175 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:28:40,996 INFO: 14612
+2016-03-04 16:28:40,997 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:29:20,113 INFO: 12958
+2016-03-04 16:29:20,161 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:29:20,205 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:29:20,206 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:29:39,710 INFO: 13474
+2016-03-04 16:29:39,710 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:30:01,994 INFO: 14488
+2016-03-04 16:30:01,995 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:30:24,823 INFO: 14691
+2016-03-04 16:30:24,823 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:31:03,056 INFO: 13689
+2016-03-04 16:31:03,107 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:31:03,154 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:31:03,154 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:31:22,769 INFO: 13526
+2016-03-04 16:31:22,770 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:31:42,961 INFO: 13857
+2016-03-04 16:31:42,961 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:32:05,572 INFO: 14005
+2016-03-04 16:32:05,573 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:32:44,872 INFO: 13370
+2016-03-04 16:32:44,922 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:32:44,970 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:32:44,971 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:33:04,433 INFO: 13309
+2016-03-04 16:33:04,433 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:33:24,121 INFO: 13548
+2016-03-04 16:33:24,121 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:33:48,745 INFO: 14932
+2016-03-04 16:33:48,745 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:34:26,062 INFO: 13977
+2016-03-04 16:34:26,113 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:34:26,158 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:34:26,158 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:34:47,719 INFO: 15271
+2016-03-04 16:34:47,720 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:35:08,085 INFO: 13940
+2016-03-04 16:35:08,085 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:35:31,885 INFO: 14822
+2016-03-04 16:35:31,886 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:36:09,968 INFO: 13080
+2016-03-04 16:36:10,018 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:36:10,064 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:36:10,064 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:36:31,726 INFO: 15180
+2016-03-04 16:36:31,726 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:36:51,864 INFO: 14088
+2016-03-04 16:36:51,864 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:37:14,988 INFO: 14698
+2016-03-04 16:37:14,989 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar jython -s default -n 1
+2016-03-04 16:37:51,663 INFO: 12933
+2016-03-04 16:37:51,715 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:37:51,761 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:37:51,762 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:37:56,422 INFO: 2425
+2016-03-04 16:37:56,423 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:38:00,830 INFO: 2471
+2016-03-04 16:38:00,831 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:38:05,784 INFO: 2510
+2016-03-04 16:38:05,784 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:38:13,410 INFO: 2383
+2016-03-04 16:38:13,458 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:38:13,505 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:38:13,505 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:38:18,042 INFO: 2496
+2016-03-04 16:38:18,042 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:38:22,456 INFO: 2473
+2016-03-04 16:38:22,457 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:38:27,600 INFO: 2530
+2016-03-04 16:38:27,600 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:38:36,334 INFO: 2364
+2016-03-04 16:38:36,383 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:38:36,430 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:38:36,430 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:38:41,214 INFO: 2575
+2016-03-04 16:38:41,214 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:38:45,844 INFO: 2644
+2016-03-04 16:38:45,845 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:38:51,087 INFO: 2580
+2016-03-04 16:38:51,087 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:39:01,828 INFO: 2396
+2016-03-04 16:39:01,878 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:39:01,926 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:39:01,927 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:39:06,549 INFO: 2587
+2016-03-04 16:39:06,550 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:39:11,052 INFO: 2551
+2016-03-04 16:39:11,052 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:39:16,561 INFO: 2641
+2016-03-04 16:39:16,561 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:39:26,715 INFO: 2523
+2016-03-04 16:39:26,765 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:39:26,811 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:39:26,811 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:39:31,493 INFO: 2508
+2016-03-04 16:39:31,493 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:39:36,278 INFO: 2585
+2016-03-04 16:39:36,278 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:39:41,594 INFO: 2646
+2016-03-04 16:39:41,595 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:39:50,490 INFO: 2405
+2016-03-04 16:39:50,538 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:39:50,585 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:39:50,585 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:39:55,296 INFO: 2641
+2016-03-04 16:39:55,296 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:39:59,976 INFO: 2634
+2016-03-04 16:39:59,977 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:40:05,294 INFO: 2622
+2016-03-04 16:40:05,294 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:40:14,701 INFO: 2323
+2016-03-04 16:40:14,751 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:40:14,798 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:40:14,798 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:40:19,393 INFO: 2539
+2016-03-04 16:40:19,393 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:40:24,002 INFO: 2527
+2016-03-04 16:40:24,003 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:40:29,267 INFO: 2572
+2016-03-04 16:40:29,267 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:40:38,728 INFO: 2427
+2016-03-04 16:40:38,777 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:40:38,823 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:40:38,824 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:40:43,447 INFO: 2608
+2016-03-04 16:40:43,448 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:40:48,081 INFO: 2595
+2016-03-04 16:40:48,081 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:40:53,443 INFO: 2585
+2016-03-04 16:40:53,444 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:41:01,620 INFO: 2329
+2016-03-04 16:41:01,669 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:41:01,715 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:41:01,715 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:41:06,202 INFO: 2479
+2016-03-04 16:41:06,203 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:41:10,700 INFO: 2454
+2016-03-04 16:41:10,701 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:41:15,890 INFO: 2542
+2016-03-04 16:41:15,890 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:41:24,139 INFO: 2443
+2016-03-04 16:41:24,188 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:41:24,234 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:41:24,234 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:41:28,693 INFO: 2487
+2016-03-04 16:41:28,693 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:41:33,196 INFO: 2522
+2016-03-04 16:41:33,196 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:41:38,499 INFO: 2614
+2016-03-04 16:41:38,499 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar luindex -s default -n 1
+2016-03-04 16:41:48,531 INFO: 2562
+2016-03-04 16:41:48,581 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:41:48,627 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:41:48,627 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:41:52,526 INFO: 2838
+2016-03-04 16:41:52,526 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:41:56,718 INFO: 3077
+2016-03-04 16:41:56,719 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:42:01,964 INFO: 3139
+2016-03-04 16:42:01,964 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:42:16,012 INFO: 3229
+2016-03-04 16:42:16,106 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:42:16,153 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:42:16,153 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:42:20,270 INFO: 3025
+2016-03-04 16:42:20,272 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:42:24,480 INFO: 3078
+2016-03-04 16:42:24,480 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:42:29,900 INFO: 3205
+2016-03-04 16:42:29,901 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:42:40,120 INFO: 2688
+2016-03-04 16:42:40,169 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:42:40,215 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:42:40,215 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:42:43,976 INFO: 2593
+2016-03-04 16:42:43,976 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:42:47,984 INFO: 2904
+2016-03-04 16:42:47,984 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:42:53,317 INFO: 3261
+2016-03-04 16:42:53,317 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:43:03,736 INFO: 2830
+2016-03-04 16:43:03,792 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:43:03,837 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:43:03,838 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:43:07,886 INFO: 2987
+2016-03-04 16:43:07,886 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:43:12,356 INFO: 3409
+2016-03-04 16:43:12,356 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:43:17,465 INFO: 2956
+2016-03-04 16:43:17,465 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:43:27,957 INFO: 2974
+2016-03-04 16:43:28,005 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:43:28,050 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:43:28,051 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:43:32,092 INFO: 2922
+2016-03-04 16:43:32,092 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:43:35,969 INFO: 2774
+2016-03-04 16:43:35,970 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:43:41,619 INFO: 3198
+2016-03-04 16:43:41,619 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:43:55,425 INFO: 3330
+2016-03-04 16:43:55,474 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:43:55,522 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:43:55,522 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:43:59,363 INFO: 2755
+2016-03-04 16:43:59,364 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:44:03,553 INFO: 3019
+2016-03-04 16:44:03,554 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:44:09,177 INFO: 3371
+2016-03-04 16:44:09,177 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:44:24,015 INFO: 3269
+2016-03-04 16:44:24,063 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:44:24,107 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:44:24,108 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:44:28,043 INFO: 2873
+2016-03-04 16:44:28,044 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:44:31,928 INFO: 2776
+2016-03-04 16:44:31,929 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:44:37,455 INFO: 3314
+2016-03-04 16:44:37,456 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:44:47,707 INFO: 2843
+2016-03-04 16:44:47,755 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:44:47,801 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:44:47,802 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:44:52,345 INFO: 3412
+2016-03-04 16:44:52,345 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:44:56,094 INFO: 2677
+2016-03-04 16:44:56,095 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:45:01,452 INFO: 3128
+2016-03-04 16:45:01,452 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:45:13,540 INFO: 2951
+2016-03-04 16:45:13,588 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:45:13,634 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:45:13,634 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:45:18,770 INFO: 4058
+2016-03-04 16:45:18,771 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:45:22,919 INFO: 3053
+2016-03-04 16:45:22,920 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:45:28,390 INFO: 3255
+2016-03-04 16:45:28,391 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:45:40,434 INFO: 3546
+2016-03-04 16:45:40,483 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:45:40,529 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:45:40,529 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:45:45,881 INFO: 4264
+2016-03-04 16:45:45,881 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:45:49,928 INFO: 2933
+2016-03-04 16:45:49,928 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:45:55,109 INFO: 2619
+2016-03-04 16:45:55,109 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar xalan -s default -n 1
+2016-03-04 16:46:06,039 INFO: 2861
+2016-03-04 16:46:06,088 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:46:06,132 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:46:06,133 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:46:10,867 INFO: 3498
+2016-03-04 16:46:10,868 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:46:15,790 INFO: 3774
+2016-03-04 16:46:15,790 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:46:21,829 INFO: 3365
+2016-03-04 16:46:21,830 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:46:38,063 INFO: 3208
+2016-03-04 16:46:38,113 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:46:38,157 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:46:38,157 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:46:42,657 INFO: 3268
+2016-03-04 16:46:42,657 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:46:47,136 INFO: 3294
+2016-03-04 16:46:47,137 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:46:53,122 INFO: 3413
+2016-03-04 16:46:53,123 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:47:08,395 INFO: 2971
+2016-03-04 16:47:08,444 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:47:08,490 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:47:08,491 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:47:13,081 INFO: 3423
+2016-03-04 16:47:13,082 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:47:17,663 INFO: 3373
+2016-03-04 16:47:17,663 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:47:24,443 INFO: 4110
+2016-03-04 16:47:24,444 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:47:38,854 INFO: 3651
+2016-03-04 16:47:38,904 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:47:38,950 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:47:38,950 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:47:43,347 INFO: 3275
+2016-03-04 16:47:43,348 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:47:47,934 INFO: 3399
+2016-03-04 16:47:47,935 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:47:54,062 INFO: 3397
+2016-03-04 16:47:54,062 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:48:10,491 INFO: 3623
+2016-03-04 16:48:10,540 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:48:10,586 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:48:10,587 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:48:14,918 INFO: 3192
+2016-03-04 16:48:14,918 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:48:19,054 INFO: 3006
+2016-03-04 16:48:19,054 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:48:25,328 INFO: 3476
+2016-03-04 16:48:25,328 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:48:42,669 INFO: 3441
+2016-03-04 16:48:42,717 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:48:42,762 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:48:42,762 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:48:47,059 INFO: 3166
+2016-03-04 16:48:47,059 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:48:51,379 INFO: 3164
+2016-03-04 16:48:51,379 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:48:57,802 INFO: 3356
+2016-03-04 16:48:57,803 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:49:15,088 INFO: 3405
+2016-03-04 16:49:15,136 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:49:15,180 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:49:15,181 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:49:19,858 INFO: 3570
+2016-03-04 16:49:19,858 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:49:24,117 INFO: 3136
+2016-03-04 16:49:24,117 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:49:30,702 INFO: 3816
+2016-03-04 16:49:30,702 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:49:55,312 INFO: 3680
+2016-03-04 16:49:55,362 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:49:55,407 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:49:55,407 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:49:59,480 INFO: 2956
+2016-03-04 16:49:59,480 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:50:04,787 INFO: 4039
+2016-03-04 16:50:04,787 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:50:11,204 INFO: 3466
+2016-03-04 16:50:11,204 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:50:32,164 INFO: 3561
+2016-03-04 16:50:32,212 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:50:32,257 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:50:32,257 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:50:36,480 INFO: 3075
+2016-03-04 16:50:36,480 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:50:41,766 INFO: 3846
+2016-03-04 16:50:41,766 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:50:48,709 INFO: 3315
+2016-03-04 16:50:48,709 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:51:04,298 INFO: 3329
+2016-03-04 16:51:04,349 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:51:04,395 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:51:04,395 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:51:08,756 INFO: 2987
+2016-03-04 16:51:08,756 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:51:12,968 INFO: 3065
+2016-03-04 16:51:12,968 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:51:19,909 INFO: 3422
+2016-03-04 16:51:19,909 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar pmd -s default -n 1
+2016-03-04 16:51:36,001 INFO: 3654
+2016-03-04 16:51:36,051 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:51:36,097 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:51:36,098 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:51:39,942 INFO: 3458
+2016-03-04 16:51:39,943 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:51:43,805 INFO: 3486
+2016-03-04 16:51:43,806 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:51:50,929 INFO: 5592
+2016-03-04 16:51:50,930 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:52:04,301 INFO: 3260
+2016-03-04 16:52:04,351 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:52:04,396 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:52:04,396 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:52:08,609 INFO: 3806
+2016-03-04 16:52:08,610 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:52:11,945 INFO: 2968
+2016-03-04 16:52:11,946 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:52:18,959 INFO: 6255
+2016-03-04 16:52:18,960 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:52:28,776 INFO: 3319
+2016-03-04 16:52:28,825 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:52:28,875 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:52:28,875 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:52:32,728 INFO: 3487
+2016-03-04 16:52:32,728 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:52:36,082 INFO: 2988
+2016-03-04 16:52:36,082 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:52:43,321 INFO: 6196
+2016-03-04 16:52:43,322 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:52:56,548 INFO: 3432
+2016-03-04 16:52:56,597 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:52:56,643 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:52:56,643 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:53:00,138 INFO: 3135
+2016-03-04 16:53:00,138 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:53:03,652 INFO: 3146
+2016-03-04 16:53:03,653 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:53:10,265 INFO: 5807
+2016-03-04 16:53:10,265 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:53:20,570 INFO: 3449
+2016-03-04 16:53:20,619 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:53:20,664 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:53:20,665 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:53:24,308 INFO: 3279
+2016-03-04 16:53:24,308 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:53:28,121 INFO: 3434
+2016-03-04 16:53:28,122 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:53:35,266 INFO: 6394
+2016-03-04 16:53:35,267 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:53:44,502 INFO: 2932
+2016-03-04 16:53:44,548 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:53:44,592 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:53:44,592 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:53:48,267 INFO: 3288
+2016-03-04 16:53:48,268 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:53:52,588 INFO: 3932
+2016-03-04 16:53:52,588 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:53:59,401 INFO: 5368
+2016-03-04 16:53:59,401 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:54:10,830 INFO: 3037
+2016-03-04 16:54:10,879 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:54:10,926 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:54:10,926 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:54:14,257 INFO: 2963
+2016-03-04 16:54:14,258 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:54:18,213 INFO: 3612
+2016-03-04 16:54:18,213 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:54:25,813 INFO: 6855
+2016-03-04 16:54:25,813 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:54:38,300 INFO: 3527
+2016-03-04 16:54:38,350 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:54:38,395 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:54:38,396 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:54:42,348 INFO: 3577
+2016-03-04 16:54:42,348 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:54:46,007 INFO: 3295
+2016-03-04 16:54:46,007 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:54:53,037 INFO: 5583
+2016-03-04 16:54:53,037 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:55:08,572 INFO: 3380
+2016-03-04 16:55:08,622 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:55:08,669 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:55:08,670 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:55:12,306 INFO: 3265
+2016-03-04 16:55:12,307 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:55:16,500 INFO: 3802
+2016-03-04 16:55:16,500 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:55:22,573 INFO: 5291
+2016-03-04 16:55:22,574 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:55:33,441 INFO: 3265
+2016-03-04 16:55:33,490 INFO: dropped mongo collection AOSDatabase : AOSCollection
+2016-03-04 16:55:33,535 INFO: dropped mongo collection AOSDatabase : DCGCollection
+2016-03-04 16:55:33,536 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:55:37,507 INFO: 3593
+2016-03-04 16:55:37,508 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:55:41,275 INFO: 3390
+2016-03-04 16:55:41,275 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdb1000 -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:55:48,831 INFO: 6747
+2016-03-04 16:55:48,832 INFO: timelimit -t 120 -T 1 /tmp/jikes-experiment-z7JxSN/dist/development_x86_64-linux/rvm -Xbootclasspath/p:/tmp/jikes-experiment-z7JxSN/mongo-java-driver-2.11.3.jar -use_aosdbbulkcompile -jar /users/staff/kristian/JikesRVM/dacapo.jar sunflow -s default -n 1
+2016-03-04 16:56:02,813 INFO: 3388
