@@ -72,18 +72,18 @@ public final class InvocationCounts {
     if (cm == null) return;
     if (VM.VerifyAssertions) VM._assert(cm.getCompilerType() == CompiledMethod.BASELINE);
     NormalMethod m = (NormalMethod) cm.getMethod();
-    CompilationPlan compPlan = new CompilationPlan(m, _optPlan, null, _options);
+    CompilationPlan compPlan = new CompilationPlan(m, _optPlan, null, _options, true);
     ControllerPlan cp =
         new ControllerPlan(compPlan, Controller.controllerClock, id, 2.0, 2.0, 2.0); // 2.0 is a bogus number....
     cp.execute();
   }
 
   public static CompilationPlan createCompilationPlan(NormalMethod method) {
-    return new CompilationPlan(method, _optPlan, null, _options);
+    return new CompilationPlan(method, _optPlan, null, _options, true);
   }
 
   public static CompilationPlan createCompilationPlan(NormalMethod method, AOSInstrumentationPlan instPlan) {
-    return new CompilationPlan(method, _optPlan, instPlan, _options);
+    return new CompilationPlan(method, _optPlan, instPlan, _options, true);
   }
 
   /**

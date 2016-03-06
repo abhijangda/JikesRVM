@@ -63,7 +63,7 @@ public class ActiveSetTest {
 
     NormalMethod nm = TestingTools.getNormalMethod(MethodsForTests.class, "emptyStaticMethodWithoutAnnotations");
     OptOptions opts = new OptOptions();
-    IR ir = new IR(nm, null, opts);
+    IR ir = new IR(nm, null, opts, true);
     ir.MIRInfo = new MIRInfo(ir);
     ir.MIRInfo.regAllocState = state;
     SpillLocationManager spillLocManager = new SpillLocationManager(ir);
@@ -221,7 +221,7 @@ public class ActiveSetTest {
     NormalMethod nm = TestingTools.getNormalMethod(MethodsForTests.class, "emptyStaticMethodWithoutAnnotations");
     OptOptions opts = new OptOptions();
     opts.FREQ_FOCUS_EFFORT = true;
-    IR ir = new IR(nm, null, opts);
+    IR ir = new IR(nm, null, opts, true);
     ir.MIRInfo = new MIRInfo(ir);
     SpillLocationManager spillLocManager = new SpillLocationManager(ir);
     this.spillLocations = spillLocManager;

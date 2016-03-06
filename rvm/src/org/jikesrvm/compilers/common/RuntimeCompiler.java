@@ -417,7 +417,7 @@ public class RuntimeCompiler implements Callbacks.ExitMonitor {
               new CompilationPlan(method,
                                       (OptimizationPlanElement[]) optimizationPlan,
                                       null,
-                                      (OptOptions) options);
+                                      (OptOptions) options, true);
           return optCompileWithFallBackInternal(method, plan);
         } finally {
           compilationInProgress = false;
@@ -609,7 +609,7 @@ public class RuntimeCompiler implements Callbacks.ExitMonitor {
           new CompilationPlan(method,
                                   (OptimizationPlanElement[]) optimizationPlan,
                                   null,
-                                  (OptOptions) options);
+                                  (OptOptions) options, true);
       return recompileWithOpt(plan);
     } else {
       if (VM.VerifyAssertions) VM._assert(VM.NOT_REACHED);
@@ -723,7 +723,7 @@ public class RuntimeCompiler implements Callbacks.ExitMonitor {
                 new CompilationPlan(method,
                                         (OptimizationPlanElement[]) optimizationPlan,
                                         instrumentationPlan,
-                                        (OptOptions) options);
+                                        (OptOptions) options, true);
             cm = optCompileWithFallBack(method, compPlan);
           }
         } else {

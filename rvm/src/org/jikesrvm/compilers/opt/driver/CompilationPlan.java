@@ -62,6 +62,8 @@ public final class CompilationPlan {
 
   public boolean irGeneration;
 
+  public final boolean takeYieldPointSamples;
+  
   /**
    * Construct a compilation plan
    *
@@ -72,13 +74,14 @@ public final class CompilationPlan {
    * @param opts The Options to be used for compiling m
    */
   public CompilationPlan(NormalMethod m, TypeReference[] pms, OptimizationPlanElement[] op, InstrumentationPlan mp,
-                             OptOptions opts) {
+                             OptOptions opts, boolean _takeYieldPointSample) {
     method = m;
     params = pms;
     inlinePlan = new DefaultInlineOracle();
     optimizationPlan = op;
     instrumentationPlan = mp;
     options = opts;
+    takeYieldPointSamples = _takeYieldPointSample;
   }
 
   /**
@@ -90,8 +93,8 @@ public final class CompilationPlan {
    * @param opts The Options to be used for compiling m
    */
   public CompilationPlan(NormalMethod m, OptimizationPlanElement[] op, InstrumentationPlan mp,
-                             OptOptions opts) {
-    this(m, null, op, mp, opts);
+                             OptOptions opts, boolean _takeYieldPointSample) {
+    this(m, null, op, mp, opts, _takeYieldPointSample);
   }
 
   /**
@@ -102,8 +105,8 @@ public final class CompilationPlan {
    * @param opts The Options to be used for compiling m
    */
   public CompilationPlan(NormalMethod m, OptimizationPlanElement op, InstrumentationPlan mp,
-                             OptOptions opts) {
-    this(m, new OptimizationPlanElement[]{op}, mp, opts);
+                             OptOptions opts, boolean _takeYieldPointSample) {
+    this(m, new OptimizationPlanElement[]{op}, mp, opts, _takeYieldPointSample);
   }
 
   public void setInlineOracle(InlineOracle o) {
@@ -117,7 +120,7 @@ public final class CompilationPlan {
    * @return the IR created by the execution of the optimization plan
    */
   public IR execute() {
-    IR ir = new IR(method, this);
+    IR ir = new IR(method, this, takeYieldPointSamples);
 
     // If there is instrumentation to perform, do some initialization
     if (instrumentationPlan != null) {

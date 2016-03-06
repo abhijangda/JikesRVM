@@ -63,7 +63,7 @@ public final class InvokeeThreadLocalContext implements SpecializationContext {
    */
   @Override
   public CompiledMethod specialCompile(NormalMethod source) {
-    CompilationPlan plan = new CompilationPlan(source, optimizationPlan, null, options);
+    CompilationPlan plan = new CompilationPlan(source, optimizationPlan, null, options, true);
     return OptimizingCompiler.compile(plan);
   }
 

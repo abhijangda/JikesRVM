@@ -78,7 +78,7 @@ public final class OnStackReplacementEvent implements ControllerInputEvent {
       optimizationPlan = (OptimizationPlanElement[]) RuntimeCompiler.optimizationPlan;
     }
 
-    CompilationPlan compPlan = new CompilationPlan(todoMethod, optimizationPlan, null, options);
+    CompilationPlan compPlan = new CompilationPlan(todoMethod, optimizationPlan, null, options, true);
 
     OnStackReplacementPlan plan =
         new OnStackReplacementPlan(this.suspendedThread,

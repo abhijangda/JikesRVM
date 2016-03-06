@@ -92,7 +92,7 @@ public class SplitBasicBlockTest {
     assumeThatVMIsBuildForOptCompiler();
 
     OptOptions opts = new OptOptions();
-    IR ir = new IR(null, null, opts);
+    IR ir = new IR(null, null, opts, true);
     opts.L2M_MAX_BLOCK_SIZE = maxInstPerBlock;
     TestingTools.addEmptyCFGToIR(ir);
     return ir;

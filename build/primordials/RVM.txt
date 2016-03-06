@@ -10,6 +10,7 @@
 #  See the COPYRIGHT.txt file distributed with this work for information
 #  regarding copyright ownership.
 #
+Lorg/jikesrvm/adaptive/database/methodsamples/MongoMethodDatabase;
 [Lorg/vmmagic/unboxed/Address;
 [Lorg/vmmagic/unboxed/ObjectReference;
 [Lorg/vmmagic/unboxed/Word;

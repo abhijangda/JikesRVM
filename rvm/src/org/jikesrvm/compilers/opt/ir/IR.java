@@ -142,7 +142,9 @@ public final class IR {
    * in the NormalMethod.
    */
   public final TypeReference[] params;
-
+  
+  public final boolean takeYieldPointSamples;
+  
   /**
    * @return The {@link NormalMethod} object corresponding to the
    * method being compiled. Other methods may have been inlined into
@@ -313,26 +315,28 @@ public final class IR {
    * @param ip   The inlining oracle to use for the compilation
    * @param opts The options to use for the compilation
    */
-  public IR(NormalMethod m, InlineOracle ip, OptOptions opts) {
+  public IR(NormalMethod m, InlineOracle ip, OptOptions opts, boolean _takeYieldPointSample) {
     method = m;
     params = null;
     options = opts;
     inlinePlan = ip;
     instrumentationPlan = null;
     compiledMethod = (OptCompiledMethod) CompiledMethods.createCompiledMethod(method, CompiledMethod.OPT);
+    this.takeYieldPointSamples = _takeYieldPointSample;  
   }
 
   /**
    * @param m    The method to compile
    * @param cp   The compilation plan to execute
    */
-  public IR(NormalMethod m, CompilationPlan cp) {
+  public IR(NormalMethod m, CompilationPlan cp, boolean _takeYieldPointSample) {
     method = m;
     params = cp.params;
     options = cp.options;
     inlinePlan = cp.inlinePlan;
     instrumentationPlan = cp.instrumentationPlan;
     compiledMethod = (OptCompiledMethod) CompiledMethods.createCompiledMethod(method, CompiledMethod.OPT);
+    this.takeYieldPointSamples = _takeYieldPointSample;
   }
 
   /**

@@ -306,7 +306,7 @@ class OptTestHarness {
             cm = BaselineCompiler.compile(method);
           } else {
             CompilationPlan cp =
-                new CompilationPlan(method, OptimizationPlanner.createOptimizationPlan(options), null, options);
+                new CompilationPlan(method, OptimizationPlanner.createOptimizationPlan(options), null, options, true);
             try {
               cm = OptimizingCompiler.compile(cp);
             } catch (Throwable e) {
@@ -390,7 +390,7 @@ class OptTestHarness {
       try {
         CompiledMethod cm = null;
         CompilationPlan cp =
-            new CompilationPlan(method, OptimizationPlanner.createOptimizationPlan(opts), null, opts);
+            new CompilationPlan(method, OptimizationPlanner.createOptimizationPlan(opts), null, opts, true);
         cm = OptimizingCompiler.compile(cp);
         method.replaceCompiledMethod(cm);
         if (printCodeAddress) {

@@ -375,7 +375,8 @@ public class MongoMethodDatabase {
                 new CompilationPlan(elem.m,
                                     Controller.recompilationStrategy.getOptPlanForLevel(elem.optLevel),
                                     instrumentationPlan,
-                                    Controller.recompilationStrategy.getOptOptionsForLevel(elem.optLevel));
+                                    Controller.recompilationStrategy.getOptOptionsForLevel(elem.optLevel),
+                                    false);
             
         ControllerPlan cp = new ControllerPlan (compPlan, 1000, elem.baseCMID, 10000, 10, elem.count);
     	cp.execute();
@@ -554,6 +555,7 @@ public class MongoMethodDatabase {
 		DBCursor cur = aosCollection.find(query);
 		if (VM.useAOSDBVerbose)
 			VM.sysWriteln ("Obtained cursor to the collection");
+		
 		while (cur.hasNext())
 		{
 			DBObject d = cur.next();

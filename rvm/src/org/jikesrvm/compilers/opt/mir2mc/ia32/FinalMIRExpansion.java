@@ -415,15 +415,18 @@ public class FinalMIRExpansion extends IRTools {
           break;
 
         case YIELDPOINT_PROLOGUE_opcode:
-          expandYieldpoint(p, ir, Entrypoints.optThreadSwitchFromPrologueMethod, IA32ConditionOperand.NE());
+          //if (ir.takeYieldPointSamples)
+        	expandYieldpoint(p, ir, Entrypoints.optThreadSwitchFromPrologueMethod, IA32ConditionOperand.NE());
           break;
 
         case YIELDPOINT_EPILOGUE_opcode:
-          expandYieldpoint(p, ir, Entrypoints.optThreadSwitchFromEpilogueMethod, IA32ConditionOperand.NE());
+          //if (ir.takeYieldPointSamples)
+           	expandYieldpoint(p, ir, Entrypoints.optThreadSwitchFromEpilogueMethod, IA32ConditionOperand.NE());
           break;
 
         case YIELDPOINT_BACKEDGE_opcode:
-          expandYieldpoint(p, ir, Entrypoints.optThreadSwitchFromBackedgeMethod, IA32ConditionOperand.GT());
+          //if (ir.takeYieldPointSamples)
+        	expandYieldpoint(p, ir, Entrypoints.optThreadSwitchFromBackedgeMethod, IA32ConditionOperand.GT());
           break;
 
         case YIELDPOINT_OSR_opcode:

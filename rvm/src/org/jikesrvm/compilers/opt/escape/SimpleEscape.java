@@ -789,7 +789,7 @@ class SimpleEscape extends CompilerPhase {
         return;
       }
     }
-    CompilationPlan plan = new CompilationPlan((NormalMethod) m, escapePlan, null, options);
+    CompilationPlan plan = new CompilationPlan((NormalMethod) m, escapePlan, null, options, true);
     plan.analyzeOnly = true;
     try {
       OptimizingCompiler.compile(plan);

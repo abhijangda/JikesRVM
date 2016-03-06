@@ -170,7 +170,7 @@ public class SpecialCompiler {
         new CompilationPlan(method,
                                 (OptimizationPlanElement[]) RuntimeCompiler.optimizationPlan,
                                 null,
-                                _options);
+                                _options, true);
 
     // it is also necessary to recompile the current method
     // without OSR.

@@ -100,7 +100,7 @@ public abstract class RecompilationStrategy {
                                                    InstrumentationPlan instPlan) {
 
     // Construct a plan from the basic pre-computed opt-levels
-    return new CompilationPlan(method, _optPlans[optLevel], null, _options[optLevel]);
+    return new CompilationPlan(method, _optPlans[optLevel], null, _options[optLevel], true);
   }
 
   public OptimizationPlanElement[] getOptPlanForLevel (int level)

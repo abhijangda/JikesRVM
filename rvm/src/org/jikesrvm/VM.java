@@ -528,7 +528,7 @@ public class VM extends Properties {
     if (verboseBoot >= 2) VM.sysWriteln("Creating main thread");
     if (useAOSDB || useAOSDBOptCompile || useAOSDBRead || useAOSDBBulkCompile)
     {    	
-    	if ((useAOSDBRead || useAOSDBOptCompile) && !useAOSDB)
+    	if (!useAOSDB)
     		bulkUpdateCount = "0";
     	
     	if (useAOSDBBulkCompile)
@@ -542,8 +542,7 @@ public class VM extends Properties {
    
     	if (useAOSDBBulkCompile) //Compile all methods in this thread
     		VM.methodDatabase.readAllDocuments();
-    	
-    	if (useAOSDBRead && !useAOSDBBulkCompile) //Read in another thread
+    	else if (useAOSDBRead) //Read in another thread
     		VM.methodDatabase.readAll();
     }
     // Create main thread.
@@ -560,9 +559,7 @@ public class VM extends Properties {
     if (verboseBoot >= 2) {
       VM.sysWriteln("Boot sequence completed; finishing boot thread");
     }
-    
-    
-    
+
     VM.sysWriteln ("Created");
     
     RVMThread.getCurrentThread().terminate();
