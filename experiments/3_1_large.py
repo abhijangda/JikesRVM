@@ -6,7 +6,7 @@ import common
 benchmarks = ['avrora', 'jython', 'sunflow']
 git_checkout = 'BulkRead'
 prefix = '3_1'
-timelimit = 180
+timelimit = 600
 taskset = '0-7'
 dacapo_args = ['-n', '2', '-t', '8', '-s', 'large']
 
