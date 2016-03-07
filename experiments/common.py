@@ -74,7 +74,7 @@ def init(prefix, commit, timelimit=0, taskset=None):
 
     # initialise a log file in this directory
     __LOG__ = logging.getLogger('common')
-    __LOG__.setLevel(logging.INFO)
+    __LOG__.setLevel(logging.DEBUG)
     handler = logging.FileHandler(os.path.join(__RESULTS_DIR__, 'experiment.log'))
     formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
     handler.setFormatter(formatter)
@@ -235,9 +235,13 @@ def run_dacapo(benchmark, vm_args=[], dacapo_args=[]):
 
     # attempt to find the PASSED time reported by the dacapo benchmark.
     # report an error and log the runtime as -1 if this line is missing from the output.
+    passed_time = 0
+    warmup_time = 0
     time = 0
     try:
-        time = int(re.findall(r'PASSED in (\d+)', output)[0])
+        warmup_time = sum(map(int, re.findall(r'completed warmup \d+ in (\d+)', output)))
+        passed_time = int(re.findall(r'PASSED in (\d+)', output)[0])
+        time = passed_time + warmup_time
     except IndexError:
         time = -1
         __LOG__.warn('dacapo benchmark may have failed, could not determine PASSED time.')
@@ -246,8 +250,12 @@ def run_dacapo(benchmark, vm_args=[], dacapo_args=[]):
     return time
 
 def download_dacapo():
-    ''' Downloads the dacapo benchmark to the original repository root returns the path to it. '''
-    dacapo_path = os.path.abspath(os.path.join(__JIKES_EXPERIMENT_ORIGINAL_ROOT__, 'dacapo.jar'))
+    ''' Downloads the dacapo benchmark to the temporary root repository and returns the path to it. '''
+    dacapo_path = os.path.abspath(os.path.join(__JIKES_EXPERIMENT_TEMP_ROOT__, 'dacapo.jar'))
+    original_dacapo_path = os.path.abspath(os.path.join(__JIKES_EXPERIMENT_ORIGINAL_ROOT__, 'dacapo.jar'))
+
+    if os.path.exists(original_dacapo_path):
+        args = ['cp', original_dacapo_path, dacapo_path]
 
     if not os.path.exists(dacapo_path):
         urllib.urlretrieve(__DACAPO_DOWNLOAD__, dacapo_path)

@@ -12,7 +12,7 @@ dacapo_args = ['-n', '2', '-t', '8', '-s', 'large']
 
 try:
     common.drop_mongo_collection('AOSDatabase', 'AOSCollection')
-    common.init('3', git_checkout, timelimit=timelimit, taskset=taskset)
+    common.init(prefix, git_checkout, timelimit=timelimit, taskset=taskset)
 
     n = common.get_repetitions()
 
