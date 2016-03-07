@@ -118,7 +118,7 @@ def checkout_and_build_jikes(commit):
     global __JIKES_EXPERIMENT_TEMP_ROOT__, __JIKES_EXPERIMENT_ORIGINAL_ROOT__, __JIKES_EXPERIMENT_TEMP_BIN__
 
     # Create temporary folder
-    __JIKES_EXPERIMENT_TEMP_ROOT__ = tempfile.mkdtemp(prefix='jikes-experiment-')
+    __JIKES_EXPERIMENT_TEMP_ROOT__ = tempfile.mkdtemp(prefix='kristian-jikes-')
 
     # git clone
     args = ['git', 'clone', __JIKES_EXPERIMENT_ORIGINAL_ROOT__, __JIKES_EXPERIMENT_TEMP_ROOT__]
@@ -230,6 +230,8 @@ def run_dacapo(benchmark, vm_args=[], dacapo_args=[]):
 
     # run the RVM with these arguments
     output = run_rvm(args)
+
+    __LOG__.debug(output)
 
     # attempt to find the PASSED time reported by the dacapo benchmark.
     # report an error and log the runtime as -1 if this line is missing from the output.
