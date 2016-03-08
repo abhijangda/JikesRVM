@@ -51,18 +51,10 @@ def init(prefix, commit, timelimit=0, taskset=None):
     __TASKSET__ = taskset
     __ARGS__ = parse_arguments()
 
-    if not __ARGS__.reuse_root:
-        # Finally we need to build the Jikes binaries in a temporary checkout location
-        checkout_and_build_jikes(commit)
-    else:
-        # Or re-use an existing repository checkout with pre-built binaries.
-        reset_root(root=__ARGS__.reuse_root)
-
-    if __ARGS__.compile_only:
-        exit()
-
     # The prefix identifies the experiment.
     # We create a name for our results directory based on this, the system hostname, and current time.
+    # The results/ directory is specified relative to the cwd, therefore we should set it as an absolute path
+    # before building jikes and changing to the temporary directory.
     __PREFIX__ = prefix
     hostname = socket.gethostname()
     timestamp = int(time.time())
@@ -79,6 +71,16 @@ def init(prefix, commit, timelimit=0, taskset=None):
     formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
     handler.setFormatter(formatter)
     __LOG__.addHandler(handler)
+
+    if not __ARGS__.reuse_root:
+        # Finally we need to build the Jikes binaries in a temporary checkout location
+        checkout_and_build_jikes(commit)
+    else:
+        # Or re-use an existing repository checkout with pre-built binaries.
+        reset_root(root=__ARGS__.reuse_root)
+
+    if __ARGS__.compile_only:
+        exit()
 
 def parse_arguments():
     global __NUM_REPETITIONS__, __TIMELIMIT__, __TASKSET__
