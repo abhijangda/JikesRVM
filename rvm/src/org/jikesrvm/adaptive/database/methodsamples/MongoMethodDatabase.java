@@ -62,18 +62,29 @@ public class MongoMethodDatabase {
 	private Vector<MethodToCompileAsync> methodsToCompileAsync;
 	private List<WriteRequest> writeRequests;
 	private boolean readingCompleted;
+	public final MongoCompilationThread compThread;
 	
 	static class MethodToCompileAsync
 	{
 		public final String desc;
-		public final Integer cmid;
+		public Integer cmid;
 		public final NormalMethod normalMethod;
+		public final MethodDatabaseElement elem;
 		public MethodToCompileAsync(String desc, Integer cmid,
 				NormalMethod normalMethod) {
 			super();
 			this.desc = desc;
 			this.cmid = cmid;
 			this.normalMethod = normalMethod;
+			this.elem = null;
+		}
+		
+		public MethodToCompileAsync(MethodDatabaseElement elem,
+				NormalMethod normalMethod) {
+			super();
+			this.desc = elem.name;
+			this.normalMethod = normalMethod;
+			this.elem = elem;
 		}
 	}
 	static class WriteRequest
@@ -86,6 +97,7 @@ public class MongoMethodDatabase {
 		{
 			IncrementRequest,
 			PutRequest,
+			UpdateOptLevelRequest,
 		}
 		
 		public final WriteRequestType type;
@@ -155,6 +167,10 @@ public class MongoMethodDatabase {
 					{
 						incrementCallCount (req);
 					}
+					else if (req.type == WriteRequestType.UpdateOptLevelRequest)
+					{
+						updateOptLevel (req);
+					}
 				}
 				if (VM.useAOSDBVerbose)
 					VM.sysWriteln ("Wrote requests");
@@ -165,27 +181,33 @@ public class MongoMethodDatabase {
 		
 		public void incrementCallCount (WriteRequest writeRequest)
 		{
+			double count = 0;
 			int cmid = writeRequest.cmid;
 			int optLevel = writeRequest.optLevel;
 			String methodFullDesc = getMethodFullDesc(cmid);
 			if (methodFullDesc == "")
 				return;
 			
-			double count = getCallCount (methodFullDesc);
-			
-			DBObject meth = new BasicDBObject ();
+			DBObject query = new BasicDBObject ("methodFullDesc", methodFullDesc);
+			DBCursor cursor = aosCollection.find (query);
+
+			DBObject meth = new BasicDBObject();
 			meth.put("methodFullDesc", methodFullDesc);
-			meth.put("count", count + 1);
+			
+			int found = cursor.count();
+			if (found > 0)
+				count = ((Double)cursor.next().get("count")).doubleValue();
+			if (found > 0)
+				meth.put("count", count + 1);
+			else
+				meth.put("count", 1.0);
 			meth.put("optLevel", optLevel);
 			
 			if (VM.useAOSDBVerbose)
-				VM.sysWriteln ("Method " + cmid + " with call counts " + count + " will be incremented");
+				VM.sysWriteln ("Method " + methodFullDesc + " with call counts " + count + " will be incremented");
 			
-			if (count != 0.0)
-			{
-				DBObject query = new BasicDBObject ();
-				query.put("methodFullDesc", methodFullDesc);
-				
+			if (found > 0)
+			{				
 				DBObject updateObj = new BasicDBObject ();
 				updateObj.put ("$set", meth);
 				
@@ -194,9 +216,52 @@ public class MongoMethodDatabase {
 			else
 			{
 				if (VM.useAOSDBVerbose)
-					VM.sysWriteln ("Method " + cmid + " added to MongoDB");
+					VM.sysWriteln ("Method " + methodFullDesc + " added to MongoDB");
 				
 				aosCollection.insert(meth);
+			}
+		}
+		
+		public void updateOptLevel (WriteRequest writeRequest)
+		{
+			int cmid = writeRequest.cmid;
+			int optLevel = writeRequest.optLevel;
+			double counts;
+			String methodFullDesc = getMethodFullDesc (cmid);
+			
+			if (methodFullDesc == "")
+				return;
+			
+			DBObject query = new BasicDBObject ("methodFullDesc", methodFullDesc);
+			DBCursor cursor = aosCollection.find (query);
+
+			DBObject meth = new BasicDBObject();
+			meth.put("methodFullDesc", methodFullDesc);
+			if (cursor.count() > 0)
+				meth.put("count", ((Double)cursor.next().get("count")).doubleValue());
+			else
+				meth.put("count", 0.0);
+			meth.put("optLevel", optLevel);
+			
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("Update Method " + methodFullDesc + " with opt level " + optLevel);
+			
+			if (cursor.count() == 0)
+			{
+				if (VM.useAOSDBVerbose)
+					VM.sysWriteln ("Method " + methodFullDesc + " added to MongoDB");
+				
+				aosCollection.insert(meth);
+			}
+			else
+			{
+				if (VM.useAOSDBVerbose)
+					VM.sysWriteln ("Method " + methodFullDesc + " updated to MongoDB");
+								
+				DBObject updateObj = new BasicDBObject ();
+				updateObj.put ("$set", meth);
+				
+				aosCollection.update(query, updateObj);
 			}
 		}
 		
@@ -216,19 +281,19 @@ public class MongoMethodDatabase {
 			meth.put("optLevel", optLevel);
 			
 			if (VM.useAOSDBVerbose)
-				VM.sysWriteln ("Put Method " + cmid + " with call counts " + counts);
+				VM.sysWriteln ("Put Method " + methodFullDesc + " with call counts " + counts);
 			
 			if (getCallCount (methodFullDesc) == 0.0)
 			{
 				if (VM.useAOSDBVerbose)
-					VM.sysWriteln ("Method " + cmid + " added to MongoDB");
+					VM.sysWriteln ("Method " + methodFullDesc + " added to MongoDB");
 				
 				aosCollection.insert(meth);
 			}
 			else
 			{
 				if (VM.useAOSDBVerbose)
-					VM.sysWriteln ("Method " + cmid + " updated to MongoDB");
+					VM.sysWriteln ("Method " + methodFullDesc + " updated to MongoDB");
 				
 				DBObject query = new BasicDBObject ();
 				query.put("methodFullDesc", methodFullDesc);
@@ -249,6 +314,7 @@ public class MongoMethodDatabase {
 		VM.sysWriteln ("RequestsLock created");
 		internalDB = new HashMap<String, MethodDatabaseElement> ();
 		methodsToCompileAsync = new Vector<MethodToCompileAsync> ();
+		compThread = new MongoCompilationThread();
 	}
 	
 	public void initializeMongoDB ()
@@ -276,6 +342,8 @@ public class MongoMethodDatabase {
 			VM.sysWriteln ("EROOORRRRRRRRRRRRRRRR");
 			e.printStackTrace();
 		}
+		
+		compThread.start();
 	}
 	
 	public static String getMethodFullDesc (RVMMethod nm)
@@ -309,6 +377,56 @@ public class MongoMethodDatabase {
 		}
 		
 		return -1;
+	}
+	
+	public MethodDatabaseElement getMethodOptLevel (NormalMethod m)
+	{
+        String methodFullDesc = getMethodFullDesc (m);
+		
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("getMethodOptLevel: Getting opt level for Method "+ methodFullDesc);
+		
+		MethodDatabaseElement elem = internalDB.get(methodFullDesc);
+		
+		if (elem == null)
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("getMethodOptLevel: Error:  Cannot find opt level for Method " + methodFullDesc);
+			
+			if (!readingCompleted)
+			{
+				if (VM.useAOSDBVerbose)
+					VM.sysWriteln("getMethodOptLevel: Reading not completed will see it later");
+			
+				//methodsToCompileAsync.add(new MethodToCompileAsync(elem, m));
+			}
+			
+			return null;
+		}
+		
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("getMethodOptLevel: Success: Opt Level for Method " + methodFullDesc + " is " + elem.optLevel);
+		
+		if (elem.optLevel == -1)
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("getMethodOptLevel: Optlevel is -1");
+			
+			return null;
+		}
+		
+		if (!readingCompleted)
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("getMethodOptLevel: Reading not completed " + methodFullDesc + " will see it later");
+			
+			//methodsToCompileAsync.add(new MethodToCompileAsync(elem, m));
+			return null;
+		}
+		
+		elem.m = m;
+		
+		return elem;
 	}
 	
 	@Inline
@@ -363,11 +481,113 @@ public class MongoMethodDatabase {
 		putOptCompilationOnQueue (elem);
 	}
 	
+	public void processMongoCompilationQueue (NormalMethod m, int cmid, CompiledMethod cm)
+	{
+		String methodFullDesc = getMethodFullDesc (m);
+		
+		if (methodFullDesc.contains("org/jikesrvm"))
+			return;
+		
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Processing Mongo Compilation Queue Entry " + methodFullDesc);
+		
+		DBObject query = new BasicDBObject ("methodFullDesc", methodFullDesc);
+		DBCursor cursor = aosCollection.find (query);
+		
+		if (cursor.count () == 0)
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("Error: Cannot find " + methodFullDesc + " on Mongo Method Database");
+			
+			return;
+		}
+		
+		DBObject doc = cursor.next();
+		int optLevel = ((Integer)doc.get("optLevel")).intValue();
+		
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Success: Found " + methodFullDesc + " optLevel as " + optLevel);
+		
+		if (optLevel == -1)
+			return;
+		
+		/*
+		 * query = new BasicDBObject ("callerRef", m.getMemberRef().toString());
+		cursor = dcgCollection.find (query);
+		
+		if (cursor.count () == 0)
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("Error: Cannot find DCG Entry for " + m.getMemberRef().toString() + " on Mongo Method Database");
+		}
+		else
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("Success: Found " +cursor.count () + " DCG Entries for " + m.getMemberRef().toString() + " optLevel as " + optLevel);
+			
+			while (cursor.hasNext())
+			{
+				DBObject d = cursor.next();
+				String s = (String)d.get("callerRef");
+				s = s.replaceAll("\\{urls[^\\}]*\\}", ""); // strip classloader cruft we can't parse
+		        StringTokenizer parser = new StringTokenizer(s, " \n,");
+		        
+				if (VM.useAOSDBVerbose)
+				{
+					VM.sysWriteln ("Read DCG Entry: callerRef: " + (String)d.get("callerRef") +  
+							" callerLength: " + (Integer)d.get("callerLength") +
+							" callerIndex: " + (Integer)d.get("callerIndex") +
+							" calleeRef: " + (String)d.get("calleeRef") +
+							" calleeLength: " + (Integer)d.get("calleeLength") +
+							" weight: " + (Double)d.get("weight"));
+					VM.sysWriteln ("Creating DCG Entry");
+				}
+				
+				MemberReference callerKey = MemberReference.parse(parser, false);
+				if (callerKey == null) return;
+				MethodReference callerRef = callerKey.asMethodReference();
+				RVMMethod caller, callee;
+				caller = DynamicCallFileInfoReader.getMethod(callerRef);
+
+				int callerSize = (Integer)d.get("callerLength");
+				int bci = (Integer)d.get("callerIndex");
+				
+				s = (String)d.get("calleeRef");
+				s = s.replaceAll("\\{urls[^\\}]*\\}", ""); // strip classloader cruft we can't parse
+		        parser = new StringTokenizer(s, " \n,");
+				
+				MemberReference calleeKey = MemberReference.parse(parser, false);
+				if (calleeKey == null) return;
+				MethodReference calleeRef = calleeKey.asMethodReference();
+				callee = DynamicCallFileInfoReader.getMethod(calleeRef);
+
+				int calleeSize = (Integer)d.get("calleeLength");
+
+				float weight = (float)((Double)(d.get("weight"))).doubleValue();
+				if ((caller == null) || (callee == null)) {
+					Controller.dcg.incrementUnResolvedEdge(callerRef, bci, calleeRef, weight);
+				} else {
+					Controller.dcg.incrementEdge(caller, bci, callee, weight);
+				}
+				
+				if (VM.useAOSDBVerbose)
+					VM.sysWriteln ("DCG Entry Created");
+			}
+		}
+		*/
+		
+		if (VM.useAOSDBVerbose)
+				VM.sysWriteln("Putting ControllerPlan on Compilation Queue for method: " + methodFullDesc);
+			
+		MongoControllerPlan plan = new MongoControllerPlan(m, methodFullDesc, cm, optLevel);
+		plan.execute();
+	}
+	
 	@Inline
 	public void putOptCompilationOnQueue (MethodDatabaseElement elem)
 	{
 		if (VM.useAOSDBVerbose)
-			VM.sysWriteln("Putting ControllerPlan on Compilation Queue");
+			VM.sysWriteln("Putting ControllerPlan on Compilation Queue for method: " + elem.name);
 		
 		AOSInstrumentationPlan instrumentationPlan =
                 new AOSInstrumentationPlan(Controller.options, elem.m);
@@ -424,6 +644,36 @@ public class MongoMethodDatabase {
 			bulkWrite ();
 	}
 
+	public void updateMethodOptLevel (NormalMethod m, CompiledMethod cm)
+	{
+		if (writeRequestsLock == null)
+		{
+			return;
+		}
+		
+		int cmid = cm.getId();
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Initializing: Method " + cmid + " to put in MongoDB");
+		
+		int optLevel = getOptLevel (cmid);
+		
+		try {
+			writeRequestsLock.acquire();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		writeRequests.add(new WriteRequest (cmid, -1, optLevel, 
+				WriteRequest.WriteRequestType.UpdateOptLevelRequest));
+		
+		writeRequestsLock.release();
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Method " + cmid + " will be added to MongoDB");
+		
+		if (writeRequests.size() >= bulkUpdateCount && aosCollection != null)
+			bulkWrite ();
+	}
+	
 	@Inline
 	public void putCallCount(int cmid, double counts) {
 		// TODO Auto-generated method stub
@@ -456,6 +706,37 @@ public class MongoMethodDatabase {
 		
 		if (writeRequests.size() >= bulkUpdateCount && aosCollection != null)
 			bulkWrite ();
+	}
+	
+	public int getOptLevel (NormalMethod meth)
+	{
+		// TODO Auto-generated method stub
+		if (aosCollection == null)
+		{
+			return -1;
+		}
+
+		String methodFullDesc = getMethodFullDesc (meth);
+
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Getting optlevel for Method "+ methodFullDesc);
+
+		DBObject query = new BasicDBObject ("methodFullDesc", methodFullDesc);
+		DBCursor cursor = aosCollection.find (query);
+
+		if (cursor.count () == 0)
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("Cannot find opt level for Method " + methodFullDesc);
+
+			return -1;
+		}
+
+		int optLevel = ((Integer)cursor.next().get("optLevel")).intValue();
+
+		if (VM.useAOSDBVerbose)
+			VM.sysWriteln ("Call count for Method " + methodFullDesc + " is " + optLevel);
+		return optLevel;
 	}
 	
 	private double getCallCount (String methodFullDesc)
@@ -538,10 +819,14 @@ public class MongoMethodDatabase {
 			MemberReference calleeRef, int calleeLength, double weight)
 	{
 		DBObject m = new BasicDBObject ();
-		m.put("callerRef", callerRef.toString());
+		String s = callerRef.toString();
+		//s = s.replaceAll("\\{urls[^\\}]*\\}", "");
+		m.put("callerRef", s);
 		m.put("callerLength", callerLength);
 		m.put("callerIndex", callerIndex);
-		m.put("calleeRef", calleeRef.toString());
+		s = calleeRef.toString();
+		//s = s.replaceAll("\\{urls[^\\}]*\\}", "");
+		m.put("calleeRef", s);
 		m.put("calleeLength", calleeLength);
 		m.put("weight", weight);
 		
@@ -642,7 +927,7 @@ public class MongoMethodDatabase {
 		
 		readingCompleted = true;
 		
-		if (!VM.useAOSDBBulkCompile)
+		if (VM.useAOSDBOptBlockingCompile || VM.useAOSDBOptCompile)
 		{
 			for (int i = 0; i < methodsToCompileAsync.size(); i++)
 			{
@@ -650,14 +935,14 @@ public class MongoMethodDatabase {
 				MethodDatabaseElement elem = internalDB.get(meth.desc);
 				if (elem == null)
 					continue;
-				elem.baseCMID = meth.cmid;
+				
 				elem.m = meth.normalMethod;
 				putOptCompilationOnQueue(elem);
 			}
 		
 		    methodsToCompileAsync.clear();
 		}
-		else
+		else if (VM.useAOSDBBulkCompile)
 		{
 			for (MethodDatabaseElement methElem : internalDB.values())
 			{
@@ -673,6 +958,8 @@ public class MongoMethodDatabase {
 				ClassLoader cl = RVMClassLoader.findWorkableClassloader(at);
 				if (cl == null)
 				{
+					if (VM.useAOSDBVerbose)
+						VM.sysWriteln ("Class " + clsName + " cannot be loaded");
 					continue;
 				}
 

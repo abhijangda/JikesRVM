@@ -13,13 +13,16 @@
 package org.jikesrvm.adaptive.controller;
 
 import java.util.LinkedList;
+
 import org.jikesrvm.VM;
+import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase;
 import org.jikesrvm.adaptive.util.AOSGenerator;
 import org.jikesrvm.adaptive.util.AOSLogging;
 import org.jikesrvm.compilers.common.CompiledMethod;
 import org.jikesrvm.compilers.common.CompiledMethods;
 import org.jikesrvm.compilers.common.RuntimeCompiler;
 import org.jikesrvm.compilers.opt.driver.CompilationPlan;
+import org.jikesrvm.compilers.opt.runtimesupport.OptCompiledMethod;
 
 /**
  * An instance of this class describes a compilation decision made by
@@ -174,9 +177,39 @@ public final class ControllerPlan {
    *  method otherwise
    */
   public CompiledMethod doRecompile() {
-	//compPlan = new CompilationPlan (compPlan.method, Controller.recompilationStrategy.getOptPlanForLevel(2),
-	//		compPlan.instrumentationPlan, Controller.recompilationStrategy.getOptOptionsForLevel(2));
-    CompilationPlan cp = getCompPlan();
+	CompilationPlan cp = getCompPlan();
+	if (cp.method.getCurrentCompiledMethod() instanceof OptCompiledMethod)
+    {
+    	int optLevel = ((OptCompiledMethod)cp.method.getCurrentCompiledMethod()).getOptLevel();
+    	if (optLevel > compPlan.options.getOptLevel())
+    	{
+    		if (VM.useAOSDBVerbose)
+    	    	VM.sysWriteln ("Failing Controller Plan: Recompiling method " + MongoMethodDatabase.getMethodFullDesc(cp.method)
+    	    			+ " with optLevel " + compPlan.options.getOptLevel() + 
+    	    			" as current level is " + optLevel);
+
+    		return null;
+    	}
+    }
+	/*if (VM.useAOSDBOptCompile)
+	{
+		int optLevel = VM.methodDatabase.getOptLevel(cp.method);  
+		int currentLevel = cp.options.getOptLevel();
+		if (optLevel > currentLevel)
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("Changing opt level to " + optLevel + " from " +	currentLevel);
+			//cp = new CompilationPlan (cp.method, Controller.recompilationStrategy.getOptPlanForLevel(optLevel),
+			//		cp.instrumentationPlan, Controller.recompilationStrategy.getOptOptionsForLevel(optLevel), true);
+			cp.options.setOptLevel(optLevel);
+		}
+		else
+		{
+			if (VM.useAOSDBVerbose)
+				VM.sysWriteln ("Not changing opt level to " + optLevel + " from " + currentLevel);
+		}
+	}*/
+	
     setTimeInitiated(Controller.controllerClock);
     AOSLogging.logger.recompilationStarted(cp);
 

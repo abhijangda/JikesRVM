@@ -13,10 +13,12 @@
 package org.jikesrvm.adaptive.controller;
 
 import java.util.Enumeration;
+
 import org.jikesrvm.VM;
 import org.jikesrvm.adaptive.OnStackReplacementEvent;
 import org.jikesrvm.adaptive.OSROrganizerThread;
 import org.jikesrvm.adaptive.database.methodsamples.MethodCountData;
+import org.jikesrvm.adaptive.database.methodsamples.MongoMethodRecompilationEvent;
 import org.jikesrvm.adaptive.measurements.listeners.EdgeListener;
 import org.jikesrvm.adaptive.measurements.listeners.YieldCounterListener;
 import org.jikesrvm.adaptive.measurements.organizers.AccumulatingMethodSampleOrganizer;
@@ -159,7 +161,11 @@ public final class ControllerThread extends SystemThread {
         Controller.stop();
       }
       Object event = Controller.controllerInputQueue.deleteMin();
-      ((ControllerInputEvent) event).process();
+      /*if (event instanceof HotMethodRecompilationEvent)
+    	  VM.sysWriteln("HotMethodRecomEvent");
+      else if (event instanceof MongoMethodRecompilationEvent)
+    	  VM.sysWriteln("MongoMethodRecompilationEvent " + ((MongoMethodRecompilationEvent)event).methodFullDesc);
+      */((ControllerInputEvent) event).process();
     }
   }
 

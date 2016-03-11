@@ -81,6 +81,7 @@ public class CommandLineArgs {
     USE_AOSDBVerbose,
     USE_AOSDBRead,
     USE_AOSDBBulkCompile,
+    USE_AOSDBOptBlockingCompile,
     /* Silently ignored */
     VERIFY_ARG,
     GC_HELP_ARG,
@@ -196,6 +197,7 @@ public class CommandLineArgs {
                                             new Prefix("-use_aosdbverbose", PrefixType.USE_AOSDBVerbose),
                                             new Prefix("-use_aosdbread", PrefixType.USE_AOSDBRead),
                                             new Prefix("-use_aosdbbulkcompile", PrefixType.USE_AOSDBBulkCompile),
+                                            new Prefix("-use_aosdboptblockingcompile", PrefixType.USE_AOSDBOptBlockingCompile),
                                             new Prefix("-Xbootclasspath/p:", PrefixType.BOOTCLASSPATH_P_ARG),
                                             new Prefix("-Xbootclasspath/a:", PrefixType.BOOTCLASSPATH_A_ARG),
                                             new Prefix("-X:vmClasses=", PrefixType.BOOTSTRAP_CLASSES_ARG),
@@ -535,6 +537,10 @@ public class CommandLineArgs {
       Prefix p = findPrefix(type);
       if (DEBUG) VM.sysWriteln(" CommandLineArgs.earlyProcessCLA(" + p + arg + " - " + type + ")");
       switch (type) {
+      case USE_AOSDBOptBlockingCompile:
+    	  org.jikesrvm.VM.useAOSDBOptBlockingCompile = true;
+    	  org.jikesrvm.VM.useAOSDBRead = true;
+    	  break;
       case USE_AOSDBBulkCompile:
     	  org.jikesrvm.VM.useAOSDBBulkCompile = true;
       case USE_AOSDBRead:
@@ -545,7 +551,7 @@ public class CommandLineArgs {
     	  break;
       case USE_AOSDBOptCompile:
     	  org.jikesrvm.VM.useAOSDBOptCompile = true;
-    	  org.jikesrvm.VM.useAOSDBRead = true;
+    	  //org.jikesrvm.VM.useAOSDBRead = true;
     	  break;
         case USE_AOSDB:
         	org.jikesrvm.VM.useAOSDB = true;

@@ -13,12 +13,14 @@
 package org.jikesrvm.compilers.opt.driver;
 
 import org.jikesrvm.VM;
+import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase;
 import org.jikesrvm.classloader.NormalMethod;
 import org.jikesrvm.compilers.common.CompiledMethod;
 import org.jikesrvm.compilers.opt.MagicNotImplementedException;
 import org.jikesrvm.compilers.opt.OptOptions;
 import org.jikesrvm.compilers.opt.OptimizingCompilerException;
 import org.jikesrvm.compilers.opt.ir.IR;
+import org.jikesrvm.compilers.opt.runtimesupport.OptCompiledMethod;
 import org.jikesrvm.compilers.opt.specialization.InvokeeThreadLocalContext;
 import org.jikesrvm.compilers.opt.specialization.SpecializationDatabase;
 import org.jikesrvm.runtime.Callbacks;
@@ -182,6 +184,10 @@ public final class OptimizingCompiler implements Callbacks.StartupMonitor {
       // that are pending.  TODO: use lazy compilation with specialization.
       SpecializationDatabase.doDeferredSpecializations();
       ir.compiledMethod.compileComplete(ir.MIRInfo.machinecode);
+      if (VM.useAOSDBVerbose)
+      	  VM.sysWriteln ("recompileWithOpt " + MongoMethodDatabase.getMethodFullDesc(cp.method) + " with level "+ ((OptCompiledMethod)ir.compiledMethod).getOptLevel());
+      if (VM.useAOSDB)
+    	  VM.methodDatabase.updateMethodOptLevel (cp.method, ir.compiledMethod);
       return ir.compiledMethod;
     } catch (OptimizingCompilerException e) {
       throw e;

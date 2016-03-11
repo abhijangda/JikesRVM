@@ -15,6 +15,7 @@ package org.jikesrvm.adaptive.recompilation;
 import org.jikesrvm.adaptive.OnStackReplacementPlan;
 import org.jikesrvm.adaptive.controller.Controller;
 import org.jikesrvm.adaptive.controller.ControllerPlan;
+import org.jikesrvm.adaptive.database.methodsamples.MongoControllerPlan;
 import org.jikesrvm.scheduler.SystemThread;
 import org.vmmagic.pragma.NonMoving;
 
@@ -48,7 +49,9 @@ public final class CompilationThread extends SystemThread {
     // Repeat...
     while (true) {
       Object plan = Controller.compilationQueue.deleteMin();
-      if (plan instanceof ControllerPlan) {
+      if (plan instanceof MongoControllerPlan)
+    	  ((MongoControllerPlan) plan).doRecompile();
+      else if (plan instanceof ControllerPlan) {
         ((ControllerPlan) plan).doRecompile();
       } else if (plan instanceof OnStackReplacementPlan) {
         ((OnStackReplacementPlan) plan).execute();

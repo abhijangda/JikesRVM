@@ -353,7 +353,7 @@ public final class MethodCountData implements Reportable {
    */
   private void collectHotOptMethodsInternal(int index, List<HotMethodRecompilationEvent> collect, double threshold,
                                             int optLevel) {
-    if (index < nextIndex) {
+	  if (index < nextIndex) {
       if (counts[index] > threshold) {
         int cmid = cmids[index];
         CompiledMethod cm = CompiledMethods.getCompiledMethod(cmid);

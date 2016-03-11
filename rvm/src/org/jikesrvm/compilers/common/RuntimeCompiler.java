@@ -19,6 +19,8 @@ import org.jikesrvm.VM;
 import org.jikesrvm.adaptive.controller.Controller;
 import org.jikesrvm.adaptive.controller.ControllerMemory;
 import org.jikesrvm.adaptive.controller.ControllerPlan;
+import org.jikesrvm.adaptive.database.methodsamples.MethodDatabaseElement;
+import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase;
 import org.jikesrvm.adaptive.recompilation.InvocationCounts;
 import org.jikesrvm.adaptive.recompilation.BulkCompile;
 import org.jikesrvm.adaptive.recompilation.instrumentation.AOSInstrumentationPlan;
@@ -562,7 +564,9 @@ public class RuntimeCompiler implements Callbacks.ExitMonitor {
       } else {
         try {
           compilationInProgress = true;
+          //CompiledMethod prev_cm = plan.method.getCurrentCompiledMethod();
           CompiledMethod cm = optCompile(plan.method, plan);
+          
           try {
             plan.method.replaceCompiledMethod(cm);
           } catch (Throwable e) {
@@ -679,9 +683,7 @@ public class RuntimeCompiler implements Callbacks.ExitMonitor {
       } else {
     	  if (VM.useAOSDBOptCompile && VM.methodDatabase != null)
           {	
-    		  if (VM.useAOSDBVerbose)
-    			  VM.sysWriteln ("Use AOS DB Opt Compile");
-        	  if (method.isClassInitializer() ||
+    		  if (method.isClassInitializer() ||
               // exception in progress. can't use opt compiler:
               // it uses exceptions and runtime doesn't support
               // multiple pending (undelivered) exceptions [--DL]
@@ -700,13 +702,50 @@ public class RuntimeCompiler implements Callbacks.ExitMonitor {
         		  
         		  if (VM.useAOSDBVerbose)
         			  VM.sysWriteln ("let us opt compile in other thread");
-        		  VM.methodDatabase.methodOptCompile (method, cm.cmid);
+        		  VM.methodDatabase.compThread.enqueueToCompilationThread(method, cm.cmid, cm);
         		  
         		  ControllerMemory.incrementNumBase();
         		  if (VM.useAOSDBVerbose)
         			  VM.sysWriteln ("basecompiling done");
         	  }
-          } else if (Controller.options.optIRC()) {
+          }
+    	  else if (VM.useAOSDBOptBlockingCompile && VM.methodDatabase != null) {
+    		  if (// will only run once: don't bother optimizing
+    	              method.isClassInitializer() ||
+    	              // exception in progress. can't use opt compiler:
+    	              // it uses exceptions and runtime doesn't support
+    	              // multiple pending (undelivered) exceptions [--DL]
+    	              RVMThread.getCurrentThread().getExceptionRegisters().getInUse()) {
+    	            // compile with baseline compiler
+    	            cm = baselineCompile(method);
+    	            ControllerMemory.incrementNumBase();
+    	          } else { // compile with opt compiler
+    	        	MethodDatabaseElement elem = VM.methodDatabase.getMethodOptLevel(method);
+    	        	if (elem != null && elem.optLevel != -1)
+    	        	{   	        		
+    	        		if(VM.useAOSDBVerbose)
+    	        			VM.sysWriteln("Blocking Compiling " + elem.name + " at optLevel " + elem.optLevel);
+    	        		AOSInstrumentationPlan instrumentationPlan =
+    	        				new AOSInstrumentationPlan(Controller.options, method);
+    	        		CompilationPlan compPlan =
+    	        				new CompilationPlan(method,
+    	        						(OptimizationPlanElement[]) optimizationPlan,
+    	        						instrumentationPlan,
+    	        						(OptOptions) options, true);
+    	        		cm = optCompileWithFallBack(method, compPlan);
+    	        		elem.baseCMID = cm.cmid;
+    	        	}
+    	        	else
+    	        	{
+    	        		if(VM.useAOSDBVerbose)
+    	        			VM.sysWriteln("Blocking Compiling at baseline cannot compile at opt");
+    	        		
+    	        		cm = baselineCompile(method);
+        	            ControllerMemory.incrementNumBase();
+        	            //elem.baseCMID = cm.cmid;
+    	        	}
+    	          }
+    	  }else if (Controller.options.optIRC()) {
           if (// will only run once: don't bother optimizing
               method.isClassInitializer() ||
               // exception in progress. can't use opt compiler:

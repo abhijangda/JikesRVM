@@ -11,6 +11,27 @@
 #  regarding copyright ownership.
 #
 Lorg/jikesrvm/adaptive/database/methodsamples/MongoMethodDatabase;
+Lorg/jikesrvm/adaptive/database/methodsamples/MongoCompilationThread;
+Lorg/jikesrvm/adaptive/database/methodsamples/MongoMethodRecompilationEvent;
+Lorg/jikesrvm/adaptive/database/methodsamples/MongoBlockingQueue;
+Lorg/jikesrvm/adaptive/database/methodsamples/MongoControllerPlan;
+Lorg/bson/BasicBSONCallback;
+Lorg/bson/BasicBSONDecoder$BSONInput;
+Lorg/bson/io/Bits;
+Lorg/bson/BasicBSONDecoder$BSONInput;
+Lcom/mongodb/DBApiLayer$MyCollection;
+Lcom/mongodb/DBCursor;
+Lcom/mongodb/QueryOpBuilder;
+Lorg/bson/BasicBSONObject;
+Lcom/mongodb/CommandResult;
+Lcom/mongodb/DBApiLayer$Result;
+Lcom/mongodb/Response;
+Lcom/mongodb/MongoOptions;
+Lcom/mongodb/Mongo;
+Lcom/mongodb/Response;
+Lcom/mongodb/MongoException;
+Lcom/mongodb/DBTCPConnector$MyPort;
+
 [Lorg/vmmagic/unboxed/Address;
 [Lorg/vmmagic/unboxed/ObjectReference;
 [Lorg/vmmagic/unboxed/Word;
