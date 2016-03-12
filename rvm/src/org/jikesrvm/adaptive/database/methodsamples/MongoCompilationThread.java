@@ -6,16 +6,25 @@ import org.jikesrvm.VM;
 import org.jikesrvm.adaptive.controller.Controller;
 import org.jikesrvm.classloader.NormalMethod;
 import org.jikesrvm.compilers.common.CompiledMethod;
+import org.vmmagic.pragma.Inline;
 import org.vmmagic.pragma.NonMoving;
 import org.vmmagic.pragma.Uninterruptible;
 
 @NonMoving
 public class MongoCompilationThread extends SystemThread {	
 	public final MongoBlockingQueue queue;
+	private boolean firstTimeProcessing;
 	
 	public MongoCompilationThread() {
 		super("MongoCompilationThread");
 		this.queue = new MongoBlockingQueue ();
+		firstTimeProcessing = false;
+	}
+	
+	@Inline
+	public boolean isFirstTimeProcessing ()
+	{
+		return firstTimeProcessing;
 	}
 	
 	public void run ()

@@ -1932,6 +1932,9 @@ const char *rvm_target_configuration = "${target.file}";
     <CompileCtoObj cfile="${bl.dir}/sysVarArgs.c"
                        objfile="${build.base}/${target.obj-prefix}sysVarArgs${target.obj-ext}"
                        cargs="${rvm.c.args}"/>
+   <!--CompileCtoObj cfile="${bl.dir}/sysMongo.c"
+                       objfile="${build.base}/${target.obj-prefix}sysMongo${target.obj-ext}"
+                       cargs="${rvm.c.args} -I/usr/include/libmongoc-1.0/ -I/usr/include/libbson-1.0/ -lmongoc-1.0 -lbson-1.0"/-->
 
     <CreateLibrary outdir="${build.base}" dllname="jvm" srcdir="${bl.dir}">
       <ObjectFiles>
@@ -1951,6 +1954,7 @@ const char *rvm_target_configuration = "${target.file}";
         <arg value="${build.base}/${target.obj-prefix}sysThread_${target.arch}${target.obj-ext}"/>
         <arg value="${build.base}/${target.obj-prefix}sysTime${target.obj-ext}"/>
         <arg value="${build.base}/${target.obj-prefix}sysVarArgs${target.obj-ext}"/>
+        <!--arg value="${build.base}/${target.obj-prefix}sysMongo${target.obj-ext}"/-->
       </ObjectFiles>
     </CreateLibrary>
 
@@ -2005,6 +2009,7 @@ const char *rvm_target_configuration = "${target.file}";
         <arg value="${build.base}/${target.obj-prefix}sysThread_${target.arch}${target.obj-ext}"/>
         <arg value="${build.base}/${target.obj-prefix}sysTime${target.obj-ext}"/>
         <arg value="${build.base}/${target.obj-prefix}sysVarArgs${target.obj-ext}"/>
+        <!--arg value="${build.base}/${target.obj-prefix}sysMongo${target.obj-ext}"/-->
       </ObjectFiles>
     </CreateDLL>
 

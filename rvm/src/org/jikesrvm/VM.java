@@ -525,6 +525,8 @@ public class VM extends Properties {
 
     Time.boot();
 
+    //SysCall.sysCall.sysMongoInit();
+    
     // Schedule "main" thread for execution.
     if (verboseBoot >= 2) VM.sysWriteln("Creating main thread");
     if (useAOSDB || useAOSDBOptCompile || useAOSDBRead || useAOSDBBulkCompile || useAOSDBOptBlockingCompile)

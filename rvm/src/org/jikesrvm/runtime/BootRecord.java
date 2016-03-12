@@ -250,6 +250,13 @@ public class BootRecord {
   public Address sysZeroPagesIP;
   public Address sysSyncCacheIP;
 
+  // mongo
+  /*public Address sysMongoInitIP;
+  public Address sysMongoConnectIP;
+  public Address sysMongoInsertIP;
+  public Address sysMongoCleanupIP;
+  public Address sysMongoFindOptLevelIP;
+*/
   // files
   public Address sysReadByteIP;
   public Address sysWriteByteIP;

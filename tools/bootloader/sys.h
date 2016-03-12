@@ -315,6 +315,13 @@ EXTERNAL jfloat sysVaArgJfloat(va_list *ap);
 EXTERNAL jdouble sysVaArgJdouble(va_list *ap);
 EXTERNAL jobject sysVaArgJobject(va_list *ap);
 
+// sysMongo
+EXTERNAL void sysMongoInit ();
+EXTERNAL void sysMongoConnect ();
+EXTERNAL void sysMongoCleanup ();
+EXTERNAL void sysMongoInsert ();
+EXTERNAL int sysMongoFindOptLevel (char* method);
+
 /** Only called externally from Java programs. */
 EXTERNAL void sysExit(int) NORETURN;
 

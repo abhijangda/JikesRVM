@@ -63,6 +63,7 @@ public class MongoMethodDatabase {
 	private List<WriteRequest> writeRequests;
 	private boolean readingCompleted;
 	public final MongoCompilationThread compThread;
+	private boolean initialized;
 	
 	static class MethodToCompileAsync
 	{
@@ -315,6 +316,7 @@ public class MongoMethodDatabase {
 		internalDB = new HashMap<String, MethodDatabaseElement> ();
 		methodsToCompileAsync = new Vector<MethodToCompileAsync> ();
 		compThread = new MongoCompilationThread();
+		initialized = false;
 	}
 	
 	public void initializeMongoDB ()
@@ -344,6 +346,13 @@ public class MongoMethodDatabase {
 		}
 		
 		compThread.start();
+		initialized = true;
+	}
+	
+	@Inline
+	public boolean isInitialized ()
+	{
+		return initialized;
 	}
 	
 	public static String getMethodFullDesc (RVMMethod nm)

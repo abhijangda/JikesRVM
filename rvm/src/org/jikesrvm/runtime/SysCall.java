@@ -151,6 +151,22 @@ public abstract class SysCall {
   @SysCallTemplate
   public abstract int sysWriteBytes(int fd, Address buf, int cnt);
 
+  // mongo
+  /*@SysCallTemplate
+  public abstract void sysMongoInit ();
+
+  @SysCallTemplate
+  public abstract void sysMongoConnect ();
+  
+  @SysCallTemplate
+  public abstract void sysMongoInsert ();
+  
+  @SysCallTemplate
+  public abstract void sysMongoCleanup ();
+  
+  @SysCallTemplate
+  public abstract int sysMongoFindOptLevel (Address method);
+  */
   // mmap - memory mapping
   @SysCallTemplate
   public abstract Address sysMMap(Address start, Extent length, int protection, int flags, int fd, Offset offset);

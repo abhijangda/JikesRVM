@@ -700,10 +700,18 @@ public class RuntimeCompiler implements Callbacks.ExitMonitor {
         			  VM.sysWriteln ("basecompile method");
         		  cm = baselineCompile(method);
         		  
-        		  if (VM.useAOSDBVerbose)
-        			  VM.sysWriteln ("let us opt compile in other thread");
-        		  VM.methodDatabase.compThread.enqueueToCompilationThread(method, cm.cmid, cm);
-        		  
+        		  if (VM.methodDatabase.isInitialized () && 
+        				  VM.methodDatabase.compThread.getRVMThread() != RVMThread.getCurrentThread())
+        		  {
+        			  if (VM.useAOSDBVerbose)
+        				  VM.sysWriteln ("let us opt compile in other thread");
+        			  VM.methodDatabase.compThread.enqueueToCompilationThread(method, cm.cmid, cm);
+        		  }
+        		  else
+        		  {
+        			  if (VM.useAOSDBVerbose)
+        				  VM.sysWriteln("cannot opt compile in other thread as this method belongs to Mongo Compilation Thread");
+        		  }
         		  ControllerMemory.incrementNumBase();
         		  if (VM.useAOSDBVerbose)
         			  VM.sysWriteln ("basecompiling done");

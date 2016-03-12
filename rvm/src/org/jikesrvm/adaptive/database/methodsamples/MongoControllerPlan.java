@@ -15,7 +15,7 @@ import org.jikesrvm.compilers.opt.runtimesupport.OptCompiledMethod;
 
 public class MongoControllerPlan {
 	public final NormalMethod meth;
-	public final String methFullDesc;
+	public String methFullDesc;
 	public final CompiledMethod prev_cm;
 	public final int optLevel;
 	public final AOSInstrumentationPlan instrumentationPlan;
@@ -49,6 +49,9 @@ public class MongoControllerPlan {
 	    if (compPlan.options.PRINT_METHOD) {
 	      VM.sysWrite("-oc:O" + compPlan.options.getOptLevel() + " \n");
 	    }
+	    
+	    if (methFullDesc == null)
+	    	methFullDesc = MongoMethodDatabase.getMethodFullDesc(meth);
 	    
 	    if (meth.getCurrentCompiledMethod() instanceof OptCompiledMethod)
 	    {

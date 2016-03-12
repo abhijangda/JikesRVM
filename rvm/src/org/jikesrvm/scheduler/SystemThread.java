@@ -12,6 +12,7 @@
  */
 package org.jikesrvm.scheduler;
 
+import org.vmmagic.pragma.Inline;
 import org.vmmagic.pragma.Interruptible;
 import org.vmmagic.pragma.NonMoving;
 import org.vmmagic.pragma.Uninterruptible;
@@ -33,7 +34,7 @@ public abstract class SystemThread {
     rvmThread = new RVMThread(this, stack, name);
     rvmThread.makeDaemon(true);
   }
-
+  @Inline
   public RVMThread getRVMThread() {
     return rvmThread;
   }
