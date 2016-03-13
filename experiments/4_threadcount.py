@@ -48,8 +48,8 @@ try:
 
                 results += [common.run_dacapo(b, vm_args=['-use_aosdboptcompile'], dacapo_args=da)]
 
-                # convert all results to strings and store them
-                common.write_csv([i] + map(str, results))
+            # convert all results to strings and store them
+            common.write_csv([i] + map(str, results))
 
         common.close_csv()
 finally:
