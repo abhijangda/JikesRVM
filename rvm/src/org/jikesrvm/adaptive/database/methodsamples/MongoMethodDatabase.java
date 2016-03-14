@@ -520,6 +520,8 @@ public class MongoMethodDatabase {
 		if (optLevel == -1)
 			return;
 		
+		double counts = ((Double)doc.get("count")).doubleValue();
+		
 		/*
 		 * query = new BasicDBObject ("callerRef", m.getMemberRef().toString());
 		cursor = dcgCollection.find (query);
@@ -588,7 +590,7 @@ public class MongoMethodDatabase {
 		if (VM.useAOSDBVerbose)
 				VM.sysWriteln("Putting ControllerPlan on Compilation Queue for method: " + methodFullDesc);
 			
-		MongoControllerPlan plan = new MongoControllerPlan(m, methodFullDesc, cm, optLevel);
+		MongoControllerPlan plan = new MongoControllerPlan(m, methodFullDesc, cm, optLevel, counts);
 		plan.execute();
 	}
 	

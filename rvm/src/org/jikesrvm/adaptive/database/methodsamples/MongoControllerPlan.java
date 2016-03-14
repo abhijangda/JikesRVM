@@ -20,9 +20,10 @@ public class MongoControllerPlan {
 	public final int optLevel;
 	public final AOSInstrumentationPlan instrumentationPlan;
 	public final CompilationPlan compPlan;
+	public final double counts;
 	
 	public MongoControllerPlan(NormalMethod meth, String methFullDesc,
-			CompiledMethod prev_cm, int optLevel) {
+			CompiledMethod prev_cm, int optLevel, double counts) {
 		super();
 		this.meth = meth;
 		this.methFullDesc = methFullDesc;
@@ -37,11 +38,12 @@ public class MongoControllerPlan {
                                     instrumentationPlan,
                                     Controller.recompilationStrategy.getOptOptionsForLevel(optLevel),
                                     false);
+        this.counts = counts;
 	}
 	
 	public void execute ()
 	{
-		Controller.compilationQueue.seq_queue_enqueue(this);
+		Controller.compilationQueue.mongo_queue_insert(optLevel, counts, this);
 	}
 	
 	public CompiledMethod doRecompile ()

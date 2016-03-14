@@ -15,6 +15,7 @@ Lorg/jikesrvm/adaptive/database/methodsamples/MongoCompilationThread;
 Lorg/jikesrvm/adaptive/database/methodsamples/MongoMethodRecompilationEvent;
 Lorg/jikesrvm/adaptive/database/methodsamples/MongoBlockingQueue;
 Lorg/jikesrvm/adaptive/database/methodsamples/MongoControllerPlan;
+Lorg/jikesrvm/adaptive/database/methodsamples/MongoPriorityQueue;
 
 Lorg/bson/io/OutputBuffer;
 Lorg/bson/util/CopyOnWriteMap$Hash;

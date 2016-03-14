@@ -13,6 +13,7 @@
 package org.jikesrvm.adaptive.util;
 
 import org.jikesrvm.VM;
+import org.jikesrvm.adaptive.database.methodsamples.MongoPriorityQueue;
 import org.jikesrvm.util.PriorityQueueRVM;
 import org.vmmagic.pragma.Inline;
 
@@ -23,58 +24,7 @@ import org.vmmagic.pragma.Inline;
  * to consume.
  */
 public class BlockingPriorityQueue extends PriorityQueueRVM {
-	private Object[] array;
-	private int start;
-	private int end;
-	private int capacity;
-	@Inline
-	public void init_seq_queue ()
-	{
-		array = new Object[1000];
-		start = 0;
-		end = 0;
-		this.capacity = 1000;
-	}
-	
-	@Inline
-	public synchronized boolean seq_queue_isEmpty ()
-	{
-		return start == end;
-	}
-	@Inline
-	public synchronized Object seq_queue_dequeue ()
-	{		
-		Object o = array[start];
-		start += 1;
-		return o;
-	}
-	@Inline
-	public synchronized void seq_queue_enqueue (Object o)
-	{
-		if (end == this.capacity)
-		{
-			int newCapacity = 2*this.capacity;
-			Object[] newArray = new Object[newCapacity];
-			
-			for (int i = 0; i < this.capacity; i++)
-			{
-				newArray[i] = array[i];
-			}
-			
-			array = newArray;
-			this.capacity = newCapacity;
-		}
-		
-		array[end] = o;
-		end += 1;
-		
-		try {
-		      notifyAll();
-		    } catch (Exception e) {
-		      // TODO: should we exit or something more dramatic?
-		      VM.sysWrite("Exception occurred while notifying that element was inserted!\n");
-		    }
-	}
+	public MongoPriorityQueue mongoQueue;
 	
 	/*public synchronized boolean isStackEmpty ()
 	{
@@ -155,12 +105,12 @@ public class BlockingPriorityQueue extends PriorityQueueRVM {
   public BlockingPriorityQueue(CallBack _cb) {
     super();
     callback = _cb;
-    init_seq_queue ();
+    mongoQueue = new MongoPriorityQueue ();
   }
 
   public BlockingPriorityQueue() {
     this(new CallBack());
-    init_seq_queue ();
+    mongoQueue = new MongoPriorityQueue ();
   }
 
   /**
@@ -183,6 +133,16 @@ public class BlockingPriorityQueue extends PriorityQueueRVM {
     }
   }
 
+  public final synchronized void mongo_queue_insert (int optLevel, double counts, Object _data)
+  {
+	  mongoQueue.insert(optLevel, counts, _data);
+	  try {
+	      notifyAll();
+	    } catch (Exception e) {
+	      // TODO: should we exit or something more dramatic?
+	      VM.sysWrite("Exception occurred while notifying that element was inserted!\n");
+	    }
+  }
   /**
    * Remove and return the front (minimum) object.  If the queue is currently
    * empty, then block until an object is available to be dequeued.
@@ -192,7 +152,7 @@ public class BlockingPriorityQueue extends PriorityQueueRVM {
   @Override
   public final synchronized Object deleteMin() {
     // While the queue is empty, sleep until notified that an object has been enqueued.
-    while (seq_queue_isEmpty () && isEmpty()) {
+    while (mongoQueue.isEmpty() && isEmpty()) {
       try {
         callback.aboutToWait();
         wait();
@@ -203,9 +163,9 @@ public class BlockingPriorityQueue extends PriorityQueueRVM {
       }
     }
     
-    if (!seq_queue_isEmpty ())
+    if (!mongoQueue.isEmpty())
     	// 	When we get to here, we know the queue is non-empty, so dequeue an object and return it.
-    	return seq_queue_dequeue();
+    	return mongoQueue.deleteMin();
     else
     	return super.deleteMin();
   }
