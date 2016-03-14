@@ -43,6 +43,7 @@ def reset_root(root=__JIKES_EXPERIMENT_ORIGINAL_ROOT__):
     global __JIKES_EXPERIMENT_TEMP_ROOT__, __JIKES_EXPERIMENT_TEMP_BIN__
     __JIKES_EXPERIMENT_TEMP_ROOT__ = root
     __JIKES_EXPERIMENT_TEMP_BIN__ = os.path.join(root, 'dist/development_x86_64-linux/')
+    os.chdir(__JIKES_EXPERIMENT_TEMP_ROOT__)
 
 def init(prefix, commit, timelimit=0, taskset=None):
     global __NUM_REPETITIONS__, __PREFIX__, __RESULTS_DIR__, __TIMELIMIT__, __TASKSET__, __ARGS__, __LOG__
@@ -81,6 +82,10 @@ def init(prefix, commit, timelimit=0, taskset=None):
 
     if __ARGS__.compile_only:
         exit()
+
+    # Log the current git revision
+    args = ['git', 'show', '--quiet', '--oneline']
+    __LOG__.info(subprocess.check_output(args))
 
 def parse_arguments():
     global __NUM_REPETITIONS__, __TIMELIMIT__, __TASKSET__
