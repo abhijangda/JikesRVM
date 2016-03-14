@@ -188,8 +188,11 @@
       - classpath git doesn't ship makefiles
       - classpath archives ship makefiles but the classpath-web.RVM-773-08.patch
           changes Makefile.am so we have to regenerate them
-    -->
+
+      KH 14/3/16: running autogen breaks the build due to missing macros. commenting it out and it works fine.
+
     <exec executable="${classpath.dir}/autogen.sh" failonerror="true" dir="${classpath.dir}"/>
+    -->
 
     <test-file name="make.exe" location="${host.file}"/>
 
