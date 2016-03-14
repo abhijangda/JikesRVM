@@ -4,16 +4,16 @@ import common
 # to see whether our speedup scales or if we are still hindered by lock contention on the lookup queues.
 
 benchmarks = ['avrora', 'jython', 'lusearch', 'sunflow']
-git_checkout = 'BulkRead'
+git_checkout = 'PriorityQueue'
 prefix = '4'
 timelimit = 600
 taskset = '0-15'
-dacapo_args = ['-n', '2', '-s', 'large']
+dacapo_args = ['-n', '1', '-s', 'large']
+vm_args = ['-Xmx1024M', '-Xms512M']
 
-dacapo_threadcount = [1, 2, 4, 8, 16]
+dacapo_threadcount = [1, 2, 4, 8, 16, 32]
 
 try:
-    common.drop_mongo_collection('AOSDatabase', 'AOSCollection')
     common.init(prefix, git_checkout, timelimit=timelimit, taskset=taskset)
 
     n = common.get_repetitions()
@@ -41,12 +41,15 @@ try:
 
                 # Baseline run
                 print '--', b, 'Baseline', '--'
-                results += [common.run_dacapo(b, dacapo_args=da)]
+                results += [common.run_dacapo(b, vm_args=vm_args, dacapo_args=da)]
 
                 # AOS database enabled runs
-                results += [common.run_dacapo(b, vm_args=['-use_aosdb1000'], dacapo_args=da)]
+                results += [common.run_dacapo(b, vm_args=vm_args + ['-use_aosdb1000'], dacapo_args=da)]
 
-                results += [common.run_dacapo(b, vm_args=['-use_aosdboptcompile'], dacapo_args=da)]
+                if (results[-1] == -1):
+                    results += [-1]
+                else:
+                    results += [common.run_dacapo(b, vm_args=vm_args + ['-use_aosdboptcompile'], dacapo_args=da)]
 
             # convert all results to strings and store them
             common.write_csv([i] + map(str, results))
