@@ -66,8 +66,8 @@ public class MongoPriorityQueue {
     int current = startingElement;
     int parent = numElements / 2;
     // keep checking parents that violate the magic condition
-    while (parent > 0 && ((queue[parent].optLevel < queue[current].optLevel) || 
-    		(queue[parent].optLevel == queue[current].optLevel && queue[parent].counts < queue[current].counts))){
+    while (parent > 0 && ((queue[parent].counts < queue[current].counts) || 
+    		(queue[parent].counts == queue[current].counts && queue[parent].optLevel < queue[current].optLevel))){
       //        System.out.println("Parent: "+ parent +", Current: "+ current);
       //        System.out.println("Contents before: "+ this);
       // exchange parrent and current values
@@ -147,15 +147,15 @@ public class MongoPriorityQueue {
 
       // find the smaller of the two children
       int smaller;
-      if (child2 <= numElements && ((queue[child2].optLevel > queue[child1].optLevel)  ||
-    		  (queue[child2].optLevel == queue[child1].optLevel && queue[child2].counts > queue[child1].counts))){
+      if (child2 <= numElements && ((queue[child2].counts > queue[child1].counts)  ||
+    		  (queue[child2].counts == queue[child1].counts && queue[child2].optLevel > queue[child1].optLevel))){
         smaller = child2;
       } else {
         smaller = child1;
       }
 
-      if (!((queue[smaller].optLevel > queue[current].optLevel)  ||
-    		  (queue[smaller].optLevel == queue[current].optLevel && queue[smaller].counts > queue[current].counts))) {
+      if (!((queue[smaller].counts > queue[current].counts)  ||
+    		  (queue[smaller].counts == queue[current].counts && queue[smaller].optLevel > queue[current].optLevel))) {
         break;
       } else {
         // exchange parrent and current values
@@ -171,7 +171,7 @@ public class MongoPriorityQueue {
     
     /*if (VM.useAOSDBVerbose)
     {
-    	//VM.sysWriteln ("After deletion current elements: " + toString ());
+    	VM.sysWriteln ("After deletion current elements: " + toString ());
     }*/
     
     return returnValue;
