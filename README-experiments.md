@@ -83,3 +83,47 @@ python
 ```
 
 The `run_dacapo` method returns the runtime in milliseconds as reported by the dacapo benchmark harness.
+
+## Setup on GPG cluster
+
+_TODO: A number of components will need to be built from source and these binaries should then be added to the $PATH. In addition, the path to the bison executable must be set in build/hosts/x86-64\_linux.xml_
+
+First make sure we have a branch with the necessary modifications:
+
+```
+git checkout PriorityQueue
+```
+
+The classpath extension should be built first, this will allow the Jikes build to reference it. For some reason the build initiated by the main Jikes build process keeps failing. If this fails, comment out the call to autogen.sh in build/components/classpath.xml, remove the components/ folder, and try again.
+
+```
+echo host.name=x86_64-linux > .ant.properties
+echo config.name=development >> .ant.properties
+ant -f build/components/classpath.xml
+```
+
+JUnit must be downloaded manually as well:
+
+```
+mkdir -p components/junit/4.10/
+cd components/junit/4.10/
+
+wget http://sourceforge.net/projects/junit/files/junit/4.10/junit4.10.zip/download?use_mirror=autoselect -O junit4.10.zip
+unzip junit4.10.zip
+
+cd junit4.10
+echo 'junit.version=4.10' > constants.properties
+echo 'junit.description=jUnit' >> constants.properties
+
+cd ../../../../
+```
+
+Then finally we can go to the experiments branch and run our script to compile jikes in a temporary folder:
+
+```
+git checkout experiments
+cd experiments
+python ./4_threadcount.py --compile-only
+```
+
+This will print the temporary repository root at the end which can be given to the script with the `--reuse-root=` option.
