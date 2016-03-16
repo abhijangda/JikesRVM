@@ -3,7 +3,7 @@ import common
 # This experiment runs each benchmark with different number of threads
 # to see whether our speedup scales or if we are still hindered by lock contention on the lookup queues.
 
-benchmarks = ['avrora', 'jython', 'lusearch', 'sunflow']
+benchmarks = ['avrora', 'jython', 'lusearch', 'sunflow', 'xalan']
 git_checkout = 'PriorityQueue'
 prefix = '4'
 timelimit = 600

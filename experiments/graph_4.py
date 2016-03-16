@@ -16,7 +16,7 @@ if not os.path.exists(graphs_dir):
 
 basename = '4'
 csv_dir = sys.argv[1]
-benchmarks = ['avrora', 'lusearch', 'jython', 'sunflow']
+benchmarks = ['avrora', 'lusearch', 'jython', 'sunflow', 'xalan']
 threadcount = [1, 2, 4, 8, 16, 32]
 
 subplot_cols = 2
