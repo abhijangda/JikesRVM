@@ -154,18 +154,18 @@ public class MongoPriorityQueue {
         smaller = child1;
       }
 
-      if (!((queue[smaller].counts > queue[current].counts)  ||
-    		  (queue[smaller].counts == queue[current].counts && queue[smaller].optLevel > queue[current].optLevel))) {
-        break;
-      } else {
-        // exchange parrent and current values
+      if ((queue[smaller].counts > queue[current].counts)  ||
+    		  (queue[smaller].counts == queue[current].counts && queue[smaller].optLevel > queue[current].optLevel)) {
+    	// exchange parrent and current values
         MongoPriorityQueueNode tmp = queue[smaller];
         queue[smaller] = queue[current];
         queue[current] = tmp;
 
-        // go down 1 level
+          // go down 1 level
         current = smaller;
         child1 = 2 * current;
+      } else {
+    	break;
       }
     }
     
