@@ -62,7 +62,7 @@ public class MongoMethodDatabase {
 	private Vector<MethodToCompileAsync> methodsToCompileAsync;
 	private List<WriteRequest> writeRequests;
 	private boolean readingCompleted;
-	public final MongoCompilationThread compThread;
+	public Vector<MongoCompilationThread> compThreads;
 	private boolean initialized;
 	
 	static class MethodToCompileAsync
@@ -315,7 +315,15 @@ public class MongoMethodDatabase {
 		VM.sysWriteln ("RequestsLock created");
 		internalDB = new HashMap<String, MethodDatabaseElement> ();
 		methodsToCompileAsync = new Vector<MethodToCompileAsync> ();
-		compThread = new MongoCompilationThread();
+		compThreads = new Vector<MongoCompilationThread>();
+		int n;
+		n = Integer.parseInt(VM.mongoCompileThreadCount);
+			
+		for (int i = 0; i < n; i++)
+		{
+			compThreads.add(new MongoCompilationThread());
+		}
+		
 		initialized = false;
 	}
 	
@@ -345,7 +353,9 @@ public class MongoMethodDatabase {
 			e.printStackTrace();
 		}
 		
-		compThread.start();
+		for (MongoCompilationThread compThread: compThreads)
+			compThread.start();
+		
 		initialized = true;
 	}
 	

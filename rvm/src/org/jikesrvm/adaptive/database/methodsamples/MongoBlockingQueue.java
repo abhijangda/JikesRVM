@@ -11,13 +11,15 @@ public class MongoBlockingQueue {
 	private int start;
 	private int end;
 	private int capacity;
+	public static final RVMField startField =
+		      getField(MongoBlockingQueue.class, "start", int.class);
 	public static final RVMField endField =
 		      getField(MongoBlockingQueue.class, "end", int.class);
 		 
 	public MongoBlockingQueue ()
 	{
 		array = new Object[5000];
-		start = 0;
+		start = -1;
 		end = 0;
 		this.capacity = 5000;
 	}
@@ -115,8 +117,8 @@ public class MongoBlockingQueue {
 			}
 		}
 		
-		Object o = array[start];
-		start += 1;
+		int p = Synchronization.fetchAndAdd (this, startField.getOffset (), 1);
+		Object o = array[p];
 		
 		return o;
 	}

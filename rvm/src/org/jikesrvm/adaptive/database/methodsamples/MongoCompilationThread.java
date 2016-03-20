@@ -12,12 +12,12 @@ import org.vmmagic.pragma.Uninterruptible;
 
 @NonMoving
 public class MongoCompilationThread extends SystemThread {	
-	public final MongoBlockingQueue queue;
+	public static MongoBlockingQueue queue;
 	private boolean firstTimeProcessing;
+	
 	
 	public MongoCompilationThread() {
 		super("MongoCompilationThread");
-		this.queue = new MongoBlockingQueue ();
 		firstTimeProcessing = false;
 	}
 	
@@ -32,6 +32,8 @@ public class MongoCompilationThread extends SystemThread {
 		while (true)
 		{
 			try {
+				if (queue == null)
+					continue;
 				MongoMethodRecompilationEvent m = ((MongoMethodRecompilationEvent)queue.dequeue());
 				m.process();
 			} catch (Exception e) {
@@ -42,11 +44,13 @@ public class MongoCompilationThread extends SystemThread {
 		}
 	}
 	
-	public void enqueueToCompilationThread (NormalMethod m, int cmid, CompiledMethod cm)
+	public static void enqueueToCompilationThread (NormalMethod m, int cmid, CompiledMethod cm)
 	{		
 		if (VM.useAOSDBVerbose)
 			VM.sysWriteln (Controller.controllerClock + ":" + Time.currentTimeMillis() + ": Enqueue method " + 
 					MongoMethodDatabase.getMethodFullDesc(m)+ " to compilation thread");
+		if (queue == null)
+			return;
 		
 		MongoMethodRecompilationEvent event = new MongoMethodRecompilationEvent(m, cm);
 		queue.enqueue(event);

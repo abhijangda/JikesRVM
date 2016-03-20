@@ -69,6 +69,8 @@ import org.vmmagic.unboxed.ObjectReference;
 import org.vmmagic.unboxed.Offset;
 import org.vmmagic.unboxed.Word;
 import org.jikesrvm.adaptive.database.methodsamples.MethodDatabase;
+import org.jikesrvm.adaptive.database.methodsamples.MongoBlockingQueue;
+import org.jikesrvm.adaptive.database.methodsamples.MongoCompilationThread;
 import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase;
 
 /**
@@ -77,6 +79,7 @@ import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase;
 @Uninterruptible
 public class VM extends Properties {
   public static String bulkUpdateCount;
+  public static String mongoCompileThreadCount;
   public static MongoMethodDatabase methodDatabase;
   public static boolean useAOSDBOptCompile = false;
   public static boolean useAOSDBVerbose = false;
@@ -543,7 +546,10 @@ public class VM extends Properties {
     	VM.methodDatabase = new MongoMethodDatabase (Integer.parseInt(bulkUpdateCount));    	
     	VM.methodDatabase.initializeMongoDB ();
     	if (VM.useAOSDBOptBlockingCompile)
+    	{
+    		MongoCompilationThread.queue = new MongoBlockingQueue ();
     		VM.methodDatabase.readAllDocuments();
+    	}
     	if (useAOSDBBulkCompile) //Compile all methods in this thread
     		VM.methodDatabase.readAllDocuments();
     	else if (useAOSDBRead) //Read in another thread

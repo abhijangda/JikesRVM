@@ -20,6 +20,7 @@ import org.jikesrvm.adaptive.controller.Controller;
 import org.jikesrvm.adaptive.controller.ControllerMemory;
 import org.jikesrvm.adaptive.controller.ControllerPlan;
 import org.jikesrvm.adaptive.database.methodsamples.MethodDatabaseElement;
+import org.jikesrvm.adaptive.database.methodsamples.MongoCompilationThread;
 import org.jikesrvm.adaptive.database.methodsamples.MongoMethodDatabase;
 import org.jikesrvm.adaptive.recompilation.InvocationCounts;
 import org.jikesrvm.adaptive.recompilation.BulkCompile;
@@ -699,13 +700,21 @@ public class RuntimeCompiler implements Callbacks.ExitMonitor {
         		  if (VM.useAOSDBVerbose)
         			  VM.sysWriteln ("basecompile method");
         		  cm = baselineCompile(method);
+        		  boolean fromThread = false;
+        		  for (MongoCompilationThread compThread : VM.methodDatabase.compThreads)
+        		  {
+        			  if (compThread.getRVMThread() == RVMThread.getCurrentThread())
+        			  {
+        				  fromThread = true;
+        				  break;
+        			  }
+        		  }
         		  
-        		  if (VM.methodDatabase.isInitialized () && 
-        				  VM.methodDatabase.compThread.getRVMThread() != RVMThread.getCurrentThread())
+        		  if (VM.methodDatabase.isInitialized () && !fromThread)
         		  {
         			  if (VM.useAOSDBVerbose)
         				  VM.sysWriteln ("let us opt compile in other thread");
-        			  VM.methodDatabase.compThread.enqueueToCompilationThread(method, cm.cmid, cm);
+        			  MongoCompilationThread.enqueueToCompilationThread(method, cm.cmid, cm);
         		  }
         		  else
         		  {

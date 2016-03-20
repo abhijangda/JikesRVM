@@ -551,6 +551,7 @@ public class CommandLineArgs {
     	  break;
       case USE_AOSDBOptCompile:
     	  org.jikesrvm.VM.useAOSDBOptCompile = true;
+    	  org.jikesrvm.VM.mongoCompileThreadCount = arg;
     	  //org.jikesrvm.VM.useAOSDBRead = true;
     	  break;
         case USE_AOSDB:
